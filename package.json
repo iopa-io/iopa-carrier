@@ -21,7 +21,7 @@
     "scripts": {
         "build": "lerna run build"
     },
-    "homepage": "http://iopa.io",
+    "homepage": "https://iopa.io",
     "workspaces": [
         "packages/*"
     ]

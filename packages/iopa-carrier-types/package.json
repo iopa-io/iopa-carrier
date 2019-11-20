@@ -32,5 +32,5 @@
     "scripts": {
         "format": "prettier --ignore-path ../../.gitignore --write '**/*.{js,jsx,ts,tsx,json,md}'"
     },
-    "homepage": "http://iopa.io"
+    "homepage": "https://iopa.io"
 }
