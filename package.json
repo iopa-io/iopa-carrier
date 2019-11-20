@@ -1,0 +1,28 @@
+{
+    "name": "mono-repository-for-iopa-carrier",
+    "private": true,
+    "version": "3.0.0",
+    "description": "Use the IOPA framework for cloud-edge SMS/Voice on Twilio, SignalWire and Cloudflare Workers",
+    "author": "iopa <build@iopa.io>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iopa-io/iopa-carrier.git"
+    },
+    "dependencies": {},
+    "keywords": [
+        "TwiML",
+        "Twilio",
+        "SignalWire",
+        "IOPA",
+        "Bot"
+    ],
+    "engines": {},
+    "scripts": {
+        "build": "lerna run build"
+    },
+    "homepage": "http://iopa.io",
+    "workspaces": [
+        "packages/*"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "name": "iopa-carrier-types",
+    "version": "3.0.0",
+    "description": "Use the IOPA Carrier framework for Twilio/SignalWire in TypeScript with zero runtime overhead",
+    "author": "iopa <build@iopa.io>",
+    "license": "MIT",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iopa-io/iopa-carrier.git"
+    },
+    "dependencies": {
+        "iopa-types": "3.0.0"
+    },
+    "keywords": [
+        "iopa",
+        "botbuilder",
+        "botframework",
+        "serverless",
+        "cloudflare",
+        "workers",
+        "functions",
+        "lambda",
+        "azure function",
+        "google cloud function",
+        "node",
+        "bot",
+        "conversational agent"
+    ],
+    "engines": {},
+    "scripts": {
+        "format": "prettier --ignore-path ../../.gitignore --write '**/*.{js,jsx,ts,tsx,json,md}'"
+    },
+    "homepage": "http://iopa.io"
+}

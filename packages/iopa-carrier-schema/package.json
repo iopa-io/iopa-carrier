@@ -1,0 +1,29 @@
+{
+    "name": "iopa-carrier-schema",
+    "version": "3.0.0",
+    "description": "Generated TypeScript Fetch API for Microsoft Bot Framework",
+    "author": "iopa <build@iopa.io>",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "src/index.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iopa-io/iopa-microsoft-botbuilder.git"
+    },
+    "dependencies": {
+        "portable-fetch": "^3.0.0",
+        "url": "^0.11.0"
+    },
+    "keywords": [
+        "botbuilder-js",
+        "botframework",
+        "iopa"
+    ],
+    "engines": {},
+    "scripts": {
+        "build": "tsc",
+        "schema:build": "tsc",
+        "format": "prettier --ignore-path ../../.gitignore --write '**/*.{js,jsx,ts,tsx,json,md}'"
+    },
+    "homepage": "http://iopa.io"
+}
