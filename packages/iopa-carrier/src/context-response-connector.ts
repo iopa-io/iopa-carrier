@@ -1,4 +1,11 @@
-import { IopaResponse, BotReading, BotResponseMethods } from 'iopa-types'
+/* eslint-disable no-await-in-loop */
+/* eslint-disable prefer-destructuring */
+import {
+    IopaResponse,
+    IopaBotReading,
+    BotResponseMethods,
+    IopaBotCard,
+} from 'iopa-types'
 
 import { IopaCarrierContext, IopaCarrierResponse } from 'iopa-carrier-types'
 import { MessageFactory } from 'iopa-carrier-cards'
@@ -9,8 +16,8 @@ const MAX_POST_MESSAGE_DELAY = 4000
 const DEFAULT_DELAY_FOR_CARD = 3000
 const DELAY_WHEN_DISABLED = 40
 
-const s_bodyState = Symbol('urn:io:iopa:bot:response:bodystate')
-const s_context = Symbol('urn:io:iopa:bot:response:context')
+const $$bodyState = Symbol('urn:io:iopa:bot:response:bodystate')
+const $$context = Symbol('urn:io:iopa:bot:response:context')
 
 /** Convert plain IopaContext into a method-enhanced IopaCarrierContext */
 export function toIopaCarrierResponse(
@@ -18,8 +25,8 @@ export function toIopaCarrierResponse(
     context: IopaCarrierContext
 ): IopaCarrierResponse {
     const response = plainresponse as IopaCarrierResponse
-    response[s_context] = context
-    response.botːCapability = context.botːCapability
+    response[$$context] = context
+    response['bot.Capability'] = context['bot.Capability']
 
     response.send = ResponseHelpers.prototype.send
     response.sendAll = ResponseHelpers.prototype.sendAll
@@ -34,23 +41,27 @@ export function toIopaCarrierResponse(
     response.isAwaitingMultiChoiceResponse =
         ResponseHelpers.prototype.isAwaitingMultiChoiceResponse
 
-    response.botːShouldEndSession = false
-    response.botːResponseHandled = false
-    response.botːIsDelayDisabled = false
-    response.iopaːStatusCode = 200
+    response['bot.ShouldEndSession'] = false
+    response['bot.ResponseHandled'] = false
+    response['bot.IsDelayDisabled'] = false
+    response['iopa.StatusCode'] = 200
 
     return response
 }
 
 export class ResponseHelpers implements BotResponseMethods {
     say(this: IopaCarrierResponse, text: string): IopaCarrierResponse {
-        if (this[s_bodyState]) {
-            if (this[s_bodyState].text)
-                this[s_bodyState].text = this[s_bodyState].text + '\n' + text
-            else this[s_bodyState].text = text
-        } else this[s_bodyState] = { text: text }
+        if (this[$$bodyState]) {
+            if (this[$$bodyState].text) {
+                this[$$bodyState].text = `${this[$$bodyState].text}\n${text}`
+            } else {
+                this[$$bodyState].text = text
+            }
+        } else {
+            this[$$bodyState] = { text }
+        }
 
-        this.botːResponseHandled = true
+        this['bot.ResponseHandled'] = true
 
         return this
     }
@@ -65,26 +76,26 @@ export class ResponseHelpers implements BotResponseMethods {
             this.say(card.text)
 
             if (card.attachments) {
-                this[s_bodyState].attachments = card.attachments
+                this[$$bodyState].attachments = card.attachments
             }
 
             if (card.image) {
-                this[s_bodyState].image = card.image
+                this[$$bodyState].image = card.image
             }
 
             if (card.title) {
-                this[s_bodyState].attachments =
-                    this[s_bodyState].attachments || []
-                this[s_bodyState].attachments[0] =
-                    this[s_bodyState].attachments[0] || {}
-                this[s_bodyState].attachments[0]['text'] = card.title
+                this[$$bodyState].attachments =
+                    this[$$bodyState].attachments || []
+                this[$$bodyState].attachments[0] =
+                    this[$$bodyState].attachments[0] || {}
+                this[$$bodyState].attachments[0].text = card.title
             }
         } else {
-            this[s_bodyState] = this[s_bodyState] || {}
+            this[$$bodyState] = this[$$bodyState] || {}
 
-            this[s_bodyState].attachments = this[s_bodyState].attachments || []
+            this[$$bodyState].attachments = this[$$bodyState].attachments || []
 
-            this[s_bodyState].attachments.push(card)
+            this[$$bodyState].attachments.push(card)
         }
 
         return this
@@ -93,7 +104,7 @@ export class ResponseHelpers implements BotResponseMethods {
     /** Send response back to bot */
     async send(this: IopaCarrierResponse, body?: any) {
         if (body) {
-            if (typeof body == 'string') {
+            if (typeof body === 'string') {
                 this.say(body)
             } else {
                 this.card(body)
@@ -103,18 +114,14 @@ export class ResponseHelpers implements BotResponseMethods {
         let message: string
         let card: any
 
-        if (this.iopaːStatusCode != 200) {
+        if (this['iopa.StatusCode'] !== 200) {
             // TO DO:: FORMAT ERROR
-            message =
-                'Unfortunately an error has occured:\n  ' +
-                this.iopaːStatusCode +
-                ' ' +
-                this[s_bodyState].text
+            message = `Unfortunately an error has occured:\n  ${this['iopa.StatusCode']} ${this[$$bodyState].text}`
         } else {
-            message = this[s_bodyState].text
+            message = this[$$bodyState].text
 
-            if (this[s_bodyState].attachments) {
-                card = this[s_bodyState].attachments[0]
+            if (this[$$bodyState].attachments) {
+                card = this[$$bodyState].attachments[0]
             }
         }
 
@@ -124,17 +131,17 @@ export class ResponseHelpers implements BotResponseMethods {
             return
         }
 
-        let responseResult =
+        const responseResult =
             hasMessage && !card
                 ? MessageFactory.text(message)
                 : MessageFactory.attachment(card, message)
 
-        await this.botːCapability.sendActivity(responseResult)
+        await this['bot.Capability'].sendActivity(responseResult)
 
-        this[s_bodyState] = undefined
+        this[$$bodyState] = undefined
 
         console.log(
-            `CF< Response Complete ${this[s_context].serverːgetTimeElapsed()}ms`
+            `CF< Response Complete ${this[$$context]['server.TimeElapsed']}ms`
         )
     }
 
@@ -143,27 +150,27 @@ export class ResponseHelpers implements BotResponseMethods {
         this: IopaCarrierResponse,
         flag: boolean
     ): IopaCarrierResponse {
-        this.botːShouldEndSession = flag
+        this['bot.ShouldEndSession'] = flag
         return this
     }
 
     /** Helper method to set the status of the response */
     status(this: IopaCarrierResponse, statuscode: number): IopaCarrierResponse {
-        this.iopaːStatusCode = statuscode
+        this['iopa.StatusCode'] = statuscode
         return this
     }
 
     /** Send a text string or card attachments, looping with delay if multiple provided */
     sendAll(
         this: IopaCarrierResponse,
-        messages: (string | { text: string; attachments: any })[],
+        messages: (string | IopaBotCard)[],
         typingDelay?: number
     ): Promise<void> {
-        return asyncForEach(messages, async message => {
+        return asyncForEach(messages, async (message) => {
             const typingDuration = typingDelay || MIN_TYPING_DURATION
             let postMessageDelay
 
-            if (typeof message == 'string') {
+            if (typeof message === 'string') {
                 postMessageDelay = postMessageDelayForText(message)
                 this.say(message)
             } else {
@@ -172,12 +179,14 @@ export class ResponseHelpers implements BotResponseMethods {
             }
             await this.showTypingIndicator()
             await delay(
-                this.botːIsDelayDisabled ? DELAY_WHEN_DISABLED : typingDuration
+                this['bot.IsDelayDisabled']
+                    ? DELAY_WHEN_DISABLED
+                    : typingDuration
             )
             await this.send()
             await this.hideTypingIndicator()
             await delay(
-                this.botːIsDelayDisabled
+                this['bot.IsDelayDisabled']
                     ? DELAY_WHEN_DISABLED
                     : postMessageDelay
             )
@@ -188,12 +197,12 @@ export class ResponseHelpers implements BotResponseMethods {
         this: IopaCarrierResponse,
         error: string,
         message: string,
-        in_channel: string
+        inChannel: string
     ): IopaCarrierResponse {
-        this.iopaːStatusCode = 200
+        this['iopa.StatusCode'] = 200
 
-        this[s_bodyState] = {
-            text: message + ': ' + error,
+        this[$$bodyState] = {
+            text: `${message}: ${error}`,
         }
 
         return this
@@ -209,8 +218,9 @@ export class ResponseHelpers implements BotResponseMethods {
 
     isAwaitingMultiChoiceResponse(): boolean {
         return (
-            (this[s_context] as BotReading).botːSession
-                .botːisMultiChoicePrompt === true
+            (this[$$context] as IopaBotReading)['bot.Session'][
+                'bot.isMultiChoicePrompt'
+            ] === true
         )
     }
 }

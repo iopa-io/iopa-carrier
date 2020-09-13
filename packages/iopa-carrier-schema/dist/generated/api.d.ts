@@ -10,24 +10,24 @@
  * Do not edit the class manually.
  */
 /// <reference path="../../src/generated/custom.d.ts" />
-import { Configuration } from './configuration'
+import { Configuration } from './configuration';
 /**
  *
  * @export
  */
 export declare const COLLECTION_FORMATS: {
-    csv: string
-    ssv: string
-    tsv: string
-    pipes: string
-}
+    csv: string;
+    ssv: string;
+    tsv: string;
+    pipes: string;
+};
 /**
  *
  * @export
  * @interface FetchAPI
  */
 export interface FetchAPI {
-    (url: string, init?: any): Promise<Response>
+    (url: string, init?: any): Promise<Response>;
 }
 /**
  *
@@ -35,8 +35,8 @@ export interface FetchAPI {
  * @interface FetchArgs
  */
 export interface FetchArgs {
-    url: string
-    options: any
+    url: string;
+    options: any;
 }
 /**
  *
@@ -44,14 +44,10 @@ export interface FetchArgs {
  * @class BaseAPI
  */
 export declare class BaseAPI {
-    protected basePath: string
-    protected fetch: FetchAPI
-    protected configuration: Configuration
-    constructor(
-        configuration?: Configuration,
-        basePath?: string,
-        fetch?: FetchAPI
-    )
+    protected basePath: string;
+    protected fetch: FetchAPI;
+    protected configuration: Configuration;
+    constructor(configuration?: Configuration, basePath?: string, fetch?: FetchAPI);
 }
 /**
  *
@@ -60,9 +56,9 @@ export declare class BaseAPI {
  * @extends {Error}
  */
 export declare class RequiredError extends Error {
-    field: string
-    name: 'RequiredError'
-    constructor(field: string, msg?: string)
+    field: string;
+    name: 'RequiredError';
+    constructor(field: string, msg?: string);
 }
 /**
  *
@@ -75,55 +71,55 @@ export interface Account {
      * @type {string}
      * @memberof Account
      */
-    auth_token?: string
+    auth_token?: string;
     /**
      * The date that this account was created, in GMT in RFC 2822 format
      * @type {string}
      * @memberof Account
      */
-    date_created?: string
+    date_created?: string;
     /**
      * The date that this account was last updated, in GMT in RFC 2822 format.
      * @type {string}
      * @memberof Account
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      * A human readable description of this account, up to 64 characters long. By default the FriendlyName is your email address.
      * @type {string}
      * @memberof Account
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      * A 34 character string that uniquely identifies this account.
      * @type {string}
      * @memberof Account
      */
-    sid?: string
+    sid?: string;
     /**
      * The status of this account. Usually active, but can be suspended or closed.
      * @type {string}
      * @memberof Account
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {any}
      * @memberof Account
      */
-    subresource_uris?: any
+    subresource_uris?: any;
     /**
      * The type of this account. Either Trial or Full if you've upgraded.
      * @type {string}
      * @memberof Account
      */
-    type?: string
+    type?: string;
     /**
      *
      * @type {string}
      * @memberof Account
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -136,61 +132,61 @@ export interface Accounts {
      * @type {Array<AccountsAccounts>}
      * @memberof Accounts
      */
-    accounts?: Array<AccountsAccounts>
+    accounts?: Array<AccountsAccounts>;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Accounts
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Accounts
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Accounts
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Accounts
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -203,37 +199,37 @@ export interface AccountsAccounts {
      * @type {string}
      * @memberof AccountsAccounts
      */
-    date_created?: string
+    date_created?: string;
     /**
      * The date that this account was last updated, in GMT in RFC 2822 format.
      * @type {string}
      * @memberof AccountsAccounts
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      * A human readable description of this account, up to 64 characters long. By default the FriendlyName is your email address.
      * @type {string}
      * @memberof AccountsAccounts
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      * A 34 character string that uniquely identifies this account.
      * @type {string}
      * @memberof AccountsAccounts
      */
-    sid?: string
+    sid?: string;
     /**
      * The status of this account. Usually active, but can be suspended or closed.
      * @type {string}
      * @memberof AccountsAccounts
      */
-    status?: string
+    status?: string;
     /**
      * The type of this account. Either Trial or Full if you've upgraded.
      * @type {string}
      * @memberof AccountsAccounts
      */
-    type?: string
+    type?: string;
 }
 /**
  *
@@ -246,115 +242,115 @@ export interface AppResource {
      * @type {string}
      * @memberof AppResource
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sms_fallback_url?: string
+    sms_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sms_status_callback?: string
+    sms_status_callback?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    sms_url?: string
+    sms_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    status_callback?: string
+    status_callback?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    status_callback_method?: string
+    status_callback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    voice_caller_id_lookup?: string
+    voice_caller_id_lookup?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    voice_fallback_url?: string
+    voice_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResource
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -367,73 +363,73 @@ export interface AppResources {
      * @type {Array<AppResourcesApplications>}
      * @memberof AppResources
      */
-    applications?: Array<AppResourcesApplications>
+    applications?: Array<AppResourcesApplications>;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof AppResources
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof AppResources
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof AppResources
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof AppResources
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof AppResources
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof AppResources
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -446,115 +442,115 @@ export interface AppResourcesApplications {
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sms_fallback_url?: string
+    sms_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sms_status_callback?: string
+    sms_status_callback?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    sms_url?: string
+    sms_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    status_callback?: string
+    status_callback?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    status_callback_method?: string
+    status_callback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    voice_caller_id_lookup?: string
+    voice_caller_id_lookup?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    voice_fallback_url?: string
+    voice_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof AppResourcesApplications
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -567,115 +563,115 @@ export interface Application {
      * @type {string}
      * @memberof Application
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    sms_fallback_url?: any
+    sms_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    sms_status_callback?: any
+    sms_status_callback?: any;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    sms_url?: any
+    sms_url?: any;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    status_callback?: any
+    status_callback?: any;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    status_callback_method?: any
+    status_callback_method?: any;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    voice_caller_id_lookup?: any
+    voice_caller_id_lookup?: any;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {any}
      * @memberof Application
      */
-    voice_fallback_url?: any
+    voice_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof Application
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -688,73 +684,73 @@ export interface Applications {
      * @type {Array<ApplicationsApplications>}
      * @memberof Applications
      */
-    applications?: Array<ApplicationsApplications>
+    applications?: Array<ApplicationsApplications>;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Applications
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Applications
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof Applications
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Applications
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Applications
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Applications
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -767,115 +763,115 @@ export interface ApplicationsApplications {
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    sms_fallback_method?: any
+    sms_fallback_method?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    sms_fallback_url?: any
+    sms_fallback_url?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    sms_method?: any
+    sms_method?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    sms_status_callback?: any
+    sms_status_callback?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    sms_url?: any
+    sms_url?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    status_callback?: any
+    status_callback?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    status_callback_method?: any
+    status_callback_method?: any;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    voice_caller_id_lookup?: any
+    voice_caller_id_lookup?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    voice_fallback_method?: any
+    voice_fallback_method?: any;
     /**
      *
      * @type {any}
      * @memberof ApplicationsApplications
      */
-    voice_fallback_url?: any
+    voice_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof ApplicationsApplications
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -888,43 +884,43 @@ export interface AuthApp {
      * @type {string}
      * @memberof AuthApp
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApp
      */
-    connect_app_company_name?: string
+    connect_app_company_name?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApp
      */
-    connect_app_description?: string
+    connect_app_description?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApp
      */
-    connect_app_friendly_name?: string
+    connect_app_friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApp
      */
-    connect_app_homepage_url?: string
+    connect_app_homepage_url?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApp
      */
-    connect_app_sid?: string
+    connect_app_sid?: string;
     /**
      *
      * @type {Array<string>}
      * @memberof AuthApp
      */
-    permissions?: Array<string>
+    permissions?: Array<string>;
 }
 /**
  *
@@ -937,73 +933,73 @@ export interface AuthApps {
      * @type {Array<AuthAppsAuthorizedConnectApps>}
      * @memberof AuthApps
      */
-    authorized_connect_apps?: Array<AuthAppsAuthorizedConnectApps>
+    authorized_connect_apps?: Array<AuthAppsAuthorizedConnectApps>;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof AuthApps
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApps
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof AuthApps
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof AuthApps
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof AuthApps
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof AuthApps
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1016,43 +1012,43 @@ export interface AuthAppsAuthorizedConnectApps {
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    connect_app_company_name?: string
+    connect_app_company_name?: string;
     /**
      *
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    connect_app_description?: string
+    connect_app_description?: string;
     /**
      *
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    connect_app_friendly_name?: string
+    connect_app_friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    connect_app_homepage_url?: string
+    connect_app_homepage_url?: string;
     /**
      *
      * @type {string}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    connect_app_sid?: string
+    connect_app_sid?: string;
     /**
      *
      * @type {Array<string>}
      * @memberof AuthAppsAuthorizedConnectApps
      */
-    permissions?: Array<string>
+    permissions?: Array<string>;
 }
 /**
  *
@@ -1065,13 +1061,13 @@ export interface AvailablePhoneNumbers {
      * @type {Array<AvailablePhoneNumbersAvailablePhoneNumbers>}
      * @memberof AvailablePhoneNumbers
      */
-    available_phone_numbers?: Array<AvailablePhoneNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<AvailablePhoneNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1084,61 +1080,61 @@ export interface AvailablePhoneNumbersAvailablePhoneNumbers {
      * @type {AvailablePhoneNumbersCapabilities}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    capabilities?: AvailablePhoneNumbersCapabilities
+    capabilities?: AvailablePhoneNumbersCapabilities;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    iso_country?: string
+    iso_country?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    lata?: string
+    lata?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    latitude?: string
+    latitude?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    longitude?: string
+    longitude?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    postal_code?: string
+    postal_code?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    rate_center?: string
+    rate_center?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersAvailablePhoneNumbers
      */
-    region?: string
+    region?: string;
 }
 /**
  *
@@ -1151,19 +1147,19 @@ export interface AvailablePhoneNumbersCapabilities {
      * @type {string}
      * @memberof AvailablePhoneNumbersCapabilities
      */
-    MMS?: string
+    MMS?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersCapabilities
      */
-    SMS?: string
+    SMS?: string;
     /**
      *
      * @type {string}
      * @memberof AvailablePhoneNumbersCapabilities
      */
-    voice?: string
+    voice?: string;
 }
 /**
  *
@@ -1176,133 +1172,133 @@ export interface Call {
      * @type {string}
      * @memberof Call
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    answered_by?: string
+    answered_by?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    caller_name?: string
+    caller_name?: string;
     /**
      * GMT in RFC 2822 format.
      * @type {string}
      * @memberof Call
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    direction?: string
+    direction?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    duration?: string
+    duration?: string;
     /**
      * Given as GMT in RFC 2822 format.
      * @type {string}
      * @memberof Call
      */
-    end_time?: string
+    end_time?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    formatted_from?: string
+    formatted_from?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    formatted_to?: string
+    formatted_to?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    forwarded_from?: string
+    forwarded_from?: string;
     /**
      * The phone number, SIP address or Client identifier that made this call. Phone numbers are in E.164 format (e.g. +16175551212).
      * @type {string}
      * @memberof Call
      */
-    from?: string
+    from?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    parent_call_sid?: string
+    parent_call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    phone_number_sid?: string
+    phone_number_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    sid?: string
+    sid?: string;
     /**
      * Given as GMT in RFC 2822 format.
      * @type {string}
      * @memberof Call
      */
-    start_time?: string
+    start_time?: string;
     /**
      *
      * @type {any}
      * @memberof Call
      */
-    status?: any
+    status?: any;
     /**
      *
      * @type {CallSubresourceUris}
      * @memberof Call
      */
-    subresource_uris?: CallSubresourceUris
+    subresource_uris?: CallSubresourceUris;
     /**
      * Phone numbers are in E.164 format (e.g. +16175551212). SIP addresses are formated as name@company.com. Client identifiers are formatted client:name.
      * @type {string}
      * @memberof Call
      */
-    to?: string
+    to?: string;
     /**
      *
      * @type {string}
      * @memberof Call
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1315,127 +1311,127 @@ export interface CallInstance {
      * @type {string}
      * @memberof CallInstance
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      * If this call was initiated with answering machine detection, either human or machine. Empty otherwise.
      * @type {any}
      * @memberof CallInstance
      */
-    answered_by?: any
+    answered_by?: any;
     /**
      *
      * @type {string}
      * @memberof CallInstance
      */
-    api_version?: string
+    api_version?: string;
     /**
      * If this call was an incoming call to a phone number with Caller ID Lookup enabled, the caller's name. Empty otherwise.
      * @type {string}
      * @memberof CallInstance
      */
-    caller_name?: string
+    caller_name?: string;
     /**
      * GMT in RFC 2822 format.
      * @type {string}
      * @memberof CallInstance
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CallInstance
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      * A string describing the direction of the call. inbound for inbound calls, outbound-api for calls initiated via the REST API or outbound-dial for calls initiated by a <Dial> verb.
      * @type {any}
      * @memberof CallInstance
      */
-    direction?: any
+    direction?: any;
     /**
      * The length of the call in seconds.
      * @type {string}
      * @memberof CallInstance
      */
-    duration?: string
+    duration?: string;
     /**
      * Given as GMT in RFC 2822 format.
      * @type {string}
      * @memberof CallInstance
      */
-    end_time?: string
+    end_time?: string;
     /**
      * If this call was an incoming call forwarded from another number, the forwarding phone number (depends on carrier supporting forwarding). Empty otherwise.
      * @type {string}
      * @memberof CallInstance
      */
-    forwarded_from?: string
+    forwarded_from?: string;
     /**
      * The phone number, SIP address or Client identifier that made this call. Phone numbers are in E.164 format (e.g. +16175551212).
      * @type {string}
      * @memberof CallInstance
      */
-    from?: string
+    from?: string;
     /**
      *
      * @type {string}
      * @memberof CallInstance
      */
-    parent_call_sid?: string
+    parent_call_sid?: string;
     /**
      * If the call was inbound, this is the Sid of the IncomingPhoneNumber that received the call. If the call was outbound, it is the Sid of the OutgoingCallerId from which the call was placed.
      * @type {string}
      * @memberof CallInstance
      */
-    phone_number_sid?: string
+    phone_number_sid?: string;
     /**
      * The charge for this call, in the currency associated with the account. Populated after the call is completed. May not be immediately available.
      * @type {string}
      * @memberof CallInstance
      */
-    price?: string
+    price?: string;
     /**
      * The currency in which Price is measured, in ISO 4127 format.
      * @type {string}
      * @memberof CallInstance
      */
-    price_unit?: string
+    price_unit?: string;
     /**
      *
      * @type {string}
      * @memberof CallInstance
      */
-    sid?: string
+    sid?: string;
     /**
      * Given as GMT in RFC 2822 format.
      * @type {string}
      * @memberof CallInstance
      */
-    start_time?: string
+    start_time?: string;
     /**
      * A string representing the status of the call.
      * @type {any}
      * @memberof CallInstance
      */
-    status?: any
+    status?: any;
     /**
      *
      * @type {any}
      * @memberof CallInstance
      */
-    subresource_uris?: any
+    subresource_uris?: any;
     /**
      * Phone numbers are in E.164 format (e.g. +16175551212). SIP addresses are formated as name@company.com. Client identifiers are formatted client:name.
      * @type {string}
      * @memberof CallInstance
      */
-    to?: string
+    to?: string;
     /**
      * The URI for this resource, relative to https://api.twilio.com
      * @type {string}
      * @memberof CallInstance
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1448,13 +1444,13 @@ export interface CallSubresourceUris {
      * @type {string}
      * @memberof CallSubresourceUris
      */
-    notifications?: string
+    notifications?: string;
     /**
      *
      * @type {string}
      * @memberof CallSubresourceUris
      */
-    recordings?: string
+    recordings?: string;
 }
 /**
  *
@@ -1467,73 +1463,73 @@ export interface Calls {
      * @type {Array<CallsCalls>}
      * @memberof Calls
      */
-    calls?: Array<CallsCalls>
+    calls?: Array<CallsCalls>;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Calls
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Calls
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Calls
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Calls
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Calls
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Calls
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1546,133 +1542,133 @@ export interface CallsCalls {
      * @type {string}
      * @memberof CallsCalls
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {any}
      * @memberof CallsCalls
      */
-    answered_by?: any
+    answered_by?: any;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {any}
      * @memberof CallsCalls
      */
-    caller_name?: any
+    caller_name?: any;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    direction?: string
+    direction?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    duration?: string
+    duration?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    end_time?: string
+    end_time?: string;
     /**
      *
      * @type {any}
      * @memberof CallsCalls
      */
-    forwarded_from?: any
+    forwarded_from?: any;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    from?: string
+    from?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    from_formatted?: string
+    from_formatted?: string;
     /**
      *
      * @type {any}
      * @memberof CallsCalls
      */
-    parent_call_sid?: any
+    parent_call_sid?: any;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    phone_number_sid?: string
+    phone_number_sid?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    start_time?: string
+    start_time?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {CallSubresourceUris}
      * @memberof CallsCalls
      */
-    subresource_uris?: CallSubresourceUris
+    subresource_uris?: CallSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    to?: string
+    to?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    to_formatted?: string
+    to_formatted?: string;
     /**
      *
      * @type {string}
      * @memberof CallsCalls
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1685,55 +1681,55 @@ export interface Conference {
      * @type {string}
      * @memberof Conference
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {any}
      * @memberof Conference
      */
-    status?: any
+    status?: any;
     /**
      *
      * @type {ConferenceSubresourceUris}
      * @memberof Conference
      */
-    subresource_uris?: ConferenceSubresourceUris
+    subresource_uris?: ConferenceSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof Conference
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1746,7 +1742,7 @@ export interface ConferenceSubresourceUris {
      * @type {string}
      * @memberof ConferenceSubresourceUris
      */
-    participants?: string
+    participants?: string;
 }
 /**
  *
@@ -1759,73 +1755,73 @@ export interface Conferences {
      * @type {Array<ConferencesConferences>}
      * @memberof Conferences
      */
-    conferences?: Array<ConferencesConferences>
+    conferences?: Array<ConferencesConferences>;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Conferences
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Conferences
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Conferences
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof Conferences
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Conferences
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Conferences
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1838,55 +1834,55 @@ export interface ConferencesConferences {
      * @type {string}
      * @memberof ConferencesConferences
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {ConferenceSubresourceUris}
      * @memberof ConferencesConferences
      */
-    subresource_uris?: ConferenceSubresourceUris
+    subresource_uris?: ConferenceSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof ConferencesConferences
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -1899,61 +1895,61 @@ export interface ConnectApp {
      * @type {string}
      * @memberof ConnectApp
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    authorize_redirect_url?: string
+    authorize_redirect_url?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    company_name?: string
+    company_name?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    deauthorize_callback_method?: string
+    deauthorize_callback_method?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    deauthorize_callback_url?: string
+    deauthorize_callback_url?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    description?: string
+    description?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    homepage_url?: string
+    homepage_url?: string;
     /**
      *
      * @type {Array<string>}
      * @memberof ConnectApp
      */
-    permissions?: Array<string>
+    permissions?: Array<string>;
     /**
      *
      * @type {string}
      * @memberof ConnectApp
      */
-    sid?: string
+    sid?: string;
 }
 /**
  *
@@ -1966,73 +1962,73 @@ export interface ConnectApps {
      * @type {Array<ConnectAppsConnectApps>}
      * @memberof ConnectApps
      */
-    connect_apps?: Array<ConnectAppsConnectApps>
+    connect_apps?: Array<ConnectAppsConnectApps>;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof ConnectApps
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApps
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectApps
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof ConnectApps
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof ConnectApps
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof ConnectApps
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2045,61 +2041,61 @@ export interface ConnectAppsConnectApps {
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    authorize_redirect_url?: string
+    authorize_redirect_url?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    company_name?: string
+    company_name?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    deauthorize_callback_method?: string
+    deauthorize_callback_method?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    deauthorize_callback_url?: string
+    deauthorize_callback_url?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    description?: string
+    description?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    homepage_url?: string
+    homepage_url?: string;
     /**
      *
      * @type {Array<string>}
      * @memberof ConnectAppsConnectApps
      */
-    permissions?: Array<string>
+    permissions?: Array<string>;
     /**
      *
      * @type {string}
      * @memberof ConnectAppsConnectApps
      */
-    sid?: string
+    sid?: string;
 }
 /**
  *
@@ -2112,31 +2108,31 @@ export interface Credential {
      * @type {string}
      * @memberof Credential
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Credential
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Credential
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Credential
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof Credential
      */
-    username?: string
+    username?: string;
 }
 /**
  *
@@ -2149,37 +2145,37 @@ export interface CredentialList {
      * @type {string}
      * @memberof CredentialList
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialList
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialList
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialList
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {CredentialListSubresourceUris}
      * @memberof CredentialList
      */
-    subresource_uris?: CredentialListSubresourceUris
+    subresource_uris?: CredentialListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof CredentialList
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2192,43 +2188,43 @@ export interface CredentialListMapping {
      * @type {string}
      * @memberof CredentialListMapping
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListMapping
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListMapping
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListMapping
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListMapping
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {CredentialListSubresourceUris}
      * @memberof CredentialListMapping
      */
-    subresource_uris?: CredentialListSubresourceUris
+    subresource_uris?: CredentialListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof CredentialListMapping
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2241,73 +2237,73 @@ export interface CredentialListMappings {
      * @type {Array<Array<any>>}
      * @memberof CredentialListMappings
      */
-    credential_list_mappings?: Array<Array<any>>
+    credential_list_mappings?: Array<Array<any>>;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof CredentialListMappings
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListMappings
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof CredentialListMappings
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof CredentialListMappings
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialListMappings
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof CredentialListMappings
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2320,7 +2316,7 @@ export interface CredentialListSubresourceUris {
      * @type {string}
      * @memberof CredentialListSubresourceUris
      */
-    credentials?: string
+    credentials?: string;
 }
 /**
  *
@@ -2333,73 +2329,73 @@ export interface CredentialLists {
      * @type {Array<CredentialListsCredentialLists>}
      * @memberof CredentialLists
      */
-    credential_lists?: Array<CredentialListsCredentialLists>
+    credential_lists?: Array<CredentialListsCredentialLists>;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof CredentialLists
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialLists
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof CredentialLists
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof CredentialLists
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof CredentialLists
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof CredentialLists
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2412,37 +2408,37 @@ export interface CredentialListsCredentialLists {
      * @type {string}
      * @memberof CredentialListsCredentialLists
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListsCredentialLists
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListsCredentialLists
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialListsCredentialLists
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {CredentialListSubresourceUris}
      * @memberof CredentialListsCredentialLists
      */
-    subresource_uris?: CredentialListSubresourceUris
+    subresource_uris?: CredentialListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof CredentialListsCredentialLists
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2455,73 +2451,73 @@ export interface Credentials {
      * @type {Array<CredentialsCredentials>}
      * @memberof Credentials
      */
-    credentials?: Array<CredentialsCredentials>
+    credentials?: Array<CredentialsCredentials>;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Credentials
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Credentials
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof Credentials
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Credentials
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Credentials
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Credentials
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2534,43 +2530,43 @@ export interface CredentialsCredentials {
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    credential_list_sid?: string
+    credential_list_sid?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof CredentialsCredentials
      */
-    username?: string
+    username?: string;
 }
 /**
  *
@@ -2583,97 +2579,97 @@ export interface Domain {
      * @type {string}
      * @memberof Domain
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    auth_type?: string
+    auth_type?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    domain_name?: string
+    domain_name?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {DomainSubresourceUris}
      * @memberof Domain
      */
-    subresource_uris?: DomainSubresourceUris
+    subresource_uris?: DomainSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {any}
      * @memberof Domain
      */
-    voice_fallback_url?: any
+    voice_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    voice_status_callback_method?: string
+    voice_status_callback_method?: string;
     /**
      *
      * @type {any}
      * @memberof Domain
      */
-    voice_status_callback_url?: any
+    voice_status_callback_url?: any;
     /**
      *
      * @type {string}
      * @memberof Domain
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -2686,13 +2682,13 @@ export interface DomainSubresourceUris {
      * @type {string}
      * @memberof DomainSubresourceUris
      */
-    credential_list_mappings?: string
+    credential_list_mappings?: string;
     /**
      *
      * @type {string}
      * @memberof DomainSubresourceUris
      */
-    ip_access_control_list_mappings?: string
+    ip_access_control_list_mappings?: string;
 }
 /**
  *
@@ -2705,73 +2701,73 @@ export interface Domains {
      * @type {number}
      * @memberof Domains
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Domains
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Domains
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof Domains
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Domains
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Domains
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Domains
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Domains
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {Array<DomainsSipDomains>}
      * @memberof Domains
      */
-    sip_domains?: Array<DomainsSipDomains>
+    sip_domains?: Array<DomainsSipDomains>;
     /**
      *
      * @type {number}
      * @memberof Domains
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Domains
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Domains
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -2784,97 +2780,97 @@ export interface DomainsSipDomains {
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    auth_type?: string
+    auth_type?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    domain_name?: string
+    domain_name?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {DomainSubresourceUris}
      * @memberof DomainsSipDomains
      */
-    subresource_uris?: DomainSubresourceUris
+    subresource_uris?: DomainSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {any}
      * @memberof DomainsSipDomains
      */
-    voice_fallback_url?: any
+    voice_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    voice_status_callback_method?: string
+    voice_status_callback_method?: string;
     /**
      *
      * @type {any}
      * @memberof DomainsSipDomains
      */
-    voice_status_callback_url?: any
+    voice_status_callback_url?: any;
     /**
      *
      * @type {string}
      * @memberof DomainsSipDomains
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -2887,133 +2883,133 @@ export interface IncomingCall {
      * @type {string}
      * @memberof IncomingCall
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {IncomingCallCapabilities}
      * @memberof IncomingCall
      */
-    capabilities?: IncomingCallCapabilities
+    capabilities?: IncomingCallCapabilities;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sms_application_sid?: string
+    sms_application_sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sms_fallback_url?: string
+    sms_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    sms_url?: string
+    sms_url?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    status_callback?: string
+    status_callback?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    status_callback_method?: string
+    status_callback_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_application_sid?: string
+    voice_application_sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_caller_id_lookup?: string
+    voice_caller_id_lookup?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_fallback_method?: string
+    voice_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_fallback_url?: string
+    voice_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCall
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -3026,13 +3022,13 @@ export interface IncomingCallCapabilities {
      * @type {string}
      * @memberof IncomingCallCapabilities
      */
-    sms?: string
+    sms?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallCapabilities
      */
-    voice?: string
+    voice?: string;
 }
 /**
  *
@@ -3045,73 +3041,73 @@ export interface IncomingCalls {
      * @type {number}
      * @memberof IncomingCalls
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof IncomingCalls
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {Array<IncomingCallsIncomingPhoneNumbers>}
      * @memberof IncomingCalls
      */
-    incoming_phone_numbers?: Array<IncomingCallsIncomingPhoneNumbers>
+    incoming_phone_numbers?: Array<IncomingCallsIncomingPhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof IncomingCalls
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof IncomingCalls
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof IncomingCalls
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof IncomingCalls
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof IncomingCalls
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof IncomingCalls
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof IncomingCalls
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof IncomingCalls
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof IncomingCalls
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3124,13 +3120,13 @@ export interface IncomingCallsCapabilities {
      * @type {boolean}
      * @memberof IncomingCallsCapabilities
      */
-    sms?: boolean
+    sms?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof IncomingCallsCapabilities
      */
-    voice?: boolean
+    voice?: boolean;
 }
 /**
  *
@@ -3143,133 +3139,133 @@ export interface IncomingCallsIncomingPhoneNumbers {
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {IncomingCallsCapabilities}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    capabilities?: IncomingCallsCapabilities
+    capabilities?: IncomingCallsCapabilities;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sms_application_sid?: string
+    sms_application_sid?: string;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sms_fallback_method?: any
+    sms_fallback_method?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sms_fallback_url?: any
+    sms_fallback_url?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sms_method?: any
+    sms_method?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    sms_url?: any
+    sms_url?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    status_callback?: any
+    status_callback?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    status_callback_method?: any
+    status_callback_method?: any;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_application_sid?: any
+    voice_application_sid?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_caller_id_lookup?: any
+    voice_caller_id_lookup?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_fallback_method?: any
+    voice_fallback_method?: any;
     /**
      *
      * @type {any}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_fallback_url?: any
+    voice_fallback_url?: any;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_method?: string
+    voice_method?: string;
     /**
      *
      * @type {string}
      * @memberof IncomingCallsIncomingPhoneNumbers
      */
-    voice_url?: string
+    voice_url?: string;
 }
 /**
  *
@@ -3282,37 +3278,37 @@ export interface IpAccessControlList {
      * @type {string}
      * @memberof IpAccessControlList
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlList
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlList
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlList
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {IpAccessControlListSubresourceUris}
      * @memberof IpAccessControlList
      */
-    subresource_uris?: IpAccessControlListSubresourceUris
+    subresource_uris?: IpAccessControlListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlList
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3325,37 +3321,37 @@ export interface IpAccessControlListMapping {
      * @type {string}
      * @memberof IpAccessControlListMapping
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMapping
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMapping
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMapping
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {IpAccessControlListSubresourceUris}
      * @memberof IpAccessControlListMapping
      */
-    subresource_uris?: IpAccessControlListSubresourceUris
+    subresource_uris?: IpAccessControlListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMapping
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3368,37 +3364,37 @@ export interface IpAccessControlListMappings {
      * @type {string}
      * @memberof IpAccessControlListMappings
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMappings
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMappings
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMappings
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {IpAccessControlListSubresourceUris}
      * @memberof IpAccessControlListMappings
      */
-    subresource_uris?: IpAccessControlListSubresourceUris
+    subresource_uris?: IpAccessControlListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof IpAccessControlListMappings
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3411,7 +3407,7 @@ export interface IpAccessControlListSubresourceUris {
      * @type {string}
      * @memberof IpAccessControlListSubresourceUris
      */
-    addresses?: string
+    addresses?: string;
 }
 /**
  *
@@ -3424,37 +3420,37 @@ export interface IpAddress {
      * @type {string}
      * @memberof IpAddress
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddress
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddress
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddress
      */
-    ip_address?: string
+    ip_address?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddress
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddress
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3467,73 +3463,73 @@ export interface IpAddresses {
      * @type {number}
      * @memberof IpAddresses
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof IpAddresses
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {Array<IpAddressesIpAddresses>}
      * @memberof IpAddresses
      */
-    ip_addresses?: Array<IpAddressesIpAddresses>
+    ip_addresses?: Array<IpAddressesIpAddresses>;
     /**
      *
      * @type {string}
      * @memberof IpAddresses
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof IpAddresses
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof IpAddresses
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof IpAddresses
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof IpAddresses
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof IpAddresses
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof IpAddresses
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof IpAddresses
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof IpAddresses
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3546,37 +3542,37 @@ export interface IpAddressesIpAddresses {
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    ip_address?: string
+    ip_address?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof IpAddressesIpAddresses
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3589,43 +3585,43 @@ export interface Media {
      * @type {string}
      * @memberof Media
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    content_type?: string
+    content_type?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    parent_sid?: string
+    parent_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Media
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3638,73 +3634,73 @@ export interface MediaList {
      * @type {number}
      * @memberof MediaList
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof MediaList
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof MediaList
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {Array<MediaListMediaList>}
      * @memberof MediaList
      */
-    media_list?: Array<MediaListMediaList>
+    media_list?: Array<MediaListMediaList>;
     /**
      *
      * @type {any}
      * @memberof MediaList
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof MediaList
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof MediaList
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof MediaList
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof MediaList
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof MediaList
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof MediaList
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof MediaList
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3717,43 +3713,43 @@ export interface MediaListMediaList {
      * @type {string}
      * @memberof MediaListMediaList
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    content_type?: string
+    content_type?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    parent_sid?: string
+    parent_sid?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof MediaListMediaList
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3766,31 +3762,31 @@ export interface Member {
      * @type {string}
      * @memberof Member
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Member
      */
-    date_enqueued?: string
+    date_enqueued?: string;
     /**
      *
      * @type {number}
      * @memberof Member
      */
-    position?: number
+    position?: number;
     /**
      *
      * @type {string}
      * @memberof Member
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {number}
      * @memberof Member
      */
-    wait_time?: number
+    wait_time?: number;
 }
 /**
  *
@@ -3803,73 +3799,73 @@ export interface Members {
      * @type {number}
      * @memberof Members
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Members
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Members
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Members
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Members
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Members
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Members
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof Members
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {Array<MembersQueueMembers>}
      * @memberof Members
      */
-    queue_members?: Array<MembersQueueMembers>
+    queue_members?: Array<MembersQueueMembers>;
     /**
      *
      * @type {number}
      * @memberof Members
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Members
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Members
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -3882,31 +3878,31 @@ export interface MembersQueueMembers {
      * @type {string}
      * @memberof MembersQueueMembers
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof MembersQueueMembers
      */
-    date_enqueued?: string
+    date_enqueued?: string;
     /**
      *
      * @type {number}
      * @memberof MembersQueueMembers
      */
-    position?: number
+    position?: number;
     /**
      *
      * @type {string}
      * @memberof MembersQueueMembers
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {number}
      * @memberof MembersQueueMembers
      */
-    wait_time?: number
+    wait_time?: number;
 }
 /**
  *
@@ -3919,91 +3915,91 @@ export interface Message {
      * @type {string}
      * @memberof Message
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    body?: string
+    body?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    date_sent?: string
+    date_sent?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    direction?: string
+    direction?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    from?: string
+    from?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    num_media?: string
+    num_media?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    num_segments?: string
+    num_segments?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    to?: string
+    to?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4016,73 +4012,73 @@ export interface Messages {
      * @type {number}
      * @memberof Messages
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Messages
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Messages
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {Array<MessagesMessages>}
      * @memberof Messages
      */
-    messages?: Array<MessagesMessages>
+    messages?: Array<MessagesMessages>;
     /**
      *
      * @type {string}
      * @memberof Messages
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Messages
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Messages
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Messages
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Messages
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Messages
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Messages
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Messages
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4095,91 +4091,91 @@ export interface MessagesMessages {
      * @type {string}
      * @memberof MessagesMessages
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    body?: string
+    body?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    date_sent?: string
+    date_sent?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    direction?: string
+    direction?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    from?: string
+    from?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    num_media?: string
+    num_media?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    num_segments?: string
+    num_segments?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    to?: string
+    to?: string;
     /**
      *
      * @type {string}
      * @memberof MessagesMessages
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4192,13 +4188,13 @@ export interface MobilePhoneNumbers {
      * @type {Array<MobilePhoneNumbersAvailablePhoneNumbers>}
      * @memberof MobilePhoneNumbers
      */
-    available_phone_numbers?: Array<MobilePhoneNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<MobilePhoneNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof MobilePhoneNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4211,61 +4207,61 @@ export interface MobilePhoneNumbersAvailablePhoneNumbers {
      * @type {AvailablePhoneNumbersCapabilities}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    capabilities?: AvailablePhoneNumbersCapabilities
+    capabilities?: AvailablePhoneNumbersCapabilities;
     /**
      *
      * @type {string}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    iso_country?: string
+    iso_country?: string;
     /**
      *
      * @type {any}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    lata?: any
+    lata?: any;
     /**
      *
      * @type {any}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    latitude?: any
+    latitude?: any;
     /**
      *
      * @type {any}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    longitude?: any
+    longitude?: any;
     /**
      *
      * @type {string}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {any}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    postal_code?: any
+    postal_code?: any;
     /**
      *
      * @type {any}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    rate_center?: any
+    rate_center?: any;
     /**
      *
      * @type {string}
      * @memberof MobilePhoneNumbersAvailablePhoneNumbers
      */
-    region?: string
+    region?: string;
 }
 /**
  *
@@ -4278,103 +4274,103 @@ export interface Notification {
      * @type {string}
      * @memberof Notification
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    error_code?: string
+    error_code?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    log?: string
+    log?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    message_date?: string
+    message_date?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    message_text?: string
+    message_text?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    more_info?: string
+    more_info?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    request_method?: string
+    request_method?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    request_url?: string
+    request_url?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    request_variables?: string
+    request_variables?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    response_body?: string
+    response_body?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    response_headers?: string
+    response_headers?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Notification
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4387,73 +4383,73 @@ export interface Notifications {
      * @type {number}
      * @memberof Notifications
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Notifications
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Notifications
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Notifications
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {Array<NotificationsNotifications>}
      * @memberof Notifications
      */
-    notifications?: Array<NotificationsNotifications>
+    notifications?: Array<NotificationsNotifications>;
     /**
      *
      * @type {number}
      * @memberof Notifications
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Notifications
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Notifications
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof Notifications
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Notifications
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Notifications
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Notifications
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4466,103 +4462,103 @@ export interface NotificationsNotifications {
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    error_code?: string
+    error_code?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    log?: string
+    log?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    message_date?: string
+    message_date?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    message_text?: string
+    message_text?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    more_info?: string
+    more_info?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    request_method?: string
+    request_method?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    request_url?: string
+    request_url?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    request_variables?: string
+    request_variables?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    response_body?: string
+    response_body?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    response_headers?: string
+    response_headers?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof NotificationsNotifications
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4575,31 +4571,31 @@ export interface OutCaller {
      * @type {string}
      * @memberof OutCaller
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCaller
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCaller
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof OutCaller
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {number}
      * @memberof OutCaller
      */
-    validation_code?: number
+    validation_code?: number;
 }
 /**
  *
@@ -4612,31 +4608,31 @@ export interface OutCallerId {
      * @type {string}
      * @memberof OutCallerId
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerId
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerId
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerId
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {number}
      * @memberof OutCallerId
      */
-    validation_code?: number
+    validation_code?: number;
 }
 /**
  *
@@ -4649,73 +4645,73 @@ export interface OutCallerIds {
      * @type {number}
      * @memberof OutCallerIds
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof OutCallerIds
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIds
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIds
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof OutCallerIds
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {OutCallerIdsOutgoingCallerIds}
      * @memberof OutCallerIds
      */
-    outgoing_caller_ids?: OutCallerIdsOutgoingCallerIds
+    outgoing_caller_ids?: OutCallerIdsOutgoingCallerIds;
     /**
      *
      * @type {number}
      * @memberof OutCallerIds
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof OutCallerIds
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof OutCallerIds
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof OutCallerIds
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof OutCallerIds
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof OutCallerIds
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4728,43 +4724,43 @@ export interface OutCallerIdsOutgoingCallerIds {
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutCallerIdsOutgoingCallerIds
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4777,43 +4773,43 @@ export interface OutgoingCallerId {
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof OutgoingCallerId
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4826,55 +4822,55 @@ export interface Participant {
      * @type {string}
      * @memberof Participant
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Participant
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Participant
      */
-    conference_sid?: string
+    conference_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Participant
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Participant
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {boolean}
      * @memberof Participant
      */
-    end_conference_on_exit?: boolean
+    end_conference_on_exit?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof Participant
      */
-    muted?: boolean
+    muted?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof Participant
      */
-    start_conference_on_enter?: boolean
+    start_conference_on_enter?: boolean;
     /**
      *
      * @type {string}
      * @memberof Participant
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4887,73 +4883,73 @@ export interface Participants {
      * @type {number}
      * @memberof Participants
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Participants
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Participants
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Participants
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Participants
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Participants
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Participants
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {Array<ParticipantsParticipants>}
      * @memberof Participants
      */
-    participants?: Array<ParticipantsParticipants>
+    participants?: Array<ParticipantsParticipants>;
     /**
      *
      * @type {string}
      * @memberof Participants
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Participants
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Participants
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Participants
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -4966,55 +4962,55 @@ export interface ParticipantsParticipants {
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    conference_sid?: string
+    conference_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {boolean}
      * @memberof ParticipantsParticipants
      */
-    end_conference_on_exit?: boolean
+    end_conference_on_exit?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof ParticipantsParticipants
      */
-    muted?: boolean
+    muted?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof ParticipantsParticipants
      */
-    start_conference_on_enter?: boolean
+    start_conference_on_enter?: boolean;
     /**
      *
      * @type {string}
      * @memberof ParticipantsParticipants
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5027,13 +5023,13 @@ export interface PhoneLocalNumbers {
      * @type {Array<AvailablePhoneNumbersAvailablePhoneNumbers>}
      * @memberof PhoneLocalNumbers
      */
-    available_phone_numbers?: Array<AvailablePhoneNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<AvailablePhoneNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof PhoneLocalNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5046,13 +5042,13 @@ export interface PhoneMobileNumbers {
      * @type {Array<MobilePhoneNumbersAvailablePhoneNumbers>}
      * @memberof PhoneMobileNumbers
      */
-    available_phone_numbers?: Array<MobilePhoneNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<MobilePhoneNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof PhoneMobileNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5065,13 +5061,13 @@ export interface PhoneNumbers {
      * @type {Array<PhoneNumbersAvailablePhoneNumbers>}
      * @memberof PhoneNumbers
      */
-    available_phone_numbers?: Array<PhoneNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<PhoneNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof PhoneNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5084,55 +5080,55 @@ export interface PhoneNumbersAvailablePhoneNumbers {
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      * The ISO country code of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    iso_country?: string
+    iso_country?: string;
     /**
      * The LATA of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    lata?: string
+    lata?: string;
     /**
      * The latitude coordinate of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    latitude?: string
+    latitude?: string;
     /**
      * The longitude coordinate of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    longitude?: string
+    longitude?: string;
     /**
      * The phone number, in E.164 (i.e. '+1') format.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    phone_number?: string
+    phone_number?: string;
     /**
      * The postal (zip) code of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    postal_code?: string
+    postal_code?: string;
     /**
      * The rate center of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    rate_center?: string
+    rate_center?: string;
     /**
      * The two-letter state or province abbreviation of this phone number.
      * @type {string}
      * @memberof PhoneNumbersAvailablePhoneNumbers
      */
-    region?: string
+    region?: string;
 }
 /**
  *
@@ -5145,13 +5141,13 @@ export interface PhoneTollFreeNumbers {
      * @type {Array<PhoneTollFreeNumbersAvailablePhoneNumbers>}
      * @memberof PhoneTollFreeNumbers
      */
-    available_phone_numbers?: Array<PhoneTollFreeNumbersAvailablePhoneNumbers>
+    available_phone_numbers?: Array<PhoneTollFreeNumbersAvailablePhoneNumbers>;
     /**
      *
      * @type {string}
      * @memberof PhoneTollFreeNumbers
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5164,25 +5160,25 @@ export interface PhoneTollFreeNumbersAvailablePhoneNumbers {
      * @type {AvailablePhoneNumbersCapabilities}
      * @memberof PhoneTollFreeNumbersAvailablePhoneNumbers
      */
-    capabilities?: AvailablePhoneNumbersCapabilities
+    capabilities?: AvailablePhoneNumbersCapabilities;
     /**
      *
      * @type {string}
      * @memberof PhoneTollFreeNumbersAvailablePhoneNumbers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof PhoneTollFreeNumbersAvailablePhoneNumbers
      */
-    iso_country?: string
+    iso_country?: string;
     /**
      *
      * @type {string}
      * @memberof PhoneTollFreeNumbersAvailablePhoneNumbers
      */
-    phone_number?: string
+    phone_number?: string;
 }
 /**
  *
@@ -5195,49 +5191,49 @@ export interface Queue {
      * @type {number}
      * @memberof Queue
      */
-    average_wait_time?: number
+    average_wait_time?: number;
     /**
      *
      * @type {number}
      * @memberof Queue
      */
-    current_size?: number
+    current_size?: number;
     /**
      *
      * @type {string}
      * @memberof Queue
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Queue
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Queue
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {number}
      * @memberof Queue
      */
-    max_size?: number
+    max_size?: number;
     /**
      *
      * @type {string}
      * @memberof Queue
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Queue
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5250,73 +5246,73 @@ export interface Queues {
      * @type {number}
      * @memberof Queues
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Queues
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Queues
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Queues
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Queues
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Queues
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Queues
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof Queues
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {Array<QueuesQueues>}
      * @memberof Queues
      */
-    queues?: Array<QueuesQueues>
+    queues?: Array<QueuesQueues>;
     /**
      *
      * @type {number}
      * @memberof Queues
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Queues
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Queues
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5329,49 +5325,49 @@ export interface QueuesQueues {
      * @type {number}
      * @memberof QueuesQueues
      */
-    average_wait_time?: number
+    average_wait_time?: number;
     /**
      *
      * @type {number}
      * @memberof QueuesQueues
      */
-    current_size?: number
+    current_size?: number;
     /**
      *
      * @type {string}
      * @memberof QueuesQueues
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof QueuesQueues
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof QueuesQueues
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {number}
      * @memberof QueuesQueues
      */
-    max_size?: number
+    max_size?: number;
     /**
      *
      * @type {string}
      * @memberof QueuesQueues
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof QueuesQueues
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5384,73 +5380,73 @@ export interface Recordings {
      * @type {number}
      * @memberof Recordings
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Recordings
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Recordings
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Recordings
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Recordings
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Recordings
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Recordings
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof Recordings
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {Array<RecordingsRecordings>}
      * @memberof Recordings
      */
-    recordings?: Array<RecordingsRecordings>
+    recordings?: Array<RecordingsRecordings>;
     /**
      *
      * @type {number}
      * @memberof Recordings
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Recordings
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof Recordings
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5463,49 +5459,49 @@ export interface RecordingsRecordings {
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    call_sid?: string
+    call_sid?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    duration?: string
+    duration?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof RecordingsRecordings
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5518,67 +5514,67 @@ export interface ShortCode {
      * @type {string}
      * @memberof ShortCode
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    short_code?: string
+    short_code?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    sms_fallback_url?: string
+    sms_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    sms_url?: string
+    sms_url?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCode
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5591,73 +5587,73 @@ export interface ShortCodes {
      * @type {number}
      * @memberof ShortCodes
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof ShortCodes
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodes
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof ShortCodes
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof ShortCodes
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof ShortCodes
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof ShortCodes
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof ShortCodes
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {Array<ShortCodesShortCodes>}
      * @memberof ShortCodes
      */
-    short_codes?: Array<ShortCodesShortCodes>
+    short_codes?: Array<ShortCodesShortCodes>;
     /**
      *
      * @type {number}
      * @memberof ShortCodes
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof ShortCodes
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof ShortCodes
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5670,67 +5666,67 @@ export interface ShortCodesShortCodes {
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    short_code?: string
+    short_code?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    sms_fallback_method?: string
+    sms_fallback_method?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    sms_fallback_url?: string
+    sms_fallback_url?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    sms_method?: string
+    sms_method?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    sms_url?: string
+    sms_url?: string;
     /**
      *
      * @type {string}
      * @memberof ShortCodesShortCodes
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5743,73 +5739,73 @@ export interface Transcription {
      * @type {string}
      * @memberof Transcription
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    duration?: string
+    duration?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    recording_sid?: string
+    recording_sid?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    transcription_text?: string
+    transcription_text?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    type?: string
+    type?: string;
     /**
      *
      * @type {string}
      * @memberof Transcription
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5822,73 +5818,73 @@ export interface Transcriptions {
      * @type {number}
      * @memberof Transcriptions
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof Transcriptions
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Transcriptions
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof Transcriptions
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof Transcriptions
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof Transcriptions
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof Transcriptions
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof Transcriptions
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof Transcriptions
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof Transcriptions
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {Array<TranscriptionsTranscriptions>}
      * @memberof Transcriptions
      */
-    transcriptions?: Array<TranscriptionsTranscriptions>
+    transcriptions?: Array<TranscriptionsTranscriptions>;
     /**
      *
      * @type {string}
      * @memberof Transcriptions
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5901,73 +5897,73 @@ export interface TranscriptionsTranscriptions {
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    api_version?: string
+    api_version?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    duration?: string
+    duration?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    recording_sid?: string
+    recording_sid?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    status?: string
+    status?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    transcription_text?: string
+    transcription_text?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    type?: string
+    type?: string;
     /**
      *
      * @type {string}
      * @memberof TranscriptionsTranscriptions
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -5980,73 +5976,73 @@ export interface UsageRecords {
      * @type {number}
      * @memberof UsageRecords
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof UsageRecords
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecords
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecords
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof UsageRecords
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof UsageRecords
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof UsageRecords
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof UsageRecords
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof UsageRecords
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof UsageRecords
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof UsageRecords
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {UsageRecordsUsageRecords}
      * @memberof UsageRecords
      */
-    usage_records?: UsageRecordsUsageRecords
+    usage_records?: UsageRecordsUsageRecords;
 }
 /**
  *
@@ -6059,79 +6055,79 @@ export interface UsageRecordsUsageRecords {
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    category?: string
+    category?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    count?: string
+    count?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    count_unit?: string
+    count_unit?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    description?: string
+    description?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    end_date?: string
+    end_date?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    price?: string
+    price?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    price_unit?: string
+    price_unit?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    start_date?: string
+    start_date?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    subresource_uris?: string
+    subresource_uris?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    usage?: string
+    usage?: string;
     /**
      *
      * @type {string}
      * @memberof UsageRecordsUsageRecords
      */
-    usage_unit?: string
+    usage_unit?: string;
 }
 /**
  *
@@ -6144,91 +6140,91 @@ export interface UsageTrigger {
      * @type {string}
      * @memberof UsageTrigger
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      * The HTTP method Twilio will use when making a request to the CallbackUrl. GET or POST.
      * @type {any}
      * @memberof UsageTrigger
      */
-    callback_method?: any
+    callback_method?: any;
     /**
      * Twilio will make a request to this url when the trigger fires.
      * @type {string}
      * @memberof UsageTrigger
      */
-    callback_url?: string
+    callback_url?: string;
     /**
      * The current value of the field the trigger is watching.
      * @type {string}
      * @memberof UsageTrigger
      */
-    current_value?: string
+    current_value?: string;
     /**
      * The date the trigger was created, given as GMT RFC 2822 format.
      * @type {string}
      * @memberof UsageTrigger
      */
-    date_created?: string
+    date_created?: string;
     /**
      * The date the trigger was last fired, given as GMT RFC 2822 format.
      * @type {string}
      * @memberof UsageTrigger
      */
-    date_fired?: string
+    date_fired?: string;
     /**
      * The date the trigger was last updated, given as GMT RFC 2822 format.
      * @type {string}
      * @memberof UsageTrigger
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      * A user-specified, human-readable name for the trigger.
      * @type {string}
      * @memberof UsageTrigger
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      * How this trigger recurs. Empty for non-recurring triggers. One of daily, monthly, or yearly for recurring triggers. A trigger will only fire once during each recurring period. Recurring periods are in GMT.
      * @type {string}
      * @memberof UsageTrigger
      */
-    recurring?: string
+    recurring?: string;
     /**
      * The trigger's unique Sid.
      * @type {string}
      * @memberof UsageTrigger
      */
-    sid?: string
+    sid?: string;
     /**
      * The field in the UsageRecord that fires the trigger. One of count, usage, or price.
      * @type {any}
      * @memberof UsageTrigger
      */
-    trigger_by?: any
+    trigger_by?: any;
     /**
      * The value at which the trigger will fire. Must be a positive numeric value.
      * @type {string}
      * @memberof UsageTrigger
      */
-    trigger_value?: string
+    trigger_value?: string;
     /**
      * The URI for this resource, relative to https://api.twilio.com.
      * @type {string}
      * @memberof UsageTrigger
      */
-    uri?: string
+    uri?: string;
     /**
      * The usage category the trigger watches. One of the supported usage categories.
      * @type {string}
      * @memberof UsageTrigger
      */
-    usage_category?: string
+    usage_category?: string;
     /**
      * The URI of the UsageRecord this trigger is watching, relative to https://api.twilio.com.
      * @type {string}
      * @memberof UsageTrigger
      */
-    usage_record_uri?: string
+    usage_record_uri?: string;
 }
 /**
  *
@@ -6241,73 +6237,73 @@ export interface UsageTriggers {
      * @type {number}
      * @memberof UsageTriggers
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof UsageTriggers
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggers
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggers
      */
-    next_page_uri?: string
+    next_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof UsageTriggers
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof UsageTriggers
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof UsageTriggers
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {string}
      * @memberof UsageTriggers
      */
-    previous_page_uri?: string
+    previous_page_uri?: string;
     /**
      *
      * @type {number}
      * @memberof UsageTriggers
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof UsageTriggers
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof UsageTriggers
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {Array<UsageTriggersUsageTriggers>}
      * @memberof UsageTriggers
      */
-    usage_triggers?: Array<UsageTriggersUsageTriggers>
+    usage_triggers?: Array<UsageTriggersUsageTriggers>;
 }
 /**
  *
@@ -6320,91 +6316,91 @@ export interface UsageTriggersUsageTriggers {
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {any}
      * @memberof UsageTriggersUsageTriggers
      */
-    callback_method?: any
+    callback_method?: any;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    callback_url?: string
+    callback_url?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    current_value?: string
+    current_value?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    date_fired?: string
+    date_fired?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    recurring?: string
+    recurring?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {any}
      * @memberof UsageTriggersUsageTriggers
      */
-    trigger_by?: any
+    trigger_by?: any;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    trigger_value?: string
+    trigger_value?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    uri?: string
+    uri?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    usage_category?: string
+    usage_category?: string;
     /**
      *
      * @type {string}
      * @memberof UsageTriggersUsageTriggers
      */
-    usage_record_uri?: string
+    usage_record_uri?: string;
 }
 /**
  *
@@ -6417,73 +6413,73 @@ export interface UserLists {
      * @type {Array<UserListsCredentialListMappings>}
      * @memberof UserLists
      */
-    credential_list_mappings?: Array<UserListsCredentialListMappings>
+    credential_list_mappings?: Array<UserListsCredentialListMappings>;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    end?: number
+    end?: number;
     /**
      *
      * @type {string}
      * @memberof UserLists
      */
-    first_page_uri?: string
+    first_page_uri?: string;
     /**
      *
      * @type {string}
      * @memberof UserLists
      */
-    last_page_uri?: string
+    last_page_uri?: string;
     /**
      *
      * @type {any}
      * @memberof UserLists
      */
-    next_page_uri?: any
+    next_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    num_pages?: number
+    num_pages?: number;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    page?: number
+    page?: number;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    page_size?: number
+    page_size?: number;
     /**
      *
      * @type {any}
      * @memberof UserLists
      */
-    previous_page_uri?: any
+    previous_page_uri?: any;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    start?: number
+    start?: number;
     /**
      *
      * @type {number}
      * @memberof UserLists
      */
-    total?: number
+    total?: number;
     /**
      *
      * @type {string}
      * @memberof UserLists
      */
-    uri?: string
+    uri?: string;
 }
 /**
  *
@@ -6496,51 +6492,49 @@ export interface UserListsCredentialListMappings {
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    account_sid?: string
+    account_sid?: string;
     /**
      *
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    date_created?: string
+    date_created?: string;
     /**
      *
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    date_updated?: string
+    date_updated?: string;
     /**
      *
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    friendly_name?: string
+    friendly_name?: string;
     /**
      *
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    sid?: string
+    sid?: string;
     /**
      *
      * @type {CredentialListSubresourceUris}
      * @memberof UserListsCredentialListMappings
      */
-    subresource_uris?: CredentialListSubresourceUris
+    subresource_uris?: CredentialListSubresourceUris;
     /**
      *
      * @type {string}
      * @memberof UserListsCredentialListMappings
      */
-    uri?: string
+    uri?: string;
 }
 /**
  * DefaultApi - fetch parameter creator
  * @export
  */
-export declare const DefaultApiFetchParamCreator: (
-    configuration?: Configuration
-) => {
+export declare const DefaultApiFetchParamCreator: (configuration?: Configuration) => {
     /**
      * Delete this application.
      * @param {string} AccountSid
@@ -6549,12 +6543,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): FetchArgs;
     /**
      * Get application instance resource.
      * @param {string} AccountSid
@@ -6563,12 +6552,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the application's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -6577,12 +6561,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of Application resource representations, each representing an application within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -6590,11 +6569,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidApplicationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Creates a new application within your account.
      * @param {string} AccountSid
@@ -6602,11 +6577,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidApplicationsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Get the properties of the authorized application.
      * @param {string} AccountSid
@@ -6615,12 +6586,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App you've authorized to access your account. The list includes paging information.
      * @param {string} AccountSid
@@ -6628,11 +6594,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number tha is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -6641,12 +6603,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -6655,12 +6612,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of toll-free AvailablePhoneNumber elements that match the specified filters, each representing a phone number that is currently available for provisioning within your account. To provision an available phone number, POST the number to the IncomingPhoneNumbers resource.
      * @param {string} AccountSid
@@ -6669,12 +6621,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
      * @param {string} AccountSid
@@ -6682,11 +6629,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -6695,12 +6638,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -6709,12 +6647,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns the single Call resource identified by {CallSid}.
      * @param {string} AccountSid
@@ -6723,12 +6656,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsCallSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Modify a phone call.
      * @param {string} AccountSid
@@ -6737,12 +6665,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsCallSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of phone calls made to and from the account identified by {AccountSid}.
      * @param {string} AccountSid
@@ -6750,11 +6673,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * To make a call, make an HTTP POST request. Initiate a new phone call.
      * @param {string} AccountSid
@@ -6762,11 +6681,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidCallsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Kick this participant from the conference.
      * @param {string} AccountSid
@@ -6776,13 +6691,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Returns a representation of this participant.
      * @param {string} AccountSid
@@ -6792,13 +6701,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Updates the status of a participant.
      * @param {string} AccountSid
@@ -6808,13 +6711,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Returns the list of participants in the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -6823,12 +6720,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a representation of the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -6837,12 +6729,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConferenceSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConferenceSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of conferences within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -6850,11 +6737,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConferencesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Get the properties of a Connect App.
      * @param {string} AccountSid
@@ -6863,12 +6746,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the Connect App's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -6877,12 +6755,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App in your account. The list includes paging information.
      * @param {string} AccountSid
@@ -6890,11 +6763,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Release this phone number from your account. Twilio will no longer answer calls to this number, and you will stop being billed the monthly phone number fee. The phone number will eventually be recycled and potentially given to another customer, so use with care. If you make a mistake, contac us. We may be able to give you the number back.
      * @param {string} AccountSid
@@ -6903,12 +6772,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): FetchArgs;
     /**
      * Get info about incoming call's phone number.
      * @param {string} AccountSid
@@ -6917,12 +6781,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -6931,12 +6790,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -6945,12 +6799,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
      * @param {string} AccountSid
@@ -6958,11 +6807,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -6970,11 +6815,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
      * @param {string} AccountSid
@@ -6982,11 +6823,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -6994,11 +6831,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
      * @param {string} AccountSid
@@ -7006,11 +6839,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -7018,11 +6847,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Returns a list of IncomingPhoneNumber resource representations, each representing a phone number given to your account. The list includes paging information.
      * @param {string} AccountSid
@@ -7030,11 +6855,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Purchases a new phone number for your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number. To find an available phone number to POST, use the subresources of the AvailablePhoneNumbers list resource.
      * @param {string} AccountSid
@@ -7042,11 +6863,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Without an extension, the media is returned using the mime-type provided when the media was generated.
      * @param {string} AccountSid
@@ -7056,13 +6873,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MediaSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MediaSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of media associated with your message.
      * @param {string} AccountSid
@@ -7071,12 +6882,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a single message specified by the provided {MessageSid}.
      * @param {string} AccountSid
@@ -7085,12 +6891,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MessageSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MessageSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of messages associated with your account. The list includes paging information.
      * @param {string} AccountSid
@@ -7098,11 +6899,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidMessagesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * To send a new outgoing message, make an HTTP POST to your Messages list resource URI
      * @param {string} AccountSid
@@ -7115,16 +6912,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        To: string,
-        From?: string,
-        MessagingServiceSid?: string,
-        Body?: string,
-        MediaUrl?: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidMessagesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', To: string, From?: string, MessagingServiceSid?: string, Body?: string, MediaUrl?: string, options?: any): FetchArgs;
     /**
      * Deletes the notification identified by {NotificationSid} from an account's log.
      * @param {string} AccountSid
@@ -7133,12 +6921,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): FetchArgs;
     /**
      * Get a notification entry.
      * @param {string} AccountSid
@@ -7147,12 +6930,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -7160,11 +6938,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidNotificationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Deletes the caller ID from the account. Returns an HTTP 204 response if successful, with no body.
      * @param {string} AccountSid
@@ -7173,12 +6947,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): FetchArgs;
     /**
      * Get the set of an account's verified phone numbers.
      * @param {string} AccountSid
@@ -7187,12 +6956,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): FetchArgs;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -7201,12 +6965,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): FetchArgs;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -7215,12 +6974,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of OutgoingCallerId resource representations, each representing a Caller ID number valid for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -7228,11 +6982,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Adds a new CallerID to your account.
      * @param {string} AccountSid
@@ -7240,11 +6990,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Get a specific member.
      * @param {string} AccountSid
@@ -7254,13 +7000,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When redirecting a member of a queue addressed by CallSid, only the first request will succeed and return a 200 response code. A second request will fail and return an appropriate 400 response code.
      * @param {string} AccountSid
@@ -7270,13 +7010,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): FetchArgs;
     /**
      * Get a front member.
      * @param {string} AccountSid
@@ -7285,12 +7019,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When dequeuing the 'Front' of the queue, the next call in the queue will be redirected.
      * @param {string} AccountSid
@@ -7299,12 +7028,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns the list of members in the queue identified by {QueueSid}.
      * @param {string} AccountSid
@@ -7313,12 +7037,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * The DELETE method allows you to remove a Queue. Only empty queues are deletable.
      * @param {string} AccountSid
@@ -7327,12 +7046,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): FetchArgs;
     /**
      * Get resource's individual Queue instance.
      * @param {string} AccountSid
@@ -7341,12 +7055,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): FetchArgs;
     /**
      * This POST request allows you to change the FriendlyName or MaxSize.
      * @param {string} AccountSid
@@ -7355,12 +7064,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of queues within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -7368,11 +7072,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Create a new Queue resource.
      * @param {string} AccountSid
@@ -7380,11 +7080,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidQueuesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -7393,12 +7089,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        RecordingSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', RecordingSid: string, options?: any): FetchArgs;
     /**
      * Deletes a recording  from your account.
      * @param {string} AccountSid
@@ -7407,12 +7098,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): FetchArgs;
     /**
      * Returns one of several representations: Without an extension, or with a \".wav\", a binary WAV audio file is returned with mime-type \"audio/x-wav\". Appending \".mp3\" to the URI returns a binary MP3 audio file with mime-type type \"audio/mpeg\". Appending \".xml\" to the URI returns a XML representation.
      * @param {string} AccountSid
@@ -7421,12 +7107,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -7434,11 +7115,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidRecordingsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Remove a Credential from a CredentialList.
      * @param {string} AccountSid
@@ -7448,13 +7125,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): FetchArgs;
     /**
      * Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.
      * @param {string} AccountSid
@@ -7464,13 +7135,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): FetchArgs;
     /**
      * Change the password of a Credential record.  If the change is successful, Twilio will respond with the Credential record but will not include the password in the response.
      * @param {string} AccountSid
@@ -7480,13 +7145,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): FetchArgs;
     /**
      * Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
      * @param {string} AccountSid
@@ -7495,12 +7154,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Add a Credential to the CredentialList.  When creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.
      * @param {string} AccountSid
@@ -7509,12 +7163,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -7523,12 +7172,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): FetchArgs;
     /**
      * Get a credential list instance resource
      * @param {string} AccountSid
@@ -7537,12 +7181,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): FetchArgs;
     /**
      * Change the FriendlyName of the list
      * @param {string} AccountSid
@@ -7551,12 +7190,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): FetchArgs;
     /**
      * Gets a list of Credential Lists for an account
      * @param {string} AccountSid
@@ -7564,11 +7198,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Create a new Credential List.
      * @param {string} AccountSid
@@ -7576,11 +7206,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Remove a CredentialListMapping from a domain
      * @param {string} AccountSid
@@ -7590,13 +7216,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): FetchArgs;
     /**
      * Get the user lists mapped to this domain.
      * @param {string} AccountSid
@@ -7605,12 +7225,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Map a CredentialList to the domain.
      * @param {string} AccountSid
@@ -7619,12 +7234,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Remove a mapping from this domain.
      * @param {string} AccountSid
@@ -7634,13 +7244,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): FetchArgs;
     /**
      * Return a specific IpAccessControlListMapping instance by Sid.
      * @param {string} AccountSid
@@ -7650,13 +7254,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): FetchArgs;
     /**
      * Return the IpAccessControlListMappings that are associated to this domain.
      * @param {string} AccountSid
@@ -7665,12 +7263,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Map an IpAccessControlList to this domain.
      * @param {string} AccountSid
@@ -7679,12 +7272,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
      * @param {string} AccountSid
@@ -7693,12 +7281,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): FetchArgs;
     /**
      * Return a specific instance by Sid.
      * @param {string} AccountSid
@@ -7707,12 +7290,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): FetchArgs;
     /**
      * Update the attributes of a domain.
      * @param {string} AccountSid
@@ -7721,12 +7299,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): FetchArgs;
     /**
      * Returns a paged list of the domains for an account.
      * @param {string} AccountSid
@@ -7734,11 +7307,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in \".sip.twilio.com\". After creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.
      * @param {string} AccountSid
@@ -7746,11 +7315,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPDomainsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Deletes an IP address entry from the list.
      * @param {string} AccountSid
@@ -7760,13 +7325,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): FetchArgs;
     /**
      * Return a single IP Address resource.
      * @param {string} AccountSid
@@ -7776,13 +7335,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): FetchArgs;
     /**
      * Change the description or IP address of a given IpAddress instance resource
      * @param {string} AccountSid
@@ -7792,13 +7345,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): FetchArgs;
     /**
      * List the IP Addresses contained in this list.
      * @param {string} AccountSid
@@ -7807,12 +7354,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Add an IP Address to the list with a description.
      * @param {string} AccountSid
@@ -7821,12 +7363,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -7835,12 +7372,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): FetchArgs;
     /**
      * Return a specific IpAccessControlList resource.
      * @param {string} AccountSid
@@ -7849,12 +7381,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): FetchArgs;
     /**
      * Rename an IpAccessControlList.
      * @param {string} AccountSid
@@ -7863,12 +7390,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): FetchArgs;
     /**
      * Return a paged list of all IpAccessControlLists under this account.
      * @param {string} AccountSid
@@ -7876,11 +7398,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Create a new IpAccessControlList resource.  When created, the list will contain no IP addresses. You will need to add IP addresses to the list for it to be active. To add IP addresses, you will need to POST to the IpAddresses List subresource.
      * @param {string} AccountSid
@@ -7888,11 +7406,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): FetchArgs;
     /**
      * Get a single message.
      * @param {string} AccountSid
@@ -7901,12 +7415,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the shortcode's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -7915,12 +7424,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of ShortCode resource representations, each representing a short code within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -7928,11 +7432,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Deletes a transcription from your account.
      * @param {string} AccountSid
@@ -7941,12 +7441,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): FetchArgs;
     /**
      * Returns a single Transcription resource representation identified by the given {TranscriptionSid}. By default Twilio will respond with the XML metadata for the Transcription. If you append \".txt\" to the end of the Transcription resource's URI Twilio will just return you the transcription tex.
      * @param {string} AccountSid
@@ -7955,12 +7450,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): FetchArgs;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -7968,11 +7458,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns UsageRecords for all usage categories for a specified period.
      * @param {string} AccountSid
@@ -7981,20 +7467,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        Subresource:
-            | 'Daily'
-            | 'Monthly'
-            | 'Yearly'
-            | 'AllTime'
-            | 'Today'
-            | 'Yesterday'
-            | 'ThisMonth'
-            | 'LastMonth',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', Subresource: 'Daily' | 'Monthly' | 'Yearly' | 'AllTime' | 'Today' | 'Yesterday' | 'ThisMonth' | 'LastMonth', options?: any): FetchArgs;
     /**
      * Returns UsageRecords for all usage categories. The list includes paging information. By default, the UsageRecords resource will return one UsageRecord for each Category, representing all usage accrued all-time for the account. You can filter the usage Category or change the date-range over which usage is counted using optional GET query parameters.
      * @param {string} AccountSid
@@ -8002,11 +7475,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageRecordsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Delete this UsageTrigger.
      * @param {string} AccountSid
@@ -8015,12 +7484,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): FetchArgs;
     /**
      * Returns a repesentation of the UsageTrigger.
      * @param {string} AccountSid
@@ -8029,12 +7493,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): FetchArgs;
     /**
      * Tries to update the UsageTrigger's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -8043,12 +7502,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): FetchArgs;
     /**
      * Returns a list of UsageTrigger resource representations. The list includes paging information. By default, all UsageTriggers are returned. You can filter the list by specifying one or more query parameters. Note that the query parameters are case-sensitive
      * @param {string} AccountSid
@@ -8056,11 +7510,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageTriggersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Creates a new UsageTrigger. Each account can create up to 1,000 UsageTriggers. Currently, UsageTriggers that are no longer active are not deleted automatically. Use DELETE to delete triggers you no longer need.
      * @param {string} AccountSid
@@ -8068,11 +7518,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsAccountSidUsageTriggersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Returns a representation of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -8080,11 +7526,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): FetchArgs;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -8092,11 +7534,7 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): FetchArgs;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -8104,39 +7542,27 @@ export declare const DefaultApiFetchParamCreator: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPut(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): FetchArgs
+    accountsAccountSidmediaTypeExtensionPut(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): FetchArgs;
     /**
      * Retrieve a list of the Account resources belonging to the account used to make the API request. This list will include that Account as well.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
+    accountsmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
     /**
      * Create a new Account instance resource as a subaccount of the one used to make the request. See Creating Subaccounts for more information.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): FetchArgs
-}
+    accountsmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): FetchArgs;
+};
 /**
  * DefaultApi - functional programming interface
  * @export
  */
-export declare const DefaultApiFp: (
-    configuration?: Configuration
-) => {
+export declare const DefaultApiFp: (configuration?: Configuration) => {
     /**
      * Delete this application.
      * @param {string} AccountSid
@@ -8145,12 +7571,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get application instance resource.
      * @param {string} AccountSid
@@ -8159,12 +7580,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Application>;
     /**
      * Tries to update the application's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -8173,12 +7589,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Application>;
     /**
      * Returns a list of Application resource representations, each representing an application within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -8186,11 +7597,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Applications>
+    accountsAccountSidApplicationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Applications>;
     /**
      * Creates a new application within your account.
      * @param {string} AccountSid
@@ -8198,11 +7605,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidApplicationsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get the properties of the authorized application.
      * @param {string} AccountSid
@@ -8211,12 +7614,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<AuthApp>
+    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AuthApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App you've authorized to access your account. The list includes paging information.
      * @param {string} AccountSid
@@ -8224,11 +7622,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<AuthApps>
+    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AuthApps>;
     /**
      * Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number tha is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -8237,12 +7631,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -8251,12 +7640,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<PhoneMobileNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PhoneMobileNumbers>;
     /**
      * Returns a list of toll-free AvailablePhoneNumber elements that match the specified filters, each representing a phone number that is currently available for provisioning within your account. To provision an available phone number, POST the number to the IncomingPhoneNumbers resource.
      * @param {string} AccountSid
@@ -8265,12 +7649,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<PhoneTollFreeNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PhoneTollFreeNumbers>;
     /**
      * Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
      * @param {string} AccountSid
@@ -8278,11 +7657,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -8291,12 +7666,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Notifications>
+    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Notifications>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -8305,12 +7675,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Recordings>
+    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Recordings>;
     /**
      * Returns the single Call resource identified by {CallSid}.
      * @param {string} AccountSid
@@ -8319,12 +7684,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CallInstance>;
     /**
      * Modify a phone call.
      * @param {string} AccountSid
@@ -8333,12 +7693,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CallInstance>;
     /**
      * Returns a list of phone calls made to and from the account identified by {AccountSid}.
      * @param {string} AccountSid
@@ -8346,11 +7701,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Calls>
+    accountsAccountSidCallsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Calls>;
     /**
      * To make a call, make an HTTP POST request. Initiate a new phone call.
      * @param {string} AccountSid
@@ -8358,11 +7709,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidCallsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Kick this participant from the conference.
      * @param {string} AccountSid
@@ -8372,13 +7719,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a representation of this participant.
      * @param {string} AccountSid
@@ -8388,13 +7729,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Participant>;
     /**
      * Updates the status of a participant.
      * @param {string} AccountSid
@@ -8404,13 +7739,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Participant>;
     /**
      * Returns the list of participants in the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -8419,12 +7748,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Participants>
+    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Participants>;
     /**
      * Returns a representation of the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -8433,12 +7757,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConferenceSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Conference>
+    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConferenceSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Conference>;
     /**
      * Returns a list of conferences within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -8446,11 +7765,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Conferences>
+    accountsAccountSidConferencesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Conferences>;
     /**
      * Get the properties of a Connect App.
      * @param {string} AccountSid
@@ -8459,12 +7774,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApp>;
     /**
      * Tries to update the Connect App's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -8473,12 +7783,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App in your account. The list includes paging information.
      * @param {string} AccountSid
@@ -8486,11 +7791,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApps>
+    accountsAccountSidConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ConnectApps>;
     /**
      * Release this phone number from your account. Twilio will no longer answer calls to this number, and you will stop being billed the monthly phone number fee. The phone number will eventually be recycled and potentially given to another customer, so use with care. If you make a mistake, contac us. We may be able to give you the number back.
      * @param {string} AccountSid
@@ -8499,12 +7800,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get info about incoming call's phone number.
      * @param {string} AccountSid
@@ -8513,12 +7809,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -8527,12 +7818,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -8541,12 +7827,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCall>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
      * @param {string} AccountSid
@@ -8554,11 +7835,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -8566,11 +7843,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
      * @param {string} AccountSid
@@ -8578,11 +7851,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -8590,11 +7859,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
      * @param {string} AccountSid
@@ -8602,11 +7867,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -8614,11 +7875,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a list of IncomingPhoneNumber resource representations, each representing a phone number given to your account. The list includes paging information.
      * @param {string} AccountSid
@@ -8626,11 +7883,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCalls>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IncomingCalls>;
     /**
      * Purchases a new phone number for your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number. To find an available phone number to POST, use the subresources of the AvailablePhoneNumbers list resource.
      * @param {string} AccountSid
@@ -8638,11 +7891,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Without an extension, the media is returned using the mime-type provided when the media was generated.
      * @param {string} AccountSid
@@ -8652,13 +7901,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MediaSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Media>
+    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MediaSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Media>;
     /**
      * Returns a list of media associated with your message.
      * @param {string} AccountSid
@@ -8667,12 +7910,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<MediaList>
+    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<MediaList>;
     /**
      * Returns a single message specified by the provided {MessageSid}.
      * @param {string} AccountSid
@@ -8681,12 +7919,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MessageSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Message>
+    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MessageSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Message>;
     /**
      * Returns a list of messages associated with your account. The list includes paging information.
      * @param {string} AccountSid
@@ -8694,11 +7927,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Messages>
+    accountsAccountSidMessagesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Messages>;
     /**
      * To send a new outgoing message, make an HTTP POST to your Messages list resource URI
      * @param {string} AccountSid
@@ -8711,16 +7940,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        To: string,
-        From?: string,
-        MessagingServiceSid?: string,
-        Body?: string,
-        MediaUrl?: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidMessagesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', To: string, From?: string, MessagingServiceSid?: string, Body?: string, MediaUrl?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Deletes the notification identified by {NotificationSid} from an account's log.
      * @param {string} AccountSid
@@ -8729,12 +7949,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get a notification entry.
      * @param {string} AccountSid
@@ -8743,12 +7958,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Notification>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Notification>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -8756,11 +7966,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Notifications>
+    accountsAccountSidNotificationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Notifications>;
     /**
      * Deletes the caller ID from the account. Returns an HTTP 204 response if successful, with no body.
      * @param {string} AccountSid
@@ -8769,12 +7975,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get the set of an account's verified phone numbers.
      * @param {string} AccountSid
@@ -8783,12 +7984,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -8797,12 +7993,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -8811,12 +8002,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a list of OutgoingCallerId resource representations, each representing a Caller ID number valid for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -8824,11 +8010,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<OutCallerIds>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<OutCallerIds>;
     /**
      * Adds a new CallerID to your account.
      * @param {string} AccountSid
@@ -8836,11 +8018,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get a specific member.
      * @param {string} AccountSid
@@ -8850,13 +8028,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When redirecting a member of a queue addressed by CallSid, only the first request will succeed and return a 200 response code. A second request will fail and return an appropriate 400 response code.
      * @param {string} AccountSid
@@ -8866,13 +8038,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Member>;
     /**
      * Get a front member.
      * @param {string} AccountSid
@@ -8881,12 +8047,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When dequeuing the 'Front' of the queue, the next call in the queue will be redirected.
      * @param {string} AccountSid
@@ -8895,12 +8056,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Member>;
     /**
      * Returns the list of members in the queue identified by {QueueSid}.
      * @param {string} AccountSid
@@ -8909,12 +8065,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Members>
+    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Members>;
     /**
      * The DELETE method allows you to remove a Queue. Only empty queues are deletable.
      * @param {string} AccountSid
@@ -8923,12 +8074,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get resource's individual Queue instance.
      * @param {string} AccountSid
@@ -8937,12 +8083,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Queue>;
     /**
      * This POST request allows you to change the FriendlyName or MaxSize.
      * @param {string} AccountSid
@@ -8951,12 +8092,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Queue>;
     /**
      * Returns a list of queues within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -8964,11 +8100,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Queues>
+    accountsAccountSidQueuesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Queues>;
     /**
      * Create a new Queue resource.
      * @param {string} AccountSid
@@ -8976,11 +8108,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidQueuesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -8989,12 +8117,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        RecordingSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Transcriptions>
+    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', RecordingSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Transcriptions>;
     /**
      * Deletes a recording  from your account.
      * @param {string} AccountSid
@@ -9003,12 +8126,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns one of several representations: Without an extension, or with a \".wav\", a binary WAV audio file is returned with mime-type \"audio/x-wav\". Appending \".mp3\" to the URI returns a binary MP3 audio file with mime-type type \"audio/mpeg\". Appending \".xml\" to the URI returns a XML representation.
      * @param {string} AccountSid
@@ -9017,12 +8135,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -9030,11 +8143,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Recordings>
+    accountsAccountSidRecordingsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Recordings>;
     /**
      * Remove a Credential from a CredentialList.
      * @param {string} AccountSid
@@ -9044,13 +8153,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.
      * @param {string} AccountSid
@@ -9060,13 +8163,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Credential>;
     /**
      * Change the password of a Credential record.  If the change is successful, Twilio will respond with the Credential record but will not include the password in the response.
      * @param {string} AccountSid
@@ -9076,13 +8173,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Credential>;
     /**
      * Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
      * @param {string} AccountSid
@@ -9091,12 +8182,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Credentials>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Credentials>;
     /**
      * Add a Credential to the CredentialList.  When creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.
      * @param {string} AccountSid
@@ -9105,12 +8191,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -9119,12 +8200,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get a credential list instance resource
      * @param {string} AccountSid
@@ -9133,12 +8209,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialList>;
     /**
      * Change the FriendlyName of the list
      * @param {string} AccountSid
@@ -9147,12 +8218,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialList>;
     /**
      * Gets a list of Credential Lists for an account
      * @param {string} AccountSid
@@ -9160,11 +8226,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialLists>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialLists>;
     /**
      * Create a new Credential List.
      * @param {string} AccountSid
@@ -9172,11 +8234,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Remove a CredentialListMapping from a domain
      * @param {string} AccountSid
@@ -9186,13 +8244,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Get the user lists mapped to this domain.
      * @param {string} AccountSid
@@ -9201,12 +8253,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialListMappings>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<CredentialListMappings>;
     /**
      * Map a CredentialList to the domain.
      * @param {string} AccountSid
@@ -9215,12 +8262,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Remove a mapping from this domain.
      * @param {string} AccountSid
@@ -9230,13 +8272,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Return a specific IpAccessControlListMapping instance by Sid.
      * @param {string} AccountSid
@@ -9246,16 +8282,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): (
-        fetch?: FetchAPI,
-        basePath?: string
-    ) => Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAccessControlListMapping>;
     /**
      * Return the IpAccessControlListMappings that are associated to this domain.
      * @param {string} AccountSid
@@ -9264,12 +8291,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Map an IpAccessControlList to this domain.
      * @param {string} AccountSid
@@ -9278,12 +8300,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
      * @param {string} AccountSid
@@ -9292,12 +8309,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Return a specific instance by Sid.
      * @param {string} AccountSid
@@ -9306,12 +8318,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Domain>;
     /**
      * Update the attributes of a domain.
      * @param {string} AccountSid
@@ -9320,12 +8327,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Domain>;
     /**
      * Returns a paged list of the domains for an account.
      * @param {string} AccountSid
@@ -9333,11 +8335,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Domains>
+    accountsAccountSidSIPDomainsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Domains>;
     /**
      * Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in \".sip.twilio.com\". After creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.
      * @param {string} AccountSid
@@ -9345,11 +8343,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPDomainsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Deletes an IP address entry from the list.
      * @param {string} AccountSid
@@ -9359,13 +8353,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Return a single IP Address resource.
      * @param {string} AccountSid
@@ -9375,13 +8363,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddress>;
     /**
      * Change the description or IP address of a given IpAddress instance resource
      * @param {string} AccountSid
@@ -9391,13 +8373,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddress>;
     /**
      * List the IP Addresses contained in this list.
      * @param {string} AccountSid
@@ -9406,12 +8382,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddresses>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAddresses>;
     /**
      * Add an IP Address to the list with a description.
      * @param {string} AccountSid
@@ -9420,12 +8391,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -9434,12 +8400,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Return a specific IpAccessControlList resource.
      * @param {string} AccountSid
@@ -9448,15 +8409,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): (
-        fetch?: FetchAPI,
-        basePath?: string
-    ) => Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAccessControlListMapping>;
     /**
      * Rename an IpAccessControlList.
      * @param {string} AccountSid
@@ -9465,15 +8418,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): (
-        fetch?: FetchAPI,
-        basePath?: string
-    ) => Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAccessControlListMapping>;
     /**
      * Return a paged list of all IpAccessControlLists under this account.
      * @param {string} AccountSid
@@ -9481,11 +8426,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Create a new IpAccessControlList resource.  When created, the list will contain no IP addresses. You will need to add IP addresses to the list for it to be active. To add IP addresses, you will need to POST to the IpAddresses List subresource.
      * @param {string} AccountSid
@@ -9493,14 +8434,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): (
-        fetch?: FetchAPI,
-        basePath?: string
-    ) => Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<IpAccessControlListMapping>;
     /**
      * Get a single message.
      * @param {string} AccountSid
@@ -9509,12 +8443,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCode>;
     /**
      * Tries to update the shortcode's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -9523,12 +8452,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCode>;
     /**
      * Returns a list of ShortCode resource representations, each representing a short code within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -9536,11 +8460,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCodes>
+    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<ShortCodes>;
     /**
      * Deletes a transcription from your account.
      * @param {string} AccountSid
@@ -9549,12 +8469,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a single Transcription resource representation identified by the given {TranscriptionSid}. By default Twilio will respond with the XML metadata for the Transcription. If you append \".txt\" to the end of the Transcription resource's URI Twilio will just return you the transcription tex.
      * @param {string} AccountSid
@@ -9563,12 +8478,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Transcription>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Transcription>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -9576,11 +8486,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Transcriptions>
+    accountsAccountSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Transcriptions>;
     /**
      * Returns UsageRecords for all usage categories for a specified period.
      * @param {string} AccountSid
@@ -9589,20 +8495,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        Subresource:
-            | 'Daily'
-            | 'Monthly'
-            | 'Yearly'
-            | 'AllTime'
-            | 'Today'
-            | 'Yesterday'
-            | 'ThisMonth'
-            | 'LastMonth',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<UsageRecords>
+    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', Subresource: 'Daily' | 'Monthly' | 'Yearly' | 'AllTime' | 'Today' | 'Yesterday' | 'ThisMonth' | 'LastMonth', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UsageRecords>;
     /**
      * Returns UsageRecords for all usage categories. The list includes paging information. By default, the UsageRecords resource will return one UsageRecord for each Category, representing all usage accrued all-time for the account. You can filter the usage Category or change the date-range over which usage is counted using optional GET query parameters.
      * @param {string} AccountSid
@@ -9610,11 +8503,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<UsageRecords>
+    accountsAccountSidUsageRecordsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UsageRecords>;
     /**
      * Delete this UsageTrigger.
      * @param {string} AccountSid
@@ -9623,12 +8512,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a repesentation of the UsageTrigger.
      * @param {string} AccountSid
@@ -9637,12 +8521,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTrigger>;
     /**
      * Tries to update the UsageTrigger's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -9651,12 +8530,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTrigger>;
     /**
      * Returns a list of UsageTrigger resource representations. The list includes paging information. By default, all UsageTriggers are returned. You can filter the list by specifying one or more query parameters. Note that the query parameters are case-sensitive
      * @param {string} AccountSid
@@ -9664,11 +8538,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTriggers>
+    accountsAccountSidUsageTriggersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UsageTriggers>;
     /**
      * Creates a new UsageTrigger. Each account can create up to 1,000 UsageTriggers. Currently, UsageTriggers that are no longer active are not deleted automatically. Use DELETE to delete triggers you no longer need.
      * @param {string} AccountSid
@@ -9676,11 +8546,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
+    accountsAccountSidUsageTriggersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
      * Returns a representation of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -9688,11 +8554,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Account>
+    accountsAccountSidmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -9700,11 +8562,7 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Account>
+    accountsAccountSidmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -9712,41 +8570,27 @@ export declare const DefaultApiFp: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPut(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Account>
+    accountsAccountSidmediaTypeExtensionPut(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Account>;
     /**
      * Retrieve a list of the Account resources belonging to the account used to make the API request. This list will include that Account as well.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Accounts>
+    accountsmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Accounts>;
     /**
      * Create a new Account instance resource as a subaccount of the one used to make the request. See Creating Subaccounts for more information.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): (fetch?: FetchAPI, basePath?: string) => Promise<Response>
-}
+    accountsmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+};
 /**
  * DefaultApi - factory interface
  * @export
  */
-export declare const DefaultApiFactory: (
-    configuration?: Configuration,
-    fetch?: FetchAPI,
-    basePath?: string
-) => {
+export declare const DefaultApiFactory: (configuration?: Configuration, fetch?: FetchAPI, basePath?: string) => {
     /**
      * Delete this application.
      * @param {string} AccountSid
@@ -9755,12 +8599,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Response>;
     /**
      * Get application instance resource.
      * @param {string} AccountSid
@@ -9769,12 +8608,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Tries to update the application's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -9783,12 +8617,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Returns a list of Application resource representations, each representing an application within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -9796,11 +8625,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Applications>
+    accountsAccountSidApplicationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Applications>;
     /**
      * Creates a new application within your account.
      * @param {string} AccountSid
@@ -9808,11 +8633,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidApplicationsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidApplicationsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Get the properties of the authorized application.
      * @param {string} AccountSid
@@ -9821,12 +8642,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<AuthApp>
+    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<AuthApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App you've authorized to access your account. The list includes paging information.
      * @param {string} AccountSid
@@ -9834,11 +8650,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AuthApps>
+    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AuthApps>;
     /**
      * Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number tha is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -9847,12 +8659,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -9861,12 +8668,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneMobileNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneMobileNumbers>;
     /**
      * Returns a list of toll-free AvailablePhoneNumber elements that match the specified filters, each representing a phone number that is currently available for provisioning within your account. To provision an available phone number, POST the number to the IncomingPhoneNumbers resource.
      * @param {string} AccountSid
@@ -9875,12 +8677,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneTollFreeNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneTollFreeNumbers>;
     /**
      * Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
      * @param {string} AccountSid
@@ -9888,11 +8685,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -9901,12 +8694,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -9915,12 +8703,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Returns the single Call resource identified by {CallSid}.
      * @param {string} AccountSid
@@ -9929,12 +8712,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Modify a phone call.
      * @param {string} AccountSid
@@ -9943,12 +8721,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Returns a list of phone calls made to and from the account identified by {AccountSid}.
      * @param {string} AccountSid
@@ -9956,11 +8729,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Calls>
+    accountsAccountSidCallsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Calls>;
     /**
      * To make a call, make an HTTP POST request. Initiate a new phone call.
      * @param {string} AccountSid
@@ -9968,11 +8737,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidCallsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidCallsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Kick this participant from the conference.
      * @param {string} AccountSid
@@ -9982,13 +8747,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Response>;
     /**
      * Returns a representation of this participant.
      * @param {string} AccountSid
@@ -9998,13 +8757,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Updates the status of a participant.
      * @param {string} AccountSid
@@ -10014,13 +8767,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Returns the list of participants in the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -10029,12 +8776,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Participants>
+    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Participants>;
     /**
      * Returns a representation of the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -10043,12 +8785,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConferenceSid: string,
-        options?: any
-    ): Promise<Conference>
+    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConferenceSid: string, options?: any): Promise<Conference>;
     /**
      * Returns a list of conferences within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -10056,11 +8793,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConferencesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Conferences>
+    accountsAccountSidConferencesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Conferences>;
     /**
      * Get the properties of a Connect App.
      * @param {string} AccountSid
@@ -10069,12 +8802,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Tries to update the Connect App's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -10083,12 +8811,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App in your account. The list includes paging information.
      * @param {string} AccountSid
@@ -10096,11 +8819,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ConnectApps>
+    accountsAccountSidConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ConnectApps>;
     /**
      * Release this phone number from your account. Twilio will no longer answer calls to this number, and you will stop being billed the monthly phone number fee. The phone number will eventually be recycled and potentially given to another customer, so use with care. If you make a mistake, contac us. We may be able to give you the number back.
      * @param {string} AccountSid
@@ -10109,12 +8828,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<Response>;
     /**
      * Get info about incoming call's phone number.
      * @param {string} AccountSid
@@ -10123,12 +8837,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -10137,12 +8846,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -10151,12 +8855,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
      * @param {string} AccountSid
@@ -10164,11 +8863,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -10176,11 +8871,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
      * @param {string} AccountSid
@@ -10188,11 +8879,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -10200,11 +8887,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
      * @param {string} AccountSid
@@ -10212,11 +8895,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -10224,11 +8903,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of IncomingPhoneNumber resource representations, each representing a phone number given to your account. The list includes paging information.
      * @param {string} AccountSid
@@ -10236,11 +8911,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IncomingCalls>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IncomingCalls>;
     /**
      * Purchases a new phone number for your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number. To find an available phone number to POST, use the subresources of the AvailablePhoneNumbers list resource.
      * @param {string} AccountSid
@@ -10248,11 +8919,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Without an extension, the media is returned using the mime-type provided when the media was generated.
      * @param {string} AccountSid
@@ -10262,13 +8929,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MediaSid: string,
-        options?: any
-    ): Promise<Media>
+    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MediaSid: string, options?: any): Promise<Media>;
     /**
      * Returns a list of media associated with your message.
      * @param {string} AccountSid
@@ -10277,12 +8938,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<MediaList>
+    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<MediaList>;
     /**
      * Returns a single message specified by the provided {MessageSid}.
      * @param {string} AccountSid
@@ -10291,12 +8947,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MessageSid: string,
-        options?: any
-    ): Promise<Message>
+    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MessageSid: string, options?: any): Promise<Message>;
     /**
      * Returns a list of messages associated with your account. The list includes paging information.
      * @param {string} AccountSid
@@ -10304,11 +8955,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Messages>
+    accountsAccountSidMessagesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Messages>;
     /**
      * To send a new outgoing message, make an HTTP POST to your Messages list resource URI
      * @param {string} AccountSid
@@ -10321,16 +8968,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidMessagesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        To: string,
-        From?: string,
-        MessagingServiceSid?: string,
-        Body?: string,
-        MediaUrl?: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidMessagesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', To: string, From?: string, MessagingServiceSid?: string, Body?: string, MediaUrl?: string, options?: any): Promise<Response>;
     /**
      * Deletes the notification identified by {NotificationSid} from an account's log.
      * @param {string} AccountSid
@@ -10339,12 +8977,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<Response>;
     /**
      * Get a notification entry.
      * @param {string} AccountSid
@@ -10353,12 +8986,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<Notification>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<Notification>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -10366,11 +8994,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidNotificationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Deletes the caller ID from the account. Returns an HTTP 204 response if successful, with no body.
      * @param {string} AccountSid
@@ -10379,12 +9003,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<Response>;
     /**
      * Get the set of an account's verified phone numbers.
      * @param {string} AccountSid
@@ -10393,12 +9012,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -10407,12 +9021,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -10421,12 +9030,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<Response>;
     /**
      * Returns a list of OutgoingCallerId resource representations, each representing a Caller ID number valid for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -10434,11 +9038,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<OutCallerIds>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<OutCallerIds>;
     /**
      * Adds a new CallerID to your account.
      * @param {string} AccountSid
@@ -10446,11 +9046,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Get a specific member.
      * @param {string} AccountSid
@@ -10460,13 +9056,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When redirecting a member of a queue addressed by CallSid, only the first request will succeed and return a 200 response code. A second request will fail and return an appropriate 400 response code.
      * @param {string} AccountSid
@@ -10476,13 +9066,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Get a front member.
      * @param {string} AccountSid
@@ -10491,12 +9075,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When dequeuing the 'Front' of the queue, the next call in the queue will be redirected.
      * @param {string} AccountSid
@@ -10505,12 +9084,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Returns the list of members in the queue identified by {QueueSid}.
      * @param {string} AccountSid
@@ -10519,12 +9093,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Members>
+    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Members>;
     /**
      * The DELETE method allows you to remove a Queue. Only empty queues are deletable.
      * @param {string} AccountSid
@@ -10533,12 +9102,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Response>;
     /**
      * Get resource's individual Queue instance.
      * @param {string} AccountSid
@@ -10547,12 +9111,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * This POST request allows you to change the FriendlyName or MaxSize.
      * @param {string} AccountSid
@@ -10561,12 +9120,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * Returns a list of queues within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -10574,11 +9128,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Queues>
+    accountsAccountSidQueuesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Queues>;
     /**
      * Create a new Queue resource.
      * @param {string} AccountSid
@@ -10586,11 +9136,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidQueuesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidQueuesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -10599,12 +9145,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', RecordingSid: string, options?: any): Promise<Transcriptions>;
     /**
      * Deletes a recording  from your account.
      * @param {string} AccountSid
@@ -10613,12 +9154,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<Response>;
     /**
      * Returns one of several representations: Without an extension, or with a \".wav\", a binary WAV audio file is returned with mime-type \"audio/x-wav\". Appending \".mp3\" to the URI returns a binary MP3 audio file with mime-type type \"audio/mpeg\". Appending \".xml\" to the URI returns a XML representation.
      * @param {string} AccountSid
@@ -10627,12 +9163,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<Response>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -10640,11 +9171,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidRecordingsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Remove a Credential from a CredentialList.
      * @param {string} AccountSid
@@ -10654,13 +9181,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Response>;
     /**
      * Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.
      * @param {string} AccountSid
@@ -10670,13 +9191,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Change the password of a Credential record.  If the change is successful, Twilio will respond with the Credential record but will not include the password in the response.
      * @param {string} AccountSid
@@ -10686,13 +9201,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
      * @param {string} AccountSid
@@ -10701,12 +9210,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Credentials>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Credentials>;
     /**
      * Add a Credential to the CredentialList.  When creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.
      * @param {string} AccountSid
@@ -10715,12 +9219,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -10729,12 +9228,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<Response>;
     /**
      * Get a credential list instance resource
      * @param {string} AccountSid
@@ -10743,12 +9237,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Change the FriendlyName of the list
      * @param {string} AccountSid
@@ -10757,12 +9246,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Gets a list of Credential Lists for an account
      * @param {string} AccountSid
@@ -10770,11 +9254,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialLists>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialLists>;
     /**
      * Create a new Credential List.
      * @param {string} AccountSid
@@ -10782,11 +9262,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Remove a CredentialListMapping from a domain
      * @param {string} AccountSid
@@ -10796,13 +9272,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<Response>;
     /**
      * Get the user lists mapped to this domain.
      * @param {string} AccountSid
@@ -10811,12 +9281,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialListMappings>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialListMappings>;
     /**
      * Map a CredentialList to the domain.
      * @param {string} AccountSid
@@ -10825,12 +9290,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Remove a mapping from this domain.
      * @param {string} AccountSid
@@ -10840,13 +9300,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific IpAccessControlListMapping instance by Sid.
      * @param {string} AccountSid
@@ -10856,13 +9310,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return the IpAccessControlListMappings that are associated to this domain.
      * @param {string} AccountSid
@@ -10871,12 +9319,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Map an IpAccessControlList to this domain.
      * @param {string} AccountSid
@@ -10885,12 +9328,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
      * @param {string} AccountSid
@@ -10899,12 +9337,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific instance by Sid.
      * @param {string} AccountSid
@@ -10913,12 +9346,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Update the attributes of a domain.
      * @param {string} AccountSid
@@ -10927,12 +9355,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Returns a paged list of the domains for an account.
      * @param {string} AccountSid
@@ -10940,11 +9363,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Domains>
+    accountsAccountSidSIPDomainsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Domains>;
     /**
      * Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in \".sip.twilio.com\". After creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.
      * @param {string} AccountSid
@@ -10952,11 +9371,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Deletes an IP address entry from the list.
      * @param {string} AccountSid
@@ -10966,13 +9381,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<Response>;
     /**
      * Return a single IP Address resource.
      * @param {string} AccountSid
@@ -10982,13 +9391,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * Change the description or IP address of a given IpAddress instance resource
      * @param {string} AccountSid
@@ -10998,13 +9401,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * List the IP Addresses contained in this list.
      * @param {string} AccountSid
@@ -11013,12 +9410,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IpAddresses>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IpAddresses>;
     /**
      * Add an IP Address to the list with a description.
      * @param {string} AccountSid
@@ -11027,12 +9419,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -11041,12 +9428,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific IpAccessControlList resource.
      * @param {string} AccountSid
@@ -11055,12 +9437,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Rename an IpAccessControlList.
      * @param {string} AccountSid
@@ -11069,12 +9446,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return a paged list of all IpAccessControlLists under this account.
      * @param {string} AccountSid
@@ -11082,11 +9454,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Create a new IpAccessControlList resource.  When created, the list will contain no IP addresses. You will need to add IP addresses to the list for it to be active. To add IP addresses, you will need to POST to the IpAddresses List subresource.
      * @param {string} AccountSid
@@ -11094,11 +9462,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Get a single message.
      * @param {string} AccountSid
@@ -11107,12 +9471,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Tries to update the shortcode's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -11121,12 +9480,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Returns a list of ShortCode resource representations, each representing a short code within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11134,11 +9488,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ShortCodes>
+    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ShortCodes>;
     /**
      * Deletes a transcription from your account.
      * @param {string} AccountSid
@@ -11147,12 +9497,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<Response>;
     /**
      * Returns a single Transcription resource representation identified by the given {TranscriptionSid}. By default Twilio will respond with the XML metadata for the Transcription. If you append \".txt\" to the end of the Transcription resource's URI Twilio will just return you the transcription tex.
      * @param {string} AccountSid
@@ -11161,12 +9506,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html' | '.txt',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<Transcription>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<Transcription>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -11174,11 +9514,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Transcriptions>;
     /**
      * Returns UsageRecords for all usage categories for a specified period.
      * @param {string} AccountSid
@@ -11187,20 +9523,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        Subresource:
-            | 'Daily'
-            | 'Monthly'
-            | 'Yearly'
-            | 'AllTime'
-            | 'Today'
-            | 'Yesterday'
-            | 'ThisMonth'
-            | 'LastMonth',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', Subresource: 'Daily' | 'Monthly' | 'Yearly' | 'AllTime' | 'Today' | 'Yesterday' | 'ThisMonth' | 'LastMonth', options?: any): Promise<UsageRecords>;
     /**
      * Returns UsageRecords for all usage categories. The list includes paging information. By default, the UsageRecords resource will return one UsageRecord for each Category, representing all usage accrued all-time for the account. You can filter the usage Category or change the date-range over which usage is counted using optional GET query parameters.
      * @param {string} AccountSid
@@ -11208,11 +9531,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageRecordsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageRecords>;
     /**
      * Delete this UsageTrigger.
      * @param {string} AccountSid
@@ -11221,12 +9540,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<Response>;
     /**
      * Returns a repesentation of the UsageTrigger.
      * @param {string} AccountSid
@@ -11235,12 +9549,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Tries to update the UsageTrigger's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -11249,12 +9558,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Returns a list of UsageTrigger resource representations. The list includes paging information. By default, all UsageTriggers are returned. You can filter the list by specifying one or more query parameters. Note that the query parameters are case-sensitive
      * @param {string} AccountSid
@@ -11262,11 +9566,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageTriggers>
+    accountsAccountSidUsageTriggersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageTriggers>;
     /**
      * Creates a new UsageTrigger. Each account can create up to 1,000 UsageTriggers. Currently, UsageTriggers that are no longer active are not deleted automatically. Use DELETE to delete triggers you no longer need.
      * @param {string} AccountSid
@@ -11274,11 +9574,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidUsageTriggersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Returns a representation of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -11286,11 +9582,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -11298,11 +9590,7 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -11310,32 +9598,22 @@ export declare const DefaultApiFactory: (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsAccountSidmediaTypeExtensionPut(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPut(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Retrieve a list of the Account resources belonging to the account used to make the API request. This list will include that Account as well.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Accounts>
+    accountsmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Accounts>;
     /**
      * Create a new Account instance resource as a subaccount of the one used to make the request. See Creating Subaccounts for more information.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    accountsmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
-}
+    accountsmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
+};
 /**
  * DefaultApi - interface
  * @export
@@ -11351,12 +9629,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<{}>;
     /**
      * Get application instance resource.
      * @param {string} AccountSid
@@ -11366,12 +9639,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Tries to update the application's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -11381,12 +9649,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Returns a list of Application resource representations, each representing an application within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11395,11 +9658,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidApplicationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Applications>
+    accountsAccountSidApplicationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Applications>;
     /**
      * Creates a new application within your account.
      * @param {string} AccountSid
@@ -11408,11 +9667,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidApplicationsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidApplicationsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Get the properties of the authorized application.
      * @param {string} AccountSid
@@ -11422,12 +9677,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<AuthApp>
+    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<AuthApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App you've authorized to access your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11436,11 +9686,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AuthApps>
+    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AuthApps>;
     /**
      * Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number tha is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -11450,12 +9696,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -11465,12 +9706,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneMobileNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneMobileNumbers>;
     /**
      * Returns a list of toll-free AvailablePhoneNumber elements that match the specified filters, each representing a phone number that is currently available for provisioning within your account. To provision an available phone number, POST the number to the IncomingPhoneNumbers resource.
      * @param {string} AccountSid
@@ -11480,12 +9716,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneTollFreeNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneTollFreeNumbers>;
     /**
      * Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
      * @param {string} AccountSid
@@ -11494,11 +9725,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -11508,12 +9735,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -11523,12 +9745,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Returns the single Call resource identified by {CallSid}.
      * @param {string} AccountSid
@@ -11538,12 +9755,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Modify a phone call.
      * @param {string} AccountSid
@@ -11553,12 +9765,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Returns a list of phone calls made to and from the account identified by {AccountSid}.
      * @param {string} AccountSid
@@ -11567,11 +9774,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Calls>
+    accountsAccountSidCallsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Calls>;
     /**
      * To make a call, make an HTTP POST request. Initiate a new phone call.
      * @param {string} AccountSid
@@ -11580,11 +9783,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidCallsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidCallsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Kick this participant from the conference.
      * @param {string} AccountSid
@@ -11595,13 +9794,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<{}>;
     /**
      * Returns a representation of this participant.
      * @param {string} AccountSid
@@ -11612,13 +9805,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Updates the status of a participant.
      * @param {string} AccountSid
@@ -11629,13 +9816,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Returns the list of participants in the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -11645,12 +9826,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Participants>
+    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Participants>;
     /**
      * Returns a representation of the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -11660,12 +9836,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConferenceSid: string,
-        options?: any
-    ): Promise<Conference>
+    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConferenceSid: string, options?: any): Promise<Conference>;
     /**
      * Returns a list of conferences within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -11674,11 +9845,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConferencesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Conferences>
+    accountsAccountSidConferencesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Conferences>;
     /**
      * Get the properties of a Connect App.
      * @param {string} AccountSid
@@ -11688,12 +9855,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Tries to update the Connect App's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -11703,12 +9865,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App in your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11717,11 +9874,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ConnectApps>
+    accountsAccountSidConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ConnectApps>;
     /**
      * Release this phone number from your account. Twilio will no longer answer calls to this number, and you will stop being billed the monthly phone number fee. The phone number will eventually be recycled and potentially given to another customer, so use with care. If you make a mistake, contac us. We may be able to give you the number back.
      * @param {string} AccountSid
@@ -11731,12 +9884,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<{}>;
     /**
      * Get info about incoming call's phone number.
      * @param {string} AccountSid
@@ -11746,12 +9894,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -11761,12 +9904,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -11776,12 +9914,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
      * @param {string} AccountSid
@@ -11790,11 +9923,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -11803,11 +9932,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
      * @param {string} AccountSid
@@ -11816,11 +9941,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -11829,11 +9950,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
      * @param {string} AccountSid
@@ -11842,11 +9959,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -11855,11 +9968,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Returns a list of IncomingPhoneNumber resource representations, each representing a phone number given to your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11868,11 +9977,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IncomingCalls>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IncomingCalls>;
     /**
      * Purchases a new phone number for your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number. To find an available phone number to POST, use the subresources of the AvailablePhoneNumbers list resource.
      * @param {string} AccountSid
@@ -11881,11 +9986,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Without an extension, the media is returned using the mime-type provided when the media was generated.
      * @param {string} AccountSid
@@ -11896,13 +9997,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MediaSid: string,
-        options?: any
-    ): Promise<Media>
+    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MediaSid: string, options?: any): Promise<Media>;
     /**
      * Returns a list of media associated with your message.
      * @param {string} AccountSid
@@ -11912,12 +10007,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<MediaList>
+    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<MediaList>;
     /**
      * Returns a single message specified by the provided {MessageSid}.
      * @param {string} AccountSid
@@ -11927,12 +10017,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MessageSid: string,
-        options?: any
-    ): Promise<Message>
+    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MessageSid: string, options?: any): Promise<Message>;
     /**
      * Returns a list of messages associated with your account. The list includes paging information.
      * @param {string} AccountSid
@@ -11941,11 +10026,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidMessagesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Messages>
+    accountsAccountSidMessagesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Messages>;
     /**
      * To send a new outgoing message, make an HTTP POST to your Messages list resource URI
      * @param {string} AccountSid
@@ -11959,16 +10040,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidMessagesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        To: string,
-        From?: string,
-        MessagingServiceSid?: string,
-        Body?: string,
-        MediaUrl?: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidMessagesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', To: string, From?: string, MessagingServiceSid?: string, Body?: string, MediaUrl?: string, options?: any): Promise<{}>;
     /**
      * Deletes the notification identified by {NotificationSid} from an account's log.
      * @param {string} AccountSid
@@ -11978,12 +10050,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<{}>;
     /**
      * Get a notification entry.
      * @param {string} AccountSid
@@ -11993,12 +10060,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<Notification>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<Notification>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -12007,11 +10069,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidNotificationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Deletes the caller ID from the account. Returns an HTTP 204 response if successful, with no body.
      * @param {string} AccountSid
@@ -12021,12 +10079,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<{}>;
     /**
      * Get the set of an account's verified phone numbers.
      * @param {string} AccountSid
@@ -12036,12 +10089,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -12051,12 +10099,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -12066,12 +10109,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<{}>;
     /**
      * Returns a list of OutgoingCallerId resource representations, each representing a Caller ID number valid for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -12080,11 +10118,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<OutCallerIds>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<OutCallerIds>;
     /**
      * Adds a new CallerID to your account.
      * @param {string} AccountSid
@@ -12093,11 +10127,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Get a specific member.
      * @param {string} AccountSid
@@ -12108,13 +10138,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When redirecting a member of a queue addressed by CallSid, only the first request will succeed and return a 200 response code. A second request will fail and return an appropriate 400 response code.
      * @param {string} AccountSid
@@ -12125,13 +10149,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Get a front member.
      * @param {string} AccountSid
@@ -12141,12 +10159,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When dequeuing the 'Front' of the queue, the next call in the queue will be redirected.
      * @param {string} AccountSid
@@ -12156,12 +10169,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Returns the list of members in the queue identified by {QueueSid}.
      * @param {string} AccountSid
@@ -12171,12 +10179,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Members>
+    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Members>;
     /**
      * The DELETE method allows you to remove a Queue. Only empty queues are deletable.
      * @param {string} AccountSid
@@ -12186,12 +10189,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<{}>;
     /**
      * Get resource's individual Queue instance.
      * @param {string} AccountSid
@@ -12201,12 +10199,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * This POST request allows you to change the FriendlyName or MaxSize.
      * @param {string} AccountSid
@@ -12216,12 +10209,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * Returns a list of queues within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -12230,11 +10218,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Queues>
+    accountsAccountSidQueuesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Queues>;
     /**
      * Create a new Queue resource.
      * @param {string} AccountSid
@@ -12243,11 +10227,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidQueuesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidQueuesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -12257,12 +10237,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', RecordingSid: string, options?: any): Promise<Transcriptions>;
     /**
      * Deletes a recording  from your account.
      * @param {string} AccountSid
@@ -12272,12 +10247,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<{}>;
     /**
      * Returns one of several representations: Without an extension, or with a \".wav\", a binary WAV audio file is returned with mime-type \"audio/x-wav\". Appending \".mp3\" to the URI returns a binary MP3 audio file with mime-type type \"audio/mpeg\". Appending \".xml\" to the URI returns a XML representation.
      * @param {string} AccountSid
@@ -12287,12 +10257,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<{}>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -12301,11 +10266,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidRecordingsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Remove a Credential from a CredentialList.
      * @param {string} AccountSid
@@ -12316,13 +10277,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<{}>;
     /**
      * Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.
      * @param {string} AccountSid
@@ -12333,13 +10288,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Change the password of a Credential record.  If the change is successful, Twilio will respond with the Credential record but will not include the password in the response.
      * @param {string} AccountSid
@@ -12350,13 +10299,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
      * @param {string} AccountSid
@@ -12366,12 +10309,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Credentials>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Credentials>;
     /**
      * Add a Credential to the CredentialList.  When creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.
      * @param {string} AccountSid
@@ -12381,12 +10319,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -12396,12 +10329,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<{}>;
     /**
      * Get a credential list instance resource
      * @param {string} AccountSid
@@ -12411,12 +10339,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Change the FriendlyName of the list
      * @param {string} AccountSid
@@ -12426,12 +10349,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Gets a list of Credential Lists for an account
      * @param {string} AccountSid
@@ -12440,11 +10358,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialLists>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialLists>;
     /**
      * Create a new Credential List.
      * @param {string} AccountSid
@@ -12453,11 +10367,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Remove a CredentialListMapping from a domain
      * @param {string} AccountSid
@@ -12468,13 +10378,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<{}>;
     /**
      * Get the user lists mapped to this domain.
      * @param {string} AccountSid
@@ -12484,12 +10388,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialListMappings>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialListMappings>;
     /**
      * Map a CredentialList to the domain.
      * @param {string} AccountSid
@@ -12499,12 +10398,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Remove a mapping from this domain.
      * @param {string} AccountSid
@@ -12515,13 +10409,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<{}>;
     /**
      * Return a specific IpAccessControlListMapping instance by Sid.
      * @param {string} AccountSid
@@ -12532,13 +10420,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return the IpAccessControlListMappings that are associated to this domain.
      * @param {string} AccountSid
@@ -12548,12 +10430,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Map an IpAccessControlList to this domain.
      * @param {string} AccountSid
@@ -12563,12 +10440,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
      * @param {string} AccountSid
@@ -12578,12 +10450,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<{}>;
     /**
      * Return a specific instance by Sid.
      * @param {string} AccountSid
@@ -12593,12 +10460,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Update the attributes of a domain.
      * @param {string} AccountSid
@@ -12608,12 +10470,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Returns a paged list of the domains for an account.
      * @param {string} AccountSid
@@ -12622,11 +10479,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Domains>
+    accountsAccountSidSIPDomainsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Domains>;
     /**
      * Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in \".sip.twilio.com\". After creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.
      * @param {string} AccountSid
@@ -12635,11 +10488,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPDomainsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Deletes an IP address entry from the list.
      * @param {string} AccountSid
@@ -12650,13 +10499,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<{}>;
     /**
      * Return a single IP Address resource.
      * @param {string} AccountSid
@@ -12667,13 +10510,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * Change the description or IP address of a given IpAddress instance resource
      * @param {string} AccountSid
@@ -12684,13 +10521,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * List the IP Addresses contained in this list.
      * @param {string} AccountSid
@@ -12700,12 +10531,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IpAddresses>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IpAddresses>;
     /**
      * Add an IP Address to the list with a description.
      * @param {string} AccountSid
@@ -12715,12 +10541,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -12730,12 +10551,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<{}>;
     /**
      * Return a specific IpAccessControlList resource.
      * @param {string} AccountSid
@@ -12745,12 +10561,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Rename an IpAccessControlList.
      * @param {string} AccountSid
@@ -12760,12 +10571,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return a paged list of all IpAccessControlLists under this account.
      * @param {string} AccountSid
@@ -12774,11 +10580,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<{}>;
     /**
      * Create a new IpAccessControlList resource.  When created, the list will contain no IP addresses. You will need to add IP addresses to the list for it to be active. To add IP addresses, you will need to POST to the IpAddresses List subresource.
      * @param {string} AccountSid
@@ -12787,11 +10589,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Get a single message.
      * @param {string} AccountSid
@@ -12801,12 +10599,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Tries to update the shortcode's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -12816,12 +10609,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Returns a list of ShortCode resource representations, each representing a short code within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -12830,11 +10618,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ShortCodes>
+    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ShortCodes>;
     /**
      * Deletes a transcription from your account.
      * @param {string} AccountSid
@@ -12844,12 +10628,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<{}>;
     /**
      * Returns a single Transcription resource representation identified by the given {TranscriptionSid}. By default Twilio will respond with the XML metadata for the Transcription. If you append \".txt\" to the end of the Transcription resource's URI Twilio will just return you the transcription tex.
      * @param {string} AccountSid
@@ -12859,12 +10638,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<Transcription>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<Transcription>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -12873,11 +10647,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Transcriptions>;
     /**
      * Returns UsageRecords for all usage categories for a specified period.
      * @param {string} AccountSid
@@ -12887,20 +10657,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        Subresource:
-            | 'Daily'
-            | 'Monthly'
-            | 'Yearly'
-            | 'AllTime'
-            | 'Today'
-            | 'Yesterday'
-            | 'ThisMonth'
-            | 'LastMonth',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', Subresource: 'Daily' | 'Monthly' | 'Yearly' | 'AllTime' | 'Today' | 'Yesterday' | 'ThisMonth' | 'LastMonth', options?: any): Promise<UsageRecords>;
     /**
      * Returns UsageRecords for all usage categories. The list includes paging information. By default, the UsageRecords resource will return one UsageRecord for each Category, representing all usage accrued all-time for the account. You can filter the usage Category or change the date-range over which usage is counted using optional GET query parameters.
      * @param {string} AccountSid
@@ -12909,11 +10666,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageRecordsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageRecords>;
     /**
      * Delete this UsageTrigger.
      * @param {string} AccountSid
@@ -12923,12 +10676,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<{}>;
     /**
      * Returns a repesentation of the UsageTrigger.
      * @param {string} AccountSid
@@ -12938,12 +10686,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Tries to update the UsageTrigger's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -12953,12 +10696,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Returns a list of UsageTrigger resource representations. The list includes paging information. By default, all UsageTriggers are returned. You can filter the list by specifying one or more query parameters. Note that the query parameters are case-sensitive
      * @param {string} AccountSid
@@ -12967,11 +10705,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageTriggers>
+    accountsAccountSidUsageTriggersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageTriggers>;
     /**
      * Creates a new UsageTrigger. Each account can create up to 1,000 UsageTriggers. Currently, UsageTriggers that are no longer active are not deleted automatically. Use DELETE to delete triggers you no longer need.
      * @param {string} AccountSid
@@ -12980,11 +10714,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsAccountSidUsageTriggersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
     /**
      * Returns a representation of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -12993,11 +10723,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -13006,11 +10732,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -13019,11 +10741,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsAccountSidmediaTypeExtensionPut(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPut(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Retrieve a list of the Account resources belonging to the account used to make the API request. This list will include that Account as well.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -13031,10 +10749,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Accounts>
+    accountsmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Accounts>;
     /**
      * Create a new Account instance resource as a subaccount of the one used to make the request. See Creating Subaccounts for more information.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -13042,10 +10757,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    accountsmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<{}>
+    accountsmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<{}>;
 }
 /**
  * DefaultApi - object-oriented interface
@@ -13063,12 +10775,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Response>;
     /**
      * Get application instance resource.
      * @param {string} AccountSid
@@ -13078,12 +10785,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Tries to update the application's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -13093,12 +10795,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ApplicationSid: string,
-        options?: any
-    ): Promise<Application>
+    accountsAccountSidApplicationsApplicationSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ApplicationSid: string, options?: any): Promise<Application>;
     /**
      * Returns a list of Application resource representations, each representing an application within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -13107,11 +10804,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidApplicationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Applications>
+    accountsAccountSidApplicationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Applications>;
     /**
      * Creates a new application within your account.
      * @param {string} AccountSid
@@ -13120,11 +10813,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidApplicationsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidApplicationsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Get the properties of the authorized application.
      * @param {string} AccountSid
@@ -13134,12 +10823,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<AuthApp>
+    accountsAccountSidAuthorizedConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<AuthApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App you've authorized to access your account. The list includes paging information.
      * @param {string} AccountSid
@@ -13148,11 +10832,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AuthApps>
+    accountsAccountSidAuthorizedConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AuthApps>;
     /**
      * Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number tha is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -13162,12 +10842,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeLocalmediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
      * @param {string} AccountSid
@@ -13177,12 +10852,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneMobileNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeMobilemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneMobileNumbers>;
     /**
      * Returns a list of toll-free AvailablePhoneNumber elements that match the specified filters, each representing a phone number that is currently available for provisioning within your account. To provision an available phone number, POST the number to the IncomingPhoneNumbers resource.
      * @param {string} AccountSid
@@ -13192,12 +10862,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        IsoCountryCode: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<PhoneTollFreeNumbers>
+    accountsAccountSidAvailablePhoneNumbersIsoCountryCodeTollFreemediaTypeExtensionGet(AccountSid: string, IsoCountryCode: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<PhoneTollFreeNumbers>;
     /**
      * Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
      * @param {string} AccountSid
@@ -13206,11 +10871,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<AvailablePhoneNumbers>
+    accountsAccountSidAvailablePhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<AvailablePhoneNumbers>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -13220,12 +10881,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidCallsCallSidNotificationsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -13235,12 +10891,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        CallSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidCallsCallSidRecordingsmediaTypeExtensionGet(AccountSid: string, CallSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Returns the single Call resource identified by {CallSid}.
      * @param {string} AccountSid
@@ -13250,12 +10901,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Modify a phone call.
      * @param {string} AccountSid
@@ -13265,12 +10911,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<CallInstance>
+    accountsAccountSidCallsCallSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<CallInstance>;
     /**
      * Returns a list of phone calls made to and from the account identified by {AccountSid}.
      * @param {string} AccountSid
@@ -13279,11 +10920,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Calls>
+    accountsAccountSidCallsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Calls>;
     /**
      * To make a call, make an HTTP POST request. Initiate a new phone call.
      * @param {string} AccountSid
@@ -13292,11 +10929,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidCallsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidCallsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Kick this participant from the conference.
      * @param {string} AccountSid
@@ -13307,13 +10940,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionDelete(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Response>;
     /**
      * Returns a representation of this participant.
      * @param {string} AccountSid
@@ -13324,13 +10951,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Updates the status of a participant.
      * @param {string} AccountSid
@@ -13341,13 +10962,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Participant>
+    accountsAccountSidConferencesConferenceSidParticipantsCallSidmediaTypeExtensionPost(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Participant>;
     /**
      * Returns the list of participants in the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -13357,12 +10972,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(
-        AccountSid: string,
-        ConferenceSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Participants>
+    accountsAccountSidConferencesConferenceSidParticipantsmediaTypeExtensionGet(AccountSid: string, ConferenceSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Participants>;
     /**
      * Returns a representation of the conference identified by {ConferenceSid}.
      * @param {string} AccountSid
@@ -13372,12 +10982,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConferenceSid: string,
-        options?: any
-    ): Promise<Conference>
+    accountsAccountSidConferencesConferenceSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConferenceSid: string, options?: any): Promise<Conference>;
     /**
      * Returns a list of conferences within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -13386,11 +10991,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConferencesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Conferences>
+    accountsAccountSidConferencesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Conferences>;
     /**
      * Get the properties of a Connect App.
      * @param {string} AccountSid
@@ -13400,12 +11001,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Tries to update the Connect App's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -13415,12 +11011,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ConnectAppSid: string,
-        options?: any
-    ): Promise<ConnectApp>
+    accountsAccountSidConnectAppsConnectAppSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ConnectAppSid: string, options?: any): Promise<ConnectApp>;
     /**
      * Returns a list of Connect App resource representations, each representing a Connect App in your account. The list includes paging information.
      * @param {string} AccountSid
@@ -13429,11 +11020,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidConnectAppsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ConnectApps>
+    accountsAccountSidConnectAppsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ConnectApps>;
     /**
      * Release this phone number from your account. Twilio will no longer answer calls to this number, and you will stop being billed the monthly phone number fee. The phone number will eventually be recycled and potentially given to another customer, so use with care. If you make a mistake, contac us. We may be able to give you the number back.
      * @param {string} AccountSid
@@ -13443,12 +11030,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<Response>;
     /**
      * Get info about incoming call's phone number.
      * @param {string} AccountSid
@@ -13458,12 +11040,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -13473,12 +11050,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Tries to update the incoming phone number's properties, and returns the updated resource representation if successful. The returned response is identical to that returned above when making a GET request.
      * @param {string} AccountSid
@@ -13488,12 +11060,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IncomingPhoneNumberSid: string,
-        options?: any
-    ): Promise<IncomingCall>
+    accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IncomingPhoneNumberSid: string, options?: any): Promise<IncomingCall>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
      * @param {string} AccountSid
@@ -13502,11 +11069,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -13515,11 +11078,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersLocalmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
      * @param {string} AccountSid
@@ -13528,11 +11087,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -13541,11 +11096,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersMobilemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
      * @param {string} AccountSid
@@ -13554,11 +11105,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Adds a new phone number to your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number.
      * @param {string} AccountSid
@@ -13567,11 +11114,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersTollFreemediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Returns a list of IncomingPhoneNumber resource representations, each representing a phone number given to your account. The list includes paging information.
      * @param {string} AccountSid
@@ -13580,11 +11123,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IncomingCalls>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IncomingCalls>;
     /**
      * Purchases a new phone number for your account. If a phone number is found for your request, Twilio will add it to your account and bill you for the first month's cost of the phone number. To find an available phone number to POST, use the subresources of the AvailablePhoneNumbers list resource.
      * @param {string} AccountSid
@@ -13593,11 +11132,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Without an extension, the media is returned using the mime-type provided when the media was generated.
      * @param {string} AccountSid
@@ -13608,13 +11143,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MediaSid: string,
-        options?: any
-    ): Promise<Media>
+    accountsAccountSidMessagesMessageSidMediaMediaSidmediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MediaSid: string, options?: any): Promise<Media>;
     /**
      * Returns a list of media associated with your message.
      * @param {string} AccountSid
@@ -13624,12 +11153,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(
-        AccountSid: string,
-        MessageSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<MediaList>
+    accountsAccountSidMessagesMessageSidMediamediaTypeExtensionGet(AccountSid: string, MessageSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<MediaList>;
     /**
      * Returns a single message specified by the provided {MessageSid}.
      * @param {string} AccountSid
@@ -13639,12 +11163,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        MessageSid: string,
-        options?: any
-    ): Promise<Message>
+    accountsAccountSidMessagesMessageSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', MessageSid: string, options?: any): Promise<Message>;
     /**
      * Returns a list of messages associated with your account. The list includes paging information.
      * @param {string} AccountSid
@@ -13653,11 +11172,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidMessagesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Messages>
+    accountsAccountSidMessagesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Messages>;
     /**
      * To send a new outgoing message, make an HTTP POST to your Messages list resource URI
      * @param {string} AccountSid
@@ -13671,16 +11186,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidMessagesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        To: string,
-        From?: string,
-        MessagingServiceSid?: string,
-        Body?: string,
-        MediaUrl?: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidMessagesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', To: string, From?: string, MessagingServiceSid?: string, Body?: string, MediaUrl?: string, options?: any): Promise<Response>;
     /**
      * Deletes the notification identified by {NotificationSid} from an account's log.
      * @param {string} AccountSid
@@ -13690,12 +11196,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<Response>;
     /**
      * Get a notification entry.
      * @param {string} AccountSid
@@ -13705,12 +11206,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        NotificationSid: string,
-        options?: any
-    ): Promise<Notification>
+    accountsAccountSidNotificationsNotificationSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', NotificationSid: string, options?: any): Promise<Notification>;
     /**
      * Returns a list of notifications generated for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -13719,11 +11215,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidNotificationsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Notifications>
+    accountsAccountSidNotificationsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Notifications>;
     /**
      * Deletes the caller ID from the account. Returns an HTTP 204 response if successful, with no body.
      * @param {string} AccountSid
@@ -13733,12 +11225,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<Response>;
     /**
      * Get the set of an account's verified phone numbers.
      * @param {string} AccountSid
@@ -13748,12 +11235,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -13763,12 +11245,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<OutgoingCallerId>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<OutgoingCallerId>;
     /**
      * Updates the caller id, and returns the updated resource if successful.
      * @param {string} AccountSid
@@ -13778,12 +11255,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        OutgoingCallerIdSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsOutgoingCallerIdSidmediaTypeExtensionPut(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', OutgoingCallerIdSid: string, options?: any): Promise<Response>;
     /**
      * Returns a list of OutgoingCallerId resource representations, each representing a Caller ID number valid for an account. The list includes paging information.
      * @param {string} AccountSid
@@ -13792,11 +11264,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<OutCallerIds>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<OutCallerIds>;
     /**
      * Adds a new CallerID to your account.
      * @param {string} AccountSid
@@ -13805,11 +11273,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidOutgoingCallerIdsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Get a specific member.
      * @param {string} AccountSid
@@ -13820,13 +11284,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When redirecting a member of a queue addressed by CallSid, only the first request will succeed and return a 200 response code. A second request will fail and return an appropriate 400 response code.
      * @param {string} AccountSid
@@ -13837,13 +11295,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CallSid: string,
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersCallSidmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CallSid: string, options?: any): Promise<Member>;
     /**
      * Get a front member.
      * @param {string} AccountSid
@@ -13853,12 +11305,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Posting a URL and Method to a Queue instance will dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL When dequeuing the 'Front' of the queue, the next call in the queue will be redirected.
      * @param {string} AccountSid
@@ -13868,12 +11315,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Member>
+    accountsAccountSidQueuesQueueSidMembersFrontmediaTypeExtensionPost(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Member>;
     /**
      * Returns the list of members in the queue identified by {QueueSid}.
      * @param {string} AccountSid
@@ -13883,12 +11325,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(
-        AccountSid: string,
-        QueueSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Members>
+    accountsAccountSidQueuesQueueSidMembersmediaTypeExtensionGet(AccountSid: string, QueueSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Members>;
     /**
      * The DELETE method allows you to remove a Queue. Only empty queues are deletable.
      * @param {string} AccountSid
@@ -13898,12 +11335,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Response>;
     /**
      * Get resource's individual Queue instance.
      * @param {string} AccountSid
@@ -13913,12 +11345,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * This POST request allows you to change the FriendlyName or MaxSize.
      * @param {string} AccountSid
@@ -13928,12 +11355,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        QueueSid: string,
-        options?: any
-    ): Promise<Queue>
+    accountsAccountSidQueuesQueueSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', QueueSid: string, options?: any): Promise<Queue>;
     /**
      * Returns a list of queues within an account. The list includes paging information.
      * @param {string} AccountSid
@@ -13942,11 +11364,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Queues>
+    accountsAccountSidQueuesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Queues>;
     /**
      * Create a new Queue resource.
      * @param {string} AccountSid
@@ -13955,11 +11373,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidQueuesmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidQueuesmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -13969,12 +11383,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidRecordingsRecordingSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', RecordingSid: string, options?: any): Promise<Transcriptions>;
     /**
      * Deletes a recording  from your account.
      * @param {string} AccountSid
@@ -13984,12 +11393,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<Response>;
     /**
      * Returns one of several representations: Without an extension, or with a \".wav\", a binary WAV audio file is returned with mime-type \"audio/x-wav\". Appending \".mp3\" to the URI returns a binary MP3 audio file with mime-type type \"audio/mpeg\". Appending \".xml\" to the URI returns a XML representation.
      * @param {string} AccountSid
@@ -13999,12 +11403,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.wav' | '.mp3',
-        RecordingSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidRecordingsRecordingSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.wav' | '.mp3', RecordingSid: string, options?: any): Promise<Response>;
     /**
      * Returns a list of Recording resource representations, each representing a recording generated during the course of a phone call.
      * @param {string} AccountSid
@@ -14013,11 +11412,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidRecordingsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Recordings>
+    accountsAccountSidRecordingsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Recordings>;
     /**
      * Remove a Credential from a CredentialList.
      * @param {string} AccountSid
@@ -14028,13 +11423,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionDelete(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Response>;
     /**
      * Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.
      * @param {string} AccountSid
@@ -14045,13 +11434,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Change the password of a Credential record.  If the change is successful, Twilio will respond with the Credential record but will not include the password in the response.
      * @param {string} AccountSid
@@ -14062,13 +11445,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CredentialSid: string,
-        options?: any
-    ): Promise<Credential>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsCredentialSidmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CredentialSid: string, options?: any): Promise<Credential>;
     /**
      * Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
      * @param {string} AccountSid
@@ -14078,12 +11455,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Credentials>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionGet(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Credentials>;
     /**
      * Add a Credential to the CredentialList.  When creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.
      * @param {string} AccountSid
@@ -14093,12 +11465,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(
-        AccountSid: string,
-        CLSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidCredentialsmediaTypeExtensionPost(AccountSid: string, CLSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -14108,12 +11475,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<Response>;
     /**
      * Get a credential list instance resource
      * @param {string} AccountSid
@@ -14123,12 +11485,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Change the FriendlyName of the list
      * @param {string} AccountSid
@@ -14138,12 +11495,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<CredentialList>
+    accountsAccountSidSIPCredentialListsCLSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<CredentialList>;
     /**
      * Gets a list of Credential Lists for an account
      * @param {string} AccountSid
@@ -14152,11 +11504,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialLists>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialLists>;
     /**
      * Create a new Credential List.
      * @param {string} AccountSid
@@ -14165,11 +11513,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPCredentialListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Remove a CredentialListMapping from a domain
      * @param {string} AccountSid
@@ -14180,13 +11524,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        CLSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsCLSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', CLSid: string, options?: any): Promise<Response>;
     /**
      * Get the user lists mapped to this domain.
      * @param {string} AccountSid
@@ -14196,12 +11534,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<CredentialListMappings>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<CredentialListMappings>;
     /**
      * Map a CredentialList to the domain.
      * @param {string} AccountSid
@@ -14211,12 +11544,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidCredentialListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Remove a mapping from this domain.
      * @param {string} AccountSid
@@ -14227,13 +11555,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionDelete(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific IpAccessControlListMapping instance by Sid.
      * @param {string} AccountSid
@@ -14244,13 +11566,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ALSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsALSidmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ALSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return the IpAccessControlListMappings that are associated to this domain.
      * @param {string} AccountSid
@@ -14260,12 +11576,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionGet(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Map an IpAccessControlList to this domain.
      * @param {string} AccountSid
@@ -14275,12 +11586,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(
-        AccountSid: string,
-        SipDomainSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidIpAccessControlListMappingsmediaTypeExtensionPost(AccountSid: string, SipDomainSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
      * @param {string} AccountSid
@@ -14290,12 +11596,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific instance by Sid.
      * @param {string} AccountSid
@@ -14305,12 +11606,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Update the attributes of a domain.
      * @param {string} AccountSid
@@ -14320,12 +11616,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        SipDomainSid: string,
-        options?: any
-    ): Promise<Domain>
+    accountsAccountSidSIPDomainsSipDomainSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', SipDomainSid: string, options?: any): Promise<Domain>;
     /**
      * Returns a paged list of the domains for an account.
      * @param {string} AccountSid
@@ -14334,11 +11625,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Domains>
+    accountsAccountSidSIPDomainsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Domains>;
     /**
      * Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in \".sip.twilio.com\". After creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.
      * @param {string} AccountSid
@@ -14347,11 +11634,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPDomainsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPDomainsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Deletes an IP address entry from the list.
      * @param {string} AccountSid
@@ -14362,13 +11645,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionDelete(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<Response>;
     /**
      * Return a single IP Address resource.
      * @param {string} AccountSid
@@ -14379,13 +11656,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * Change the description or IP address of a given IpAddress instance resource
      * @param {string} AccountSid
@@ -14396,13 +11667,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAddressSid: string,
-        options?: any
-    ): Promise<IpAddress>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesIpAddressSidmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAddressSid: string, options?: any): Promise<IpAddress>;
     /**
      * List the IP Addresses contained in this list.
      * @param {string} AccountSid
@@ -14412,12 +11677,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<IpAddresses>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionGet(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<IpAddresses>;
     /**
      * Add an IP Address to the list with a description.
      * @param {string} AccountSid
@@ -14427,12 +11687,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(
-        AccountSid: string,
-        IpAccessControlListSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidIpAddressesmediaTypeExtensionPost(AccountSid: string, IpAccessControlListSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
      * @param {string} AccountSid
@@ -14442,12 +11697,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<Response>;
     /**
      * Return a specific IpAccessControlList resource.
      * @param {string} AccountSid
@@ -14457,12 +11707,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Rename an IpAccessControlList.
      * @param {string} AccountSid
@@ -14472,12 +11717,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        IpAccessControlListSid: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsIpAccessControlListSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', IpAccessControlListSid: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Return a paged list of all IpAccessControlLists under this account.
      * @param {string} AccountSid
@@ -14486,11 +11726,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<Response>;
     /**
      * Create a new IpAccessControlList resource.  When created, the list will contain no IP addresses. You will need to add IP addresses to the list for it to be active. To add IP addresses, you will need to POST to the IpAddresses List subresource.
      * @param {string} AccountSid
@@ -14499,11 +11735,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: string,
-        options?: any
-    ): Promise<IpAccessControlListMapping>
+    accountsAccountSidSIPIpAccessControlListsmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: string, options?: any): Promise<IpAccessControlListMapping>;
     /**
      * Get a single message.
      * @param {string} AccountSid
@@ -14513,12 +11745,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Tries to update the shortcode's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -14528,12 +11755,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        ShortCodeSid: string,
-        options?: any
-    ): Promise<ShortCode>
+    accountsAccountSidSMSShortCodesShortCodeSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', ShortCodeSid: string, options?: any): Promise<ShortCode>;
     /**
      * Returns a list of ShortCode resource representations, each representing a short code within your account. The list includes paging information.
      * @param {string} AccountSid
@@ -14542,11 +11764,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<ShortCodes>
+    accountsAccountSidSMSShortCodesmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<ShortCodes>;
     /**
      * Deletes a transcription from your account.
      * @param {string} AccountSid
@@ -14556,12 +11774,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<Response>;
     /**
      * Returns a single Transcription resource representation identified by the given {TranscriptionSid}. By default Twilio will respond with the XML metadata for the Transcription. If you append \".txt\" to the end of the Transcription resource's URI Twilio will just return you the transcription tex.
      * @param {string} AccountSid
@@ -14571,12 +11784,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml',
-        TranscriptionSid: string,
-        options?: any
-    ): Promise<Transcription>
+    accountsAccountSidTranscriptionsTranscriptionSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.json' | '.csv' | '.html' | '.txt' | '.xml', TranscriptionSid: string, options?: any): Promise<Transcription>;
     /**
      * Returns a set of Transcription resource representations that includes paging information.
      * @param {string} AccountSid
@@ -14585,11 +11793,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidTranscriptionsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Transcriptions>
+    accountsAccountSidTranscriptionsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Transcriptions>;
     /**
      * Returns UsageRecords for all usage categories for a specified period.
      * @param {string} AccountSid
@@ -14599,20 +11803,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        Subresource:
-            | 'Daily'
-            | 'Monthly'
-            | 'Yearly'
-            | 'AllTime'
-            | 'Today'
-            | 'Yesterday'
-            | 'ThisMonth'
-            | 'LastMonth',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsSubresourcemediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', Subresource: 'Daily' | 'Monthly' | 'Yearly' | 'AllTime' | 'Today' | 'Yesterday' | 'ThisMonth' | 'LastMonth', options?: any): Promise<UsageRecords>;
     /**
      * Returns UsageRecords for all usage categories. The list includes paging information. By default, the UsageRecords resource will return one UsageRecord for each Category, representing all usage accrued all-time for the account. You can filter the usage Category or change the date-range over which usage is counted using optional GET query parameters.
      * @param {string} AccountSid
@@ -14621,11 +11812,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageRecordsmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageRecords>
+    accountsAccountSidUsageRecordsmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageRecords>;
     /**
      * Delete this UsageTrigger.
      * @param {string} AccountSid
@@ -14635,12 +11822,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionDelete(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<Response>;
     /**
      * Returns a repesentation of the UsageTrigger.
      * @param {string} AccountSid
@@ -14650,12 +11832,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Tries to update the UsageTrigger's properties, and returns the updated resource representation if successful.
      * @param {string} AccountSid
@@ -14665,12 +11842,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        UsageTriggerSid: string,
-        options?: any
-    ): Promise<UsageTrigger>
+    accountsAccountSidUsageTriggersUsageTriggerSidmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', UsageTriggerSid: string, options?: any): Promise<UsageTrigger>;
     /**
      * Returns a list of UsageTrigger resource representations. The list includes paging information. By default, all UsageTriggers are returned. You can filter the list by specifying one or more query parameters. Note that the query parameters are case-sensitive
      * @param {string} AccountSid
@@ -14679,11 +11851,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionGet(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<UsageTriggers>
+    accountsAccountSidUsageTriggersmediaTypeExtensionGet(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<UsageTriggers>;
     /**
      * Creates a new UsageTrigger. Each account can create up to 1,000 UsageTriggers. Currently, UsageTriggers that are no longer active are not deleted automatically. Use DELETE to delete triggers you no longer need.
      * @param {string} AccountSid
@@ -14692,11 +11860,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidUsageTriggersmediaTypeExtensionPost(
-        AccountSid: string,
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsAccountSidUsageTriggersmediaTypeExtensionPost(AccountSid: string, mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
     /**
      * Returns a representation of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -14705,11 +11869,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -14718,11 +11878,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Allows you to modify the properties of an account.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -14731,11 +11887,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsAccountSidmediaTypeExtensionPut(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        AccountSid: string,
-        options?: any
-    ): Promise<Account>
+    accountsAccountSidmediaTypeExtensionPut(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', AccountSid: string, options?: any): Promise<Account>;
     /**
      * Retrieve a list of the Account resources belonging to the account used to make the API request. This list will include that Account as well.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -14743,10 +11895,7 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsmediaTypeExtensionGet(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Accounts>
+    accountsmediaTypeExtensionGet(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Accounts>;
     /**
      * Create a new Account instance resource as a subaccount of the one used to make the request. See Creating Subaccounts for more information.
      * @param {'.xml' | '.json' | '.csv' | '.html'} mediaTypeExtension By default, Twilio&#39;s REST API returns XML. You may obtain CSV, JSON or HTML by appending \&quot;.csv\&quot;, \&quot;.json\&quot;, or \&quot;.html\&quot;.
@@ -14754,8 +11903,5 @@ export declare class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    accountsmediaTypeExtensionPost(
-        mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html',
-        options?: any
-    ): Promise<Response>
+    accountsmediaTypeExtensionPost(mediaTypeExtension: '.xml' | '.json' | '.csv' | '.html', options?: any): Promise<Response>;
 }

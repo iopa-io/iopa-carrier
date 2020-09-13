@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import {
     Activity,
     ConversationReference,
@@ -5,6 +6,7 @@ import {
     ActivityTypes,
     AvailablePhoneNumbersAvailablePhoneNumbers,
     AvailablePhoneNumbers,
+    IncomingCallsIncomingPhoneNumbers,
 } from 'iopa-carrier-schema'
 
 import * as url from 'url'
@@ -15,18 +17,18 @@ import {
     CARRIER_PROVIDER,
 } from 'iopa-carrier-types'
 
+import { RouterApp, IopaContext } from 'iopa-types'
 import { shallowCopy } from './util'
 import { CarrierWithEvents } from './carrier-events'
-import { RouterApp, IopaContext } from 'iopa-types'
-import { IncomingCallsIncomingPhoneNumbers } from 'iopa-carrier-schema/dist'
+
 import { Carrier } from './carrier'
-import { response } from 'express'
 
 export const URI_CARRIER_PATH = '/client/v1.0.0/carrier/api'
 
-export class CarrierWithEventsAndMethods extends CarrierWithEvents
+export class CarrierWithEventsAndMethods
+    extends CarrierWithEvents
     implements ICarrierMethods {
-    constructor(app: RouterApp & { carrier: Carrier }) {
+    constructor(app: RouterApp<{}, IopaCarrierContext> & { carrier: Carrier }) {
         super(app)
 
         app.carrier.onCall(
@@ -35,10 +37,12 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
                 next: () => Promise<void>
             ): Promise<void> => {
                 if (
-                    context.botːCapability.activity.channelData.Direction ==
+                    context['bot.Capability'].activity.channelData.Direction ===
                     'outbound-api'
                 ) {
-                    const subtype = context.iopaːUrl.searchParams.get('subtype')
+                    const subtype = context['iopa.Url'].searchParams.get(
+                        'subtype'
+                    )
 
                     switch (subtype) {
                         case 'callback_dial':
@@ -55,15 +59,18 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
     cleanNumber(number: string) {
         let result = number.replace(/[^\d+]+/g, '')
         result = result.replace(/^00/, '+')
-        if (result.match(/^1/)) result = '+' + result
-        if (!result.match(/^\+/))
-            result = result.length > 7 ? '+1' + result : result
+        if (result.match(/^1/)) {
+            result = `+${result}`
+        }
+        if (!result.match(/^\+/)) {
+            result = result.length > 7 ? `+1${result}` : result
+        }
         result = result.replace(/^\+/, '')
         return result
     }
 
     beautifyNumber(number: string) {
-        let result = number.replace(/^\+/, '')
+        const result = number.replace(/^\+/, '')
         if (!result.startsWith('1') || result.length !== 11) {
             return number
         }
@@ -75,7 +82,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
     }
 
     getBaseUrl(context: IopaContext): string {
-        return `${context.iopaːUrl.protocol}//${context.iopaːUrl.hostname}${URI_CARRIER_PATH}`
+        return `${context['iopa.Url'].protocol}//${context['iopa.Url'].hostname}${URI_CARRIER_PATH}`
     }
 
     getBaseUrlPath(): string {
@@ -110,7 +117,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
     ) {
         const config = this.providerConfig[provider]
         const client = this.createCarrierApiClient(config)
-        const accountSid = config.accountSid
+        const { accountSid } = config
 
         const query = {
             AreaCode: areacode,
@@ -143,7 +150,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
         try {
             const config = this.providerConfig[provider]
             const client = this.createCarrierApiClient(config)
-            const accountSid = config.accountSid
+            const { accountSid } = config
 
             const params = new url.URLSearchParams() as URLSearchParams
             params.append('PhoneNumber', phone_number)
@@ -186,7 +193,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
         try {
             const config = this.providerConfig[provider]
             const client = this.createCarrierApiClient(config)
-            const accountSid = config.accountSid
+            const { accountSid } = config
 
             const response = await client.accountsAccountSidIncomingPhoneNumbersmediaTypeExtensionGet(
                 accountSid,
@@ -200,9 +207,8 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
 
             if (response.incoming_phone_numbers.length === 1) {
                 return response.incoming_phone_numbers[0]
-            } else {
-                return null
             }
+            return null
         } catch (ex) {
             console.log(ex)
             return null
@@ -216,7 +222,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
     ) {
         const config = this.providerConfig[provider]
         const client = this.createCarrierApiClient(config)
-        const accountSid = config.accountSid
+        const { accountSid } = config
 
         const params = new url.URLSearchParams() as URLSearchParams
         params.append('FriendlyName', patch.friendly_name)
@@ -269,11 +275,12 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
 
         const config = this.providerConfig[provider]
         const client = this.createCarrierApiClient(config)
-        const accountSid = config.accountSid
+        const { accountSid } = config
 
         const subtype = 'callback_dial'
-        const appId = this.providerConfig[provider].inboundCredentialsProvider
-            .appId
+        const { appId } = this.providerConfig[
+            provider
+        ].inboundCredentialsProvider
         const callback_token = await this.providerConfig[
             provider
         ].inboundCredentialsProvider.getAppSecret(appId)
@@ -306,9 +313,9 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
         context: IopaCarrierContext,
         next: () => Promise<void>
     ): Promise<void> {
-        const toNumber = `+${context.iopaːUrl.searchParams.get('value')}`
+        const toNumber = `+${context['iopa.Url'].searchParams.get('value')}`
         console.log(`adding call to ${toNumber}}`)
-
+        context.response['iopa.StatusCode'] = 200
         context.response.end(
             `<?xml version="1.0" encoding="UTF-8"?>
     <Response>
@@ -317,8 +324,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
         <Number>${toNumber}</Number>
         </Dial>
         <Hangup />
-    </Response>`,
-            { status: 200 }
+    </Response>`
         )
         return next()
     }
@@ -330,7 +336,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
         logic: (context: IopaCarrierContext) => Promise<void>
     ) {
         const config = this.providerConfig[provider]
-        const accountSid = config.accountSid
+        const { accountSid } = config
 
         const conversationReference: ConversationReference = {
             user: { id: toNumber },
@@ -361,7 +367,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents
     public applyConversationReference(
         activity: Partial<Activity>,
         reference: Partial<ConversationReference>,
-        isIncoming: boolean = false
+        isIncoming = false
     ): Partial<Activity> {
         activity.channelId = reference.channelId
         activity.serviceUrl = reference.serviceUrl

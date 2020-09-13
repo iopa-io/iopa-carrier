@@ -56,6 +56,7 @@ export class SimpleCredentialProvider implements ICredentialProvider {
     ])
 
     public readonly appId: string
+
     private readonly appSecret: string
 
     constructor(appId: string, appSecret: string) {
@@ -97,13 +98,13 @@ export class SimpleCredentialProvider implements ICredentialProvider {
      */
     public isAuthenticationDisabled(): Promise<boolean> {
         if (
-            process.env.NODE_ENV == 'localhost' ||
-            process.env.NODE_ENV == 'development'
+            process.env.NODE_ENV === 'localhost' ||
+            process.env.NODE_ENV === 'development' ||
+            process.env.NODE_ENV === 'test'
         ) {
             return Promise.resolve(true)
-        } else {
-            return Promise.resolve(false)
         }
+        return Promise.resolve(false)
     }
 
     public async signRequest(
@@ -116,7 +117,7 @@ export class SimpleCredentialProvider implements ICredentialProvider {
             if (request.headers.set) {
                 request.headers.set('authorization', `Basic ${token}`)
             } else {
-                request.headers['authorization'] = `Basic ${token}`
+                request.headers.authorization = `Basic ${token}`
             }
         }
     }

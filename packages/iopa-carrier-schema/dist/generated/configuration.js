@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 // tslint:disable
 /**
  * Twilio
@@ -11,15 +11,16 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, '__esModule', { value: true })
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Configuration = void 0;
 class Configuration {
     constructor(param = {}) {
-        this.apiKey = param.apiKey
-        this.username = param.username
-        this.password = param.password
-        this.accessToken = param.accessToken
-        this.basePath = param.basePath
+        this.apiKey = param.apiKey;
+        this.username = param.username;
+        this.password = param.password;
+        this.accessToken = param.accessToken;
+        this.basePath = param.basePath;
     }
 }
-exports.Configuration = Configuration
+exports.Configuration = Configuration;
 //# sourceMappingURL=configuration.js.map

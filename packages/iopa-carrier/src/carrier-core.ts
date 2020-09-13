@@ -1,3 +1,6 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-async-promise-executor */
+/* eslint-disable no-case-declarations */
 import {
     Activity,
     ActivityTypes,
@@ -8,7 +11,6 @@ import {
 
 import {
     SimpleCredentialProvider,
-    ICredentialProvider,
     authenticateCarrierContext,
 } from 'iopa-carrier-schema-auth'
 
@@ -26,17 +28,17 @@ import { IopaContext, RouterApp } from 'iopa-types'
 import { toIopaCarrierContext } from './context'
 
 // This key is exported internally so that the TeamsActivityHandler will not overwrite any already set InvokeResponses.
-export const INVOKE_RESPONSE_KEY: string = 'urn:io.iopa.invokeResponse'
-export const URN_CARRIER: string = 'urn:io.iopa:carrier'
+export const INVOKE_RESPONSE_KEY = 'urn:io.iopa.invokeResponse'
+export const URN_CARRIER = 'urn:io.iopa:carrier'
 export const URN_BOTINTENT_LITERAL = 'urn:io.iopa.bot:intent:literal'
 
 /** The Iopa CarrierMiddleware */
 export class CarrierCore implements ICarrierCore {
-    protected readonly app: RouterApp
+    protected readonly app: RouterApp<{}, IopaCarrierContext>
 
     protected providerConfig: { [key: string]: CarrierConfig }
 
-    constructor(app: RouterApp) {
+    constructor(app: RouterApp<{}, IopaCarrierContext>) {
         this.app = app
         ;(app as CarrierMiddlewareApp).carrier = (this as unknown) as Carrier
 
@@ -82,9 +84,9 @@ export class CarrierCore implements ICarrierCore {
      * for an incoming activity from HTTP wire */
     public async invokeActivity(
         context: IopaContext,
-        next: () => Promise<any>
+        next: () => Promise<void>
     ): Promise<void> {
-        if (context.iopaːProtocol == URN_CARRIER) {
+        if (context['iopa.Protocol'] === URN_CARRIER) {
             // skip validation and parsing for synthetic contexts created by this framework
             return next()
         }
@@ -104,16 +106,18 @@ export class CarrierCore implements ICarrierCore {
 
             // Expand Context with Iopa Turn Context from
             status = 500
-            const context_expanded: IopaCarrierContext = toIopaCarrierContext(
+            const contextExpanded: IopaCarrierContext = toIopaCarrierContext(
                 context,
                 (this as unknown) as Carrier,
                 activity
             )
 
-            context_expanded.botːSource = URN_CARRIER
+            contextExpanded['bot.Source'] = URN_CARRIER
 
             console.log(
-                `[Carrier] Authorization Complete] ${context.serverːgetTimeElapsed()}ms`
+                `[Carrier] Authorization Complete] ${context.get(
+                    'server.TimeElapsed'
+                )}ms`
             )
 
             // Main processing of received activity
@@ -121,7 +125,7 @@ export class CarrierCore implements ICarrierCore {
                 await next()
             } catch (err) {
                 if (this.onTurnError) {
-                    await this.onTurnError(context_expanded, err)
+                    await this.onTurnError(contextExpanded, err)
                 } else {
                     throw err
                 }
@@ -135,7 +139,7 @@ export class CarrierCore implements ICarrierCore {
         }
 
         // Return status
-        context.response.iopaːStatusCode = status
+        context.response['iopa.StatusCode'] = status
 
         await context.response.end(
             `<?xml version="1.0" encoding="UTF-8"?><Response></Response>`
@@ -151,6 +155,7 @@ export class CarrierCore implements ICarrierCore {
                 throw new Error(`CarrierCore.invoke(): ${status} ERROR`)
             }
         }
+        return null
     }
 
     /** An asynchronous method that sends a set of outgoing activities to a channel server. */
@@ -183,7 +188,7 @@ export class CarrierCore implements ICarrierCore {
                     }
 
                     const client = this.createCarrierApiClient(
-                        this.providerConfig[context.botːProvider]
+                        this.providerConfig[context['bot.Provider']]
                     )
 
                     if (
@@ -206,7 +211,7 @@ export class CarrierCore implements ICarrierCore {
                                     {
                                         query: {
                                             ApplicationSid: this.providerConfig[
-                                                context.botːProvider
+                                                context['bot.Provider']
                                             ].carrierCallbackApplicationId,
                                         },
                                     }
@@ -215,7 +220,7 @@ export class CarrierCore implements ICarrierCore {
                         } catch (ex) {
                             const error = await ex.json()
                             console.error(JSON.stringify(error))
-                            responses.push({ error: error } as ResourceResponse)
+                            responses.push({ error } as ResourceResponse)
                         }
                     }
                     break
@@ -257,7 +262,7 @@ export class CarrierCore implements ICarrierCore {
             const result = await timeout(fetch(url, init), 10000)
 
             // override json in case of empty successful (202) responses
-            if (result.status == 202) {
+            if (result.status === 202) {
                 result.json = async () => ({})
             }
             return result
@@ -278,7 +283,8 @@ export class CarrierCore implements ICarrierCore {
     ): Promise<void> {
         await authenticateCarrierContext(
             context,
-            this.providerConfig[context.botːProvider].inboundCredentialsProvider
+            this.providerConfig[context['bot.Provider']]
+                .inboundCredentialsProvider
         )
     }
 
@@ -295,7 +301,7 @@ export class CarrierCore implements ICarrierCore {
             activity
         )
 
-        context.botːSource = URN_CARRIER
+        context['bot.Source'] = URN_CARRIER
 
         return context
     }
@@ -325,15 +331,17 @@ export class CarrierCore implements ICarrierCore {
     private _parseRequest(context: IopaContext): Promise<Activity> {
         return new Promise(
             async (resolve: any, reject: any): Promise<void> => {
-                const provider = context.iopaːUrl.searchParams.get('provider')
+                const provider = context['iopa.Url'].searchParams.get(
+                    'provider'
+                )
 
-                if (['twilio', 'signalwire'].indexOf(provider) == -1) {
+                if (['twilio', 'signalwire'].indexOf(provider) === -1) {
                     throw new Error(
                         `CarrierCore._parseRequest(): unknown provider ${provider}.`
                     )
                 }
 
-                const body: ActivityInbound = await context.iopaːBody
+                const body: ActivityInbound = await context['iopa.Body']
 
                 try {
                     if (typeof body !== 'object') {
@@ -354,7 +362,7 @@ export class CarrierCore implements ICarrierCore {
 
                     let type: ActivityTypes
 
-                    switch (context.iopaːUrl.searchParams.get('type')) {
+                    switch (context['iopa.Url'].searchParams.get('type')) {
                         case 'message':
                             type = ActivityTypes.Message
                             break
@@ -374,7 +382,7 @@ export class CarrierCore implements ICarrierCore {
                     }
 
                     const activity: Activity = {
-                        type: type,
+                        type,
                         channelId: provider,
                         conversation: { tenantId: body.AccountSid },
                         channelData: body,
@@ -384,7 +392,9 @@ export class CarrierCore implements ICarrierCore {
                         id: body.MessageSid || body.SmsSid,
                         serviceUrl: this.providerConfig[provider].serviceUrl,
                     }
-                    ;(context as IopaCarrierContext).botːProvider = provider as CARRIER_PROVIDER
+                    ;(context as IopaCarrierContext)[
+                        'bot.Provider'
+                    ] = provider as CARRIER_PROVIDER
 
                     resolve(activity)
                 } catch (err) {
@@ -397,14 +407,14 @@ export class CarrierCore implements ICarrierCore {
 }
 
 function delay(/** timeout in ms */ timeout: number): Promise<void> {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         setTimeout(resolve, timeout)
     })
 }
 
 function timeout<T>(promise: Promise<T>, ms: number): Promise<T> {
-    return new Promise(function(resolve, reject) {
-        setTimeout(function() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             reject(new Error('timeout'))
         }, ms)
         promise.then(resolve, reject)

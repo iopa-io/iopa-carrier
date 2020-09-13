@@ -8,18 +8,23 @@ import {
 import {
     ContextMethods as IContextMethods,
     ICarrierCapability,
+    Carrier,
+    IopaCarrierContext,
 } from 'iopa-carrier-types'
 
 import { IopaContext } from 'iopa-types'
-import { Carrier, IopaCarrierContext } from 'iopa-carrier-types'
 
-const s_context: unique symbol = Symbol('urn:io:iopa:bot:response:context')
+const $$context: unique symbol = Symbol('urn:io:iopa:bot:response:context')
 
 export class CarrierCapability implements ICarrierCapability, IContextMethods {
-    private readonly [s_context]: IopaCarrierContext
+    private readonly [$$context]: IopaCarrierContext
+
     public readonly carrier: Carrier
+
     public readonly activity: Activity
+
     public readonly turnState: Map<any, any>
+
     public responded: boolean
 
     constructor(
@@ -27,7 +32,7 @@ export class CarrierCapability implements ICarrierCapability, IContextMethods {
         carrier: Carrier,
         activity: Activity
     ) {
-        this[s_context] = plaincontext as IopaCarrierContext
+        this[$$context] = plaincontext as IopaCarrierContext
         this.activity = activity
         this.carrier = carrier
         this.turnState = new Map<any, any>()
@@ -83,11 +88,11 @@ export class CarrierCapability implements ICarrierCapability, IContextMethods {
 
         return this.carrier.emit(
             'ContextSendActivities',
-            this[s_context],
+            this[$$context],
             { activities: output },
             () => {
                 return this.carrier
-                    .sendActivities(this[s_context], output)
+                    .sendActivities(this[$$context], output)
                     .then((responses: ResourceResponse[]) => {
                         // Set responded flag
                         if (sentNonTraceActivity) {

@@ -1,12 +1,6 @@
-export * from './generated/index'
-export { DefaultApi as CarrierApi } from './generated/api'
-export {
-    Activity,
-    ActivityTypes,
-    ConversationReference,
-    InputHints,
-    ResourceResponse,
-} from 'iopa-botadapter-schema'
+export * from './generated/index';
+export { DefaultApi as CarrierApi } from './generated/api';
+export { Activity, ActivityTypes, ConversationReference, InputHints, ResourceResponse, } from 'iopa-botadapter-schema';
 /**
  *
  * @export
@@ -18,47 +12,49 @@ export interface ActivityInbound {
      * @type {string}
      * @memberof Message
      */
-    AccountSid?: string
+    AccountSid?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    Body?: string
+    Body?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    From?: string
+    From?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    NumMedia?: string
+    NumMedia?: string;
     /**
      *
      * @type {string}
      * @memberof Message
      */
-    NumSegments?: string
+    NumSegments?: string;
     /**
      * Unique Id of the message
      * @type {string}
      * @memberof Message
      */
-    MessageSid?: string
+    MessageSid?: string;
     /**
      * Unique Id of the message
      * @type {string}
      * @memberof Message
      */
-    SmsSid?: string
+    SmsSid?: string;
     /**
      * Recipient E164 numer
      * @type {string}
      * @memberof Message
      */
-    To?: string
+    To?: string;
+    /** Intermediary used for whisper calls */
+    CalledVia?: string;
 }

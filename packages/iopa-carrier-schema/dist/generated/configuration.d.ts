@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 export interface ConfigurationParameters {
-    apiKey?: string | ((name: string) => string)
-    username?: string
-    password?: string
-    accessToken?: string | ((name: string, scopes?: string[]) => string)
-    basePath?: string
+    apiKey?: string | ((name: string) => string);
+    username?: string;
+    password?: string;
+    accessToken?: string | ((name: string, scopes?: string[]) => string);
+    basePath?: string;
 }
 export declare class Configuration {
     /**
@@ -22,34 +22,34 @@ export declare class Configuration {
      * @param name security name
      * @memberof Configuration
      */
-    apiKey?: string | ((name: string) => string)
+    apiKey?: string | ((name: string) => string);
     /**
      * parameter for basic security
      *
      * @type {string}
      * @memberof Configuration
      */
-    username?: string
+    username?: string;
     /**
      * parameter for basic security
      *
      * @type {string}
      * @memberof Configuration
      */
-    password?: string
+    password?: string;
     /**
      * parameter for oauth2 security
      * @param name security name
      * @param scopes oauth2 scope
      * @memberof Configuration
      */
-    accessToken?: string | ((name: string, scopes?: string[]) => string)
+    accessToken?: string | ((name: string, scopes?: string[]) => string);
     /**
      * override base path
      *
      * @type {string}
      * @memberof Configuration
      */
-    basePath?: string
-    constructor(param?: ConfigurationParameters)
+    basePath?: string;
+    constructor(param?: ConfigurationParameters);
 }

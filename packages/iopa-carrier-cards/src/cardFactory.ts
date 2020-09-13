@@ -12,7 +12,8 @@ import {
     SigninCard,
     ThumbnailCard,
     VideoCard,
-} from 'iopa-carrier-schema'
+} from 'iopa-botadapter-schema'
+import { O365ConnectorCard } from 'iopa-botadapter-schema-teams'
 
 /**
  * A set of utility functions designed to assist with the formatting of the various card types a

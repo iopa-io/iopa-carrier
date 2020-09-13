@@ -5,6 +5,9 @@ import {
 
 import { ActivityTypes, Activity, ResourceResponse } from 'iopa-carrier-schema'
 
+import { RouterApp, IopaBotReading, BotActivityTypes } from 'iopa-types'
+import { URN_BOTINTENT_LITERAL, URN_CARRIER, CarrierCore } from './carrier-core'
+
 export type IopaEventHandlerNoArgs = (
     context: IopaCarrierContext,
     next: () => Promise<any>
@@ -18,14 +21,10 @@ export type IopaEventHandlerArgs = (
 
 export type IopaEventHandler = IopaEventHandlerNoArgs | IopaEventHandlerArgs
 
-import { URN_BOTINTENT_LITERAL, URN_CARRIER, CarrierCore } from './carrier-core'
-
-import { RouterApp, BotReading, BotActivityTypes } from 'iopa-types'
-
 export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
     protected readonly handlers: { [type: string]: IopaEventHandler[] } = {}
 
-    public constructor(app: RouterApp) {
+    public constructor(app: RouterApp<{}, IopaCarrierContext>) {
         super(app)
         app.use(this.invokeEvents, 'CarrierWithEvents.Invoke')
     }
@@ -38,62 +37,60 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         context: IopaCarrierContext,
         next: () => Promise<void>
     ) => {
-        if (context.botːSource !== URN_CARRIER) {
+        if (context['bot.Source'] !== URN_CARRIER) {
             return next()
         }
 
-        const reading: BotReading = context as any
+        const reading: IopaBotReading = context as any
 
-        const { activity, carrier } = context.botːCapability
+        const { activity, carrier } = context['bot.Capability']
 
-        context.iopaːLabels.set('user', activity.from.id)
+        context['iopa.Labels'].set('user', activity.from.id)
 
-        reading.botːActivityId = activity.id
-        reading.botːActivityType = (((activity.type as unknown) as string)
-            .charAt(0)
-            .toUpperCase() +
+        reading['bot.ActivityId'] = activity.id
+        reading[
+            'bot.ActivityType'
+        ] = (((activity.type as unknown) as string).charAt(0).toUpperCase() +
             ((activity.type as unknown) as string).slice(1)) as any
-        reading.botːChannel = { id: activity.conversation.tenantId }
-        reading.botːConversation = carrier.getConversationReference(activity)
-        reading.botːFrom = {
+        reading['bot.Channel'] = { id: activity.conversation.tenantId }
+        reading['bot.Conversation'] = carrier.getConversationReference(activity)
+        reading['bot.From'] = {
             id: activity.from.aadObjectId, // likely undefined
             localid: activity.from.id,
             name:
                 activity.from.name || activity.channelData.CallerCity
-                    ? activity.channelData.CallerCity +
-                      ' ' +
-                      activity.channelData.CallerState
+                    ? `${activity.channelData.CallerCity} ${activity.channelData.CallerState}`
                     : '', // name likely undefined
         }
-        reading.botːIntent =
-            activity.type == ActivityTypes.Message
+        reading['bot.Intent'] =
+            activity.type === ActivityTypes.Message
                 ? URN_BOTINTENT_LITERAL
                 : `${URN_CARRIER}:${activity.type}`
-        reading.botːRecipient = {
+        reading['bot.Recipient'] = {
             id: activity.recipient.aadObjectId, // likely undefined
             localid: activity.recipient.id,
             name: activity.recipient.name, // likely undefined
         }
-        reading.botːSession = undefined
-        reading.botːTeam = { id: 'carrier' }
-        reading.botːTimestamp = Date.now()
+        reading['bot.Session'] = undefined
+        reading['bot.Team'] = { id: 'carrier' }
+        reading['bot.Timestamp'] = Date.now()
 
         await this.emit('Turn', context, async () => {
-            switch (context.botːCapability.activity.type) {
+            switch (context['bot.Capability'].activity.type) {
                 case ActivityTypes.Message:
-                    await this.invoke_MessageActivity(context)
+                    await this.invokeMessageActivity(context)
                     break
                 case ActivityTypes.Call:
-                    await this.invoke_CallActivity(context)
+                    await this.invokeCallActivity(context)
                     break
                 case ActivityTypes.MessageStatus:
-                    await this.invoke_MessageStatusActivity(context)
+                    await this.invokeMessageStatusActivity(context)
                     break
                 case ActivityTypes.CallStatus:
-                    await this.invoke_CallStatusActivity(context)
+                    await this.invokeCallStatusActivity(context)
                     break
                 default:
-                    await this.invoke_UnrecognizedActivity(context)
+                    await this.invokeUnrecognizedActivity(context)
                     break
             }
         })
@@ -105,32 +102,32 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
     // INVOKE SUBTYPE HANDLERS
     //
 
-    protected async invoke_MessageActivity(
+    protected async invokeMessageActivity(
         context: IopaCarrierContext
     ): Promise<void> {
-        const { activity, carrier } = context.botːCapability
-        const reading: IopaCarrierContext & BotReading = context as any
-        reading.botːText = activity.text
-        context.response.iopaːHeaders.set('content-type', 'text/xml')
+        const { activity, carrier } = context['bot.Capability']
+        const reading: IopaCarrierContext & IopaBotReading = context as any
+        reading['bot.Text'] = activity.text
+        context.response['iopa.Headers'].set('content-type', 'text/xml')
         await this.emit('Message', reading, this.defaultNextEvent(reading))
     }
 
-    protected async invoke_CallActivity(
+    protected async invokeCallActivity(
         context: IopaCarrierContext
     ): Promise<void> {
-        const { activity, carrier } = context.botːCapability
-        const reading: IopaCarrierContext & BotReading = context as any
-        reading.botːText = activity.text
-        context.response.iopaːHeaders.set('content-type', 'text/xml')
+        const { activity, carrier } = context['bot.Capability']
+        const reading: IopaCarrierContext & IopaBotReading = context as any
+        reading['bot.Text'] = activity.text
+        context.response['iopa.Headers'].set('content-type', 'text/xml')
 
         await this.emit('Call', reading, this.defaultNextEvent(reading))
     }
 
-    protected async invoke_MessageStatusActivity(
+    protected async invokeMessageStatusActivity(
         context: IopaCarrierContext
     ): Promise<void> {
-        const reading: IopaCarrierContext & BotReading = context as any
-        context.response.iopaːHeaders.set('content-type', 'text/plain')
+        const reading: IopaCarrierContext & IopaBotReading = context as any
+        context.response['iopa.Headers'].set('content-type', 'text/plain')
         await this.emit(
             'MessageStatus',
             reading,
@@ -138,17 +135,17 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         )
     }
 
-    protected async invoke_CallStatusActivity(
+    protected async invokeCallStatusActivity(
         context: IopaCarrierContext
     ): Promise<void> {
-        const { activity, carrier } = context.botːCapability
-        const reading: IopaCarrierContext & BotReading = context as any
-        reading.botːText = activity.text
-        context.response.iopaːHeaders.set('content-type', 'text/plain')
+        const { activity, carrier } = context['bot.Capability']
+        const reading: IopaCarrierContext & IopaBotReading = context as any
+        reading['bot.Text'] = activity.text
+        context.response['iopa.Headers'].set('content-type', 'text/plain')
         await this.emit('CallStatus', reading, this.defaultNextEvent(reading))
     }
 
-    protected async invoke_UnrecognizedActivity(
+    protected async invokeUnrecognizedActivity(
         context: IopaCarrierContext
     ): Promise<void> {
         await this.emit(
@@ -166,7 +163,7 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         context: IopaCarrierContext
     ): () => Promise<void> {
         const runDialogs = async (): Promise<void> => {
-            if (!context.botːCapability.responded) {
+            if (!context['bot.Capability'].responded) {
                 await this.emit('Dialog', context, async () => {
                     // noop
                 })
@@ -206,10 +203,10 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         onNext?: () => Promise<any>
     ): Promise<any> {
         if ((type as any) !== 'Dialog') {
-            context.botːActivityType = type
+            context['bot.ActivityType'] = type
         }
 
-        if (typeof args == 'function') {
+        if (typeof args === 'function') {
             onNext = args as any
             args = null
         }
@@ -276,7 +273,8 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
             async (context: IopaCarrierContext, next) => {
                 await handler(
                     context,
-                    context.botːCapability.activity.channelData.MessageStatus,
+                    context['bot.Capability'].activity.channelData
+                        .MessageStatus,
                     next
                 )
             }
@@ -309,7 +307,7 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         return this.on(
             'ContextSendActivities',
             async (context: IopaCarrierContext, { activities }, next) => {
-                return await handler(context, activities, next)
+                await handler(context, activities, next)
             }
         )
     }

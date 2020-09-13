@@ -1,6 +1,10 @@
 import { Activity } from 'iopa-carrier-schema'
 import { IopaContext } from 'iopa-types'
-import { Carrier, IopaCarrierContext } from 'iopa-carrier-types'
+import {
+    Carrier,
+    IopaCarrierContext,
+    CARRIER_PROVIDER,
+} from 'iopa-carrier-types'
 import { CarrierCapability } from './context-capability'
 import { toIopaCarrierResponse } from './context-response-connector'
 
@@ -11,12 +15,14 @@ export function toIopaCarrierContext(
     activity: Activity
 ): IopaCarrierContext {
     const context = plaincontext as IopaCarrierContext
-    context.botːCapability = new CarrierCapability(
+    context['bot.Capability'] = new CarrierCapability(
         plaincontext,
         carrier,
         activity
     )
-    context.botːProvider = context.botːProvider || activity.channelId
+    context['bot.Provider'] =
+        context['bot.Provider'] ||
+        ((activity.channelId as unknown) as CARRIER_PROVIDER)
     context.response = toIopaCarrierResponse(plaincontext.response, context)
     return context
 }

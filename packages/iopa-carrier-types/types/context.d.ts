@@ -17,17 +17,17 @@ import {
  * BotFramework extensions to the IopaContext
  *
  * The properties and methods included here are added to the
- * `botːCapability` section of the  IopaContext
+ * ["bot.Capability"]` section of the  IopaContext
  *
  */
 export interface IopaCarrierContext extends IopaBotContext {
-    botːProvider: CARRIER_PROVIDER
-    botːCapability?: ICarrierCapability
+   ["bot.Provider"]: CARRIER_PROVIDER
+   ["bot.Capability"]?: ICarrierCapability
     response: IopaCarrierResponse
 }
 
 export type IopaCarrierResponse = IopaBotResponse & {
-    botːCapability?: ICarrierCapability
+   ["bot.Capability"]?: ICarrierCapability
 }
 
 export interface ICarrierCapability {
@@ -92,9 +92,9 @@ export interface ICarrierCapability {
      *
      * ```JavaScript
      * // Send a typing indicator without going through an middleware listeners.
-     * const reference = context.botːCapability.carrier.getConversationReference(context.activity);
-     * const activity = context.botːCapability.carrier.applyConversationReference({ type: 'typing' }, reference);
-     * await context.botːCapability.sendActivities([activity]);
+     * const reference = context["bot.Capability"].carrier.getConversationReference(context.activity);
+     * const activity = context["bot.Capability"].carrier.applyConversationReference({ type: 'typing' }, reference);
+     * await context["bot.Capability"].sendActivities([activity]);
      * ```
      */
     readonly carrier: Carrier
@@ -119,8 +119,8 @@ export interface ICarrierCapability {
      *
      * ```JavaScript
      * await routeActivity(context);
-     * if (!context.botːCapability.responded) {
-     *    await context.botːCapability.sendActivity(`I'm sorry. I didn't understand.`);
+     * if (!context["bot.Capability"].responded) {
+     *    await context["bot.Capability"].sendActivity(`I'm sorry. I didn't understand.`);
      * }
      * ```
      */
@@ -136,7 +136,7 @@ export interface ICarrierCapability {
      *
      * ```JavaScript
      * const cart = await loadUsersShoppingCart(context);
-     * context.botːCapability.turnState.set('cart', cart);
+     * context["bot.Capability"].turnState.set('cart', cart);
      * ```
      *
      * > [!TIP]
