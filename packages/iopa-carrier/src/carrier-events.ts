@@ -141,7 +141,7 @@ export class CarrierWithEvents extends CarrierCore implements ICarrierEvents {
         const { activity, carrier } = context['bot.Capability']
         const reading: IopaCarrierContext & IopaBotReading = context as any
         reading['bot.Text'] = activity.text
-        context.response['iopa.Headers'].set('content-type', 'text/plain')
+        context.response['iopa.Headers'].set('content-type', 'text/xml')
         await this.emit('CallStatus', reading, this.defaultNextEvent(reading))
     }
 

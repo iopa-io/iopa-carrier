@@ -315,7 +315,6 @@ export class CarrierWithEventsAndMethods
     ): Promise<void> {
         const toNumber = `+${context['iopa.Url'].searchParams.get('value')}`
         console.log(`adding call to ${toNumber}}`)
-        context.response['iopa.StatusCode'] = 200
         context.response.end(
             `<?xml version="1.0" encoding="UTF-8"?>
     <Response>
@@ -324,7 +323,8 @@ export class CarrierWithEventsAndMethods
         <Number>${toNumber}</Number>
         </Dial>
         <Hangup />
-    </Response>`
+    </Response>`,
+            { status: 200 }
         )
         return next()
     }

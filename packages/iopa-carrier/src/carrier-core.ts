@@ -131,19 +131,26 @@ export class CarrierCore implements ICarrierCore {
                 }
             }
 
-            status = 200
+            if (status !== 200) {
+                status = 200
+
+                await context.response.end(
+                    `<?xml version="1.0" encoding="UTF-8"?><Response></Response>`,
+                    { status }
+                )
+            }
         } catch (err) {
             // Catch the error to try and throw the stacktrace out of processActivity()
             processError = err
             console.error(err)
         }
 
-        // Return status
-        context.response['iopa.StatusCode'] = status
-
-        await context.response.end(
-            `<?xml version="1.0" encoding="UTF-8"?><Response></Response>`
-        )
+        if (status !== 200) {
+            await context.response.end(
+                `<?xml version="1.0" encoding="UTF-8"?><Response></Response>`,
+                { status }
+            )
+        }
 
         // Check for an error
         if (status >= 400) {

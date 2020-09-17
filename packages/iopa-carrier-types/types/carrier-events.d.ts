@@ -1,14 +1,6 @@
-import {
-    CarrierMiddlewareApp,
-    IopaCarrierContext,
-    InvokeResponse,
-} from 'iopa-carrier-types'
+import { IopaCarrierContext } from 'iopa-carrier-types'
 
-import {
-    Activity,
-    ResourceResponse,
-    ConversationReference,
-} from 'iopa-carrier-schema'
+import { Activity, ResourceResponse } from 'iopa-carrier-schema'
 
 export declare type IopaHandler = (
     context: IopaCarrierContext,
