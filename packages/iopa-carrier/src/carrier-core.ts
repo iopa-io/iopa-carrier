@@ -227,7 +227,13 @@ export class CarrierCore implements ICarrierCore {
                         } catch (ex) {
                             const error = await ex.json()
                             console.error(JSON.stringify(error))
-                            responses.push({ error } as ResourceResponse)
+                            throw new Error(
+                                ex.statusText ||
+                                    `Error: ${
+                                        ex.message ||
+                                        'An error occurred sending the message [carrier-core]'
+                                    }`
+                            )
                         }
                     }
                     break
