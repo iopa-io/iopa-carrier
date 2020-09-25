@@ -250,6 +250,38 @@ export class CarrierWithEventsAndMethods
         return response
     }
 
+    async migrateIncomingPhoneNumber(provider: CARRIER_PROVIDER, sid: string) {
+        if (provider !== 'twilio') {
+            throw new Error('migration only supported for twilio')
+        }
+
+        const config = this.providerConfig[provider]
+        const client = this.createCarrierApiClient(config)
+        const { accountSid, migrateToAccountSid } = config
+
+        const params = new url.URLSearchParams() as URLSearchParams
+        params.append('AccountSid', migrateToAccountSid)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        if (provider !== 'signalwire') {
+            params.append('AddressSid', config.migrateToAddressSid)
+        }
+
+        const response = await client.accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(
+            accountSid,
+            '.json',
+            sid,
+            {
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                },
+                body: params,
+            }
+        )
+
+        return response
+    }
+
     public async clickToCall({
         provider,
         baseUrl,

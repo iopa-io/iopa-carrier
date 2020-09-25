@@ -48,6 +48,8 @@ export class CarrierCore implements ICarrierCore {
                 baseUrl: `https://${process.env.SIGNALWIRE_SPACE}`,
                 serviceUrl: `https://${process.env.SIGNALWIRE_SPACE}/api/laml/2010-04-01`,
                 accountSid: process.env.SIGNALWIRE_ACCOUNT_SID,
+                migrateToAccountSid:
+                    process.env.SIGNALWIRE_MIGRATE_TO_ACCOUNT_SID,
                 outboundCredentialsProvider: new SimpleCredentialProvider(
                     process.env.SIGNALWIRE_ACCOUNT_SID,
                     process.env.SIGNALWIRE_ACCOUNT_TOKEN
@@ -59,12 +61,15 @@ export class CarrierCore implements ICarrierCore {
                 carrierCallbackApplicationId:
                     process.env.SIGNALWIRE_CALLBACK_APP_ID,
                 addressSid: process.env.SIGNALWIRE_ADDRESS_SID,
+                migrateToAddressSid:
+                    process.env.SIGNALWIRE_MIGRATE_TO_ADDRESS_SID,
             },
             twilio: {
                 provider: 'twilio',
                 baseUrl: `https://api.twilio.com`,
                 serviceUrl: `https://api.twilio.com/2010-04-01`,
                 accountSid: process.env.TWILIO_ACCOUNT_SID,
+                migrateToAccountSid: process.env.TWILIO_MIGRATE_TO_ACCOUNT_SID,
                 outboundCredentialsProvider: new SimpleCredentialProvider(
                     process.env.TWILIO_ACCOUNT_SID,
                     process.env.TWILIO_PRIMARY_TOKEN
@@ -76,6 +81,7 @@ export class CarrierCore implements ICarrierCore {
                 carrierCallbackApplicationId:
                     process.env.TWILIO_CALLBACK_APP_ID,
                 addressSid: process.env.TWILIO_ADDRESS_SID,
+                migrateToAddressSid: process.env.TWILIO_MIGRATE_TO_ADDRESS_SID,
             },
         }
     }

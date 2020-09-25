@@ -9,12 +9,12 @@ import {
     IncomingCall,
 } from 'iopa-carrier-schema'
 
+import { IopaContext } from 'iopa-types'
 import {
     IopaCarrierContext as TurnContext,
     IopaCarrierContext,
 } from './context'
 import { CARRIER_PROVIDER } from './carrier'
-import { IopaContext } from 'iopa-types'
 
 export interface CarrierMethods {
     cleanNumber(number: string): string
@@ -44,6 +44,10 @@ export interface CarrierMethods {
         provider: CARRIER_PROVIDER,
         sid: string,
         patch: Partial<IncomingCallsIncomingPhoneNumbers>
+    ): Promise<IncomingCall>
+    migrateIncomingPhoneNumber(
+        provider: CARRIER_PROVIDER,
+        sid: string
     ): Promise<IncomingCall>
     clickToCall(params: {
         provider: CARRIER_PROVIDER

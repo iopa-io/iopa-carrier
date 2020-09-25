@@ -5,23 +5,25 @@ import {
     CarrierApi,
 } from 'iopa-carrier-schema'
 
-import { IopaCarrierContext } from './context'
 import { IopaContext, RouterApp } from 'iopa-types'
+import { ICredentialProvider } from 'iopa-carrier-schema-auth'
+import { IopaCarrierContext } from './context'
 import { CarrierEvents } from './carrier-events'
 import { CarrierMethods } from './carrier-methods'
-import { ICredentialProvider } from 'iopa-carrier-schema-auth'
 
 export type CARRIER_PROVIDER = 'twilio' | 'signalwire'
 
 export interface CarrierConfig {
     provider: string
     accountSid: string
+    migrateToAccountSid: string
     baseUrl: string
     serviceUrl: string
     outboundCredentialsProvider: ICredentialProvider
     inboundCredentialsProvider: ICredentialProvider
     carrierCallbackApplicationId: string
     addressSid: string
+    migrateToAddressSid: string
 }
 
 /**
