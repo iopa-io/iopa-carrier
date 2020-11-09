@@ -23,9 +23,9 @@ The only dependency that a plugin needs is a typescript definition repository on
 -   `iopa-carrier-schema-auth` - Auth helpers for validating microsoft auth tokens, kept in sync with botbuilder-js framework to implement best practice security guidance
 -   `iopa-carrier-types` - Common typescript definitions to all packages
 
-### Plugins and Helpers
+### Plugins and Helpers (dependencies)
 
--   `iopa-carrier-cards` - Helper factories to create simple text messages, Bot Framework Cards, Teams Legacy cards and modern Adaptive Cards that degrade gracefully over SMS
+-   `iopa-botadapter-cards` - Helper factories to create simple text messages, Bot Framework Cards, Teams Legacy cards and modern Adaptive Cards that degrade gracefully over SMS
 
 ## License
 

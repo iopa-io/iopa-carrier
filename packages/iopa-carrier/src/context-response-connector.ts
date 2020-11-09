@@ -8,7 +8,7 @@ import {
 } from 'iopa-types'
 
 import { IopaCarrierContext, IopaCarrierResponse } from 'iopa-carrier-types'
-import { MessageFactory } from 'iopa-carrier-cards'
+import { MessageFactory } from 'iopa-botadapter-cards'
 
 const MIN_TYPING_DURATION = 2200
 const MIN_POST_MESSAGE_DELAY = 1500
