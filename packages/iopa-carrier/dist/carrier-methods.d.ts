@@ -17,6 +17,7 @@ export declare class CarrierWithEventsAndMethods extends CarrierWithEvents imple
     purchaseIncomingPhoneNumber(provider: CARRIER_PROVIDER, phone_number: string): Promise<AvailablePhoneNumbersAvailablePhoneNumbers>;
     getIncomingPhoneNumber(provider: CARRIER_PROVIDER, phone_number: string): Promise<IncomingCallsIncomingPhoneNumbers>;
     updateIncomingPhoneNumber(provider: CARRIER_PROVIDER, sid: string, patch: Partial<IncomingCallsIncomingPhoneNumbers>): Promise<import("iopa-carrier-schema").IncomingCall>;
+    migrateIncomingPhoneNumber(provider: CARRIER_PROVIDER, sid: string): Promise<import("iopa-carrier-schema").IncomingCall>;
     clickToCall({ provider, baseUrl, physicalNumber, virtualNumber, recipientNumber, }: {
         provider: CARRIER_PROVIDER;
         baseUrl: string;

@@ -87,7 +87,7 @@ export class CarrierWithEvents extends CarrierCore {
         const { activity, carrier } = context['bot.Capability'];
         const reading = context;
         reading['bot.Text'] = activity.text;
-        context.response['iopa.Headers'].set('content-type', 'text/plain');
+        context.response['iopa.Headers'].set('content-type', 'text/xml');
         await this.emit('CallStatus', reading, this.defaultNextEvent(reading));
     }
     async invokeUnrecognizedActivity(context) {

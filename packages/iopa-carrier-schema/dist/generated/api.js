@@ -60,7 +60,7 @@ exports.RequiredError = RequiredError;
  * DefaultApi - fetch parameter creator
  * @export
  */
-exports.DefaultApiFetchParamCreator = function (configuration) {
+const DefaultApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Delete this application.
@@ -4468,11 +4468,12 @@ exports.DefaultApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.DefaultApiFetchParamCreator = DefaultApiFetchParamCreator;
 /**
  * DefaultApi - functional programming interface
  * @export
  */
-exports.DefaultApiFp = function (configuration) {
+const DefaultApiFp = function (configuration) {
     return {
         /**
          * Delete this application.
@@ -6890,11 +6891,12 @@ exports.DefaultApiFp = function (configuration) {
         },
     };
 };
+exports.DefaultApiFp = DefaultApiFp;
 /**
  * DefaultApi - factory interface
  * @export
  */
-exports.DefaultApiFactory = function (configuration, fetch, basePath) {
+const DefaultApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Delete this application.
@@ -8152,6 +8154,7 @@ exports.DefaultApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.DefaultApiFactory = DefaultApiFactory;
 /**
  * DefaultApi - object-oriented interface
  * @export

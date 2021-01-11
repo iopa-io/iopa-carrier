@@ -140,6 +140,28 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents {
         });
         return response;
     }
+    async migrateIncomingPhoneNumber(provider, sid) {
+        if (provider !== 'twilio') {
+            throw new Error('migration only supported for twilio');
+        }
+        const config = this.providerConfig[provider];
+        const client = this.createCarrierApiClient(config);
+        const { accountSid, migrateToAccountSid } = config;
+        const params = new url.URLSearchParams();
+        params.append('AccountSid', migrateToAccountSid);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        if (provider !== 'signalwire') {
+            params.append('AddressSid', config.migrateToAddressSid);
+        }
+        const response = await client.accountsAccountSidIncomingPhoneNumbersIncomingPhoneNumberSidmediaTypeExtensionPost(accountSid, '.json', sid, {
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+            },
+            body: params,
+        });
+        return response;
+    }
     async clickToCall({ provider, baseUrl, physicalNumber, virtualNumber, recipientNumber, }) {
         console.log(`[iopa-carrier] Click to call ${JSON.stringify({
             provider,
@@ -168,7 +190,6 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents {
     async onCallBackDialCall(context, next) {
         const toNumber = `+${context['iopa.Url'].searchParams.get('value')}`;
         console.log(`adding call to ${toNumber}}`);
-        context.response['iopa.StatusCode'] = 200;
         context.response.end(`<?xml version="1.0" encoding="UTF-8"?>
     <Response>
         <Say voice="alice" language="en-GB">Connecting you now</Say>
@@ -176,7 +197,7 @@ export class CarrierWithEventsAndMethods extends CarrierWithEvents {
         <Number>${toNumber}</Number>
         </Dial>
         <Hangup />
-    </Response>`);
+    </Response>`, { status: 200 });
         return next();
     }
     createSmsConversation(provider, fromNumber, toNumber, logic) {

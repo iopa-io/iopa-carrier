@@ -7,9 +7,10 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.InputHints = exports.ActivityTypes = exports.CarrierApi = void 0;
 __exportStar(require("./generated/index"), exports);
 var api_1 = require("./generated/api");
 Object.defineProperty(exports, "CarrierApi", { enumerable: true, get: function () { return api_1.DefaultApi; } });

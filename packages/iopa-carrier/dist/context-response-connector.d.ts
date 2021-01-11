@@ -13,7 +13,7 @@ export declare class ResponseHelpers implements BotResponseMethods {
     status(this: IopaCarrierResponse, statuscode: number): IopaCarrierResponse;
     /** Send a text string or card attachments, looping with delay if multiple provided */
     sendAll(this: IopaCarrierResponse, messages: (string | IopaBotCard)[], typingDelay?: number): Promise<void>;
-    fail(this: IopaCarrierResponse, error: string, message: string, in_channel: string): IopaCarrierResponse;
+    fail(this: IopaCarrierResponse, error: string, message: string, inChannel: string): IopaCarrierResponse;
     showTypingIndicator(): Promise<void>;
     hideTypingIndicator(): Promise<void>;
     isAwaitingMultiChoiceResponse(): boolean;

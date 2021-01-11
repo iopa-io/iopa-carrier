@@ -19,20 +19,24 @@ export class CarrierCore {
                 baseUrl: `https://${process.env.SIGNALWIRE_SPACE}`,
                 serviceUrl: `https://${process.env.SIGNALWIRE_SPACE}/api/laml/2010-04-01`,
                 accountSid: process.env.SIGNALWIRE_ACCOUNT_SID,
+                migrateToAccountSid: process.env.SIGNALWIRE_MIGRATE_TO_ACCOUNT_SID,
                 outboundCredentialsProvider: new SimpleCredentialProvider(process.env.SIGNALWIRE_ACCOUNT_SID, process.env.SIGNALWIRE_ACCOUNT_TOKEN),
                 inboundCredentialsProvider: new SimpleCredentialProvider(process.env.SIGNALWIRE_ACCOUNT_SID, process.env.SIGNALWIRE_CALLBACK_TOKEN),
                 carrierCallbackApplicationId: process.env.SIGNALWIRE_CALLBACK_APP_ID,
                 addressSid: process.env.SIGNALWIRE_ADDRESS_SID,
+                migrateToAddressSid: process.env.SIGNALWIRE_MIGRATE_TO_ADDRESS_SID,
             },
             twilio: {
                 provider: 'twilio',
                 baseUrl: `https://api.twilio.com`,
                 serviceUrl: `https://api.twilio.com/2010-04-01`,
                 accountSid: process.env.TWILIO_ACCOUNT_SID,
+                migrateToAccountSid: process.env.TWILIO_MIGRATE_TO_ACCOUNT_SID,
                 outboundCredentialsProvider: new SimpleCredentialProvider(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_PRIMARY_TOKEN),
                 inboundCredentialsProvider: new SimpleCredentialProvider(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_CALLBACK_TOKEN),
                 carrierCallbackApplicationId: process.env.TWILIO_CALLBACK_APP_ID,
                 addressSid: process.env.TWILIO_ADDRESS_SID,
+                migrateToAddressSid: process.env.TWILIO_MIGRATE_TO_ADDRESS_SID,
             },
         };
     }
@@ -69,16 +73,19 @@ export class CarrierCore {
                     throw err;
                 }
             }
-            status = 200;
+            if (status !== 200) {
+                status = 200;
+                await context.response.end(`<?xml version="1.0" encoding="UTF-8"?><Response></Response>`, { status });
+            }
         }
         catch (err) {
             // Catch the error to try and throw the stacktrace out of processActivity()
             processError = err;
             console.error(err);
         }
-        // Return status
-        context.response['iopa.StatusCode'] = status;
-        await context.response.end(`<?xml version="1.0" encoding="UTF-8"?><Response></Response>`);
+        if (status !== 200) {
+            await context.response.end(`<?xml version="1.0" encoding="UTF-8"?><Response></Response>`, { status });
+        }
         // Check for an error
         if (status >= 400) {
             if (processError && processError.stack) {
@@ -127,7 +134,9 @@ export class CarrierCore {
                         catch (ex) {
                             const error = await ex.json();
                             console.error(JSON.stringify(error));
-                            responses.push({ error });
+                            throw new Error(ex.statusText ||
+                                `Error: ${ex.message ||
+                                    'An error occurred sending the message [carrier-core]'}`);
                         }
                     }
                     break;

@@ -1,6 +1,6 @@
+import { IopaContext } from 'iopa-types';
 import { ICredentialProvider } from './credentialProvider';
 import { ClaimsIdentity } from './claimsIdentity';
-import { IopaContext } from 'iopa-types';
 /**
  * Validate the incoming Headers sent from the Carrier Service.
  * @param  {string} authHeader The raw HTTP header in the format: "Bearer [longString]"

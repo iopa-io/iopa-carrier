@@ -1,4 +1,4 @@
-import { MessageFactory } from 'iopa-carrier-cards';
+import { MessageFactory } from 'iopa-botadapter-cards';
 const MIN_TYPING_DURATION = 2200;
 const MIN_POST_MESSAGE_DELAY = 1500;
 const MAX_POST_MESSAGE_DELAY = 4000;
@@ -139,7 +139,7 @@ export class ResponseHelpers {
                 : postMessageDelay);
         });
     }
-    fail(error, message, in_channel) {
+    fail(error, message, inChannel) {
         this['iopa.StatusCode'] = 200;
         this[$$bodyState] = {
             text: `${message}: ${error}`,
